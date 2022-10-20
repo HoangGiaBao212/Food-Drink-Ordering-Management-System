@@ -1,18 +1,157 @@
-## Getting Started
+Login(y/n)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+    Y {
+        TK, MK
+    } => id => lưu vô trong session hiện tại
+    N => id ẩn danh => luu vô trong session hiện tại
 
-## Folder Structure
+//Với quyền người dùng
 
-The workspace contains two folders by default, where:
+1, Hiện danh sách sản phẩm
+2, Thông tin người dùng
+3, Thoát
+1 {
+    Show sách sản phẩm (id, Tên, Giá, Mô tả)
+    Show Giỏ hàng
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+    1, Chọn sản phẩm {
+        Nhập: id, số lượng -> tự động quay lại
+    }
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    2, Chỉnh sửa giỏ hàng {
+        Show giỏ hàng
+        1, Chọn sản phẩm muốn sửa {
+            1, xóa sản phẩm
+            2, chỉnh sửa số lượng
+            3, quay lại
+        }
+    }
+    3, Thanh Toán {
+        Show giỏ hàng
+        Show số tiền phải thanh toán
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+        1, Thanh toán bằng tiền mặt, mời đút tiền vô :))
+        2, Thanh toán bằng thẻ, mời đút thẻ vô
+        1, 2 {
+            Sử dụng điểm (Y/N) {
+                Y: Trừ điểm
+                N: DO NOTTHING
+            }
+            Hiện quay mòng mòng
 
-## Dependency Management
+            Show Thanh toán thành công {
+                Mua tiếp (Y/N)
+            }
+        }
+        3, Quay lại
+    }
+    4, Quay lại
+}
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+2 {
+    Show thông tin người dùng
+    1, Xem lịch sử {
+        Show sản phẩm đã mua
+    }
+
+    2, Thay đổi thông tin {
+        1, Đổi mật khẩu
+        2, quay lại
+    }
+    3, Quay lại
+}
+
+// Với quyền Salesman
+
+1, Tạo hóa đơn
+2, Tra cứu thông tin người dùng
+3, là kết ca
+
+1 {
+    Show sách sản phẩm (id, Tên, Giá, Mô tả)
+    Show Giỏ hàng
+
+    1, Chọn sản phẩm {
+        Nhập: id, số lượng -> tự động quay lại
+    }
+
+    2, Chỉnh sửa giỏ hàng {
+        Show giỏ hàng
+        1, Chọn sản phẩm muốn sửa {
+            1, xóa sản phẩm
+            2, chỉnh sửa số lượng
+            3, quay lại
+        }
+    }
+    3, Thanh Toán {
+        Show giỏ hàng
+        Show số tiền phải thanh toán
+
+        1, Thanh toán bằng tiền mặt
+        2, Thanh toán bằng thẻ
+
+        1, 2 {
+            Hỏi id (Y/N) {
+                Sử dụng điểm (Y/N) {
+                    Y: Trừ điểm
+                }
+            }
+
+            Hiện quay mòng mòng
+
+            Show Thanh toán thành công
+            Tích điểm
+        }
+        3, Quay lại
+    }
+    4, Quay lại
+}
+
+2 {
+    1, Show danh sách người dùng
+    2, Chọn người dùng {
+        Show thông tin người dùng
+
+        1, Xem lịch sử {
+            Show sản phẩm đã mua
+        }
+        2, Thay đổi thông tin {
+            1, Đổi mật khẩu
+            2, quay lại
+        }
+        3, Quay lại
+    }
+    3, Quay lại
+}
+
+3, {
+    -Show số tiền đã bán
+    -Thoát
+}
+
+// Với quyền Manager
+
+1, Sản phẩm
+2, Nhân viên
+3, Người dùng
+4, Thoát
+
+1 {
+    1, Show danh sách sản phẩm
+    2, Thêm sản phẩm
+    3, Tạo sản phẩm mới
+    4, Xóa sản phẩm
+    5, quay lại
+}
+2 {
+    1, Show danh sách nhân viên
+    2, Thêm nhân viên
+    3, Xóa nhân viên
+    4, Quay lại
+}
+3 {
+    1, Show danh sách người dùng
+    2, Thêm người dùng
+    3, Xóa người dùng
+    4, Quay lại
+}
