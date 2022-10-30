@@ -44,14 +44,14 @@ public class Product {
     public Date getMFG() {
         return MFG;
     }
-    public void setMFG(Date mFG) {
-        MFG = mFG;
+    public void setMFG(Date MFG) {
+        this.MFG = MFG;
     }
     public Date getEXP() {
         return EXP;
     }
-    public void setEXP(Date eXP) {
-        EXP = eXP;
+    public void setEXP(Date EXP) {
+        this.EXP = EXP;
     }
     @Override
     public String toString() {
