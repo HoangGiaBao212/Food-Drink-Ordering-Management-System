@@ -26,5 +26,4 @@ public class Account {
     public void setPass(String pass) {
         this.pass = pass;
     }
-    
 }
