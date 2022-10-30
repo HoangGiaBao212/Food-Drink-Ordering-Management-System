@@ -6,6 +6,7 @@ public class Account {
         this.acc = acc;
         this.pass = pass;
     }
+    
     public Account() {
     }
     public int getId() {
