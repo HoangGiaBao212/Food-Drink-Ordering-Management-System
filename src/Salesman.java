@@ -1,3 +1,3 @@
-public class Salesman {
+public class Salesman extends Employee{
     
 }
