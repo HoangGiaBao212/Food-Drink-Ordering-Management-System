@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Person {
+public abstract class Person {
     private String name, adress;
     private Date birth;
 
