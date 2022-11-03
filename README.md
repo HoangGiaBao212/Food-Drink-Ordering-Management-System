@@ -46,7 +46,7 @@ Nguyen Minh Tuan
             1, 2 {
                 Sử dụng điểm (Y/N) {
                     Y: Trừ điểm
-                    N: DO NOTTHING
+                    N: DO NOT THING
                 }
 
                 Hiện quay mòng mòng
