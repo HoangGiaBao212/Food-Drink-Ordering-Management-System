@@ -1,5 +1,8 @@
 # Food & Drink Ordering Management System
+
 Nguyen Minh Tuan
+Bui Hong Bao
+
 ## Login (Y/N)
 
     Y {
@@ -61,7 +64,6 @@ Nguyen Minh Tuan
 
         4, Quay lại
 
-
 ### 2, Thông tin người dùng
 
         Show thông tin người dùng
@@ -84,6 +86,7 @@ Nguyen Minh Tuan
     3, Kết ca
 
 ### 1, Tạo hóa đơn
+
         Show sách sản phẩm (id, Tên, Giá, Mô tả)
         Show Giỏ hàng
 
@@ -125,6 +128,7 @@ Nguyen Minh Tuan
             4, Quay lại
 
 ### 2 Tra cứu thông tin người dùng
+
     1, Show danh sách người dùng
     2, Chọn người dùng {
         Show thông tin người dùng
