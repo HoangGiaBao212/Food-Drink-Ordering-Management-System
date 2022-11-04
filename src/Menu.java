@@ -16,6 +16,7 @@ public class Menu {
     }
 
     /**
+     * Display customer function
      * 
      * @return int
      */
@@ -24,16 +25,17 @@ public class Menu {
          * TODO:
          * [x] display customer function list
          * [x] get customer choice
-         * [x] return customer choice
+         * [x] check customer choice
+         * [x] return customer choice if valid
          */
         System.out.println("1. Hiện danh sách sản phẩm.");
         System.out.println("2. Thông tin người dùng.");
         System.out.println("0. Thoát.");
-        int choice = -1;
-        while (choice < 0 || choice > 2) {
+        int customerChoice;
+        do {
             System.out.print("Lựa chọn: ");
-            choice = Integer.parseInt(sc.nextLine());
-        }
-        return choice;
+            customerChoice = Integer.parseInt(sc.nextLine());
+        } while (customerChoice < 0 || customerChoice > 2);
+        return customerChoice;
     }
 }
