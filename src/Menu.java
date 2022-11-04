@@ -16,11 +16,11 @@ public class Menu {
     }
 
     /**
-     * Show customer function and return customer choice
+     * Show permission customer function and return customer choice
      * 
      * @return int
      */
-    public static int showMenuCustomer() {
+    public static int showMenuPermissionCustomer() {
         /**
          * TODO:
          * [x] display customer function list
@@ -40,11 +40,28 @@ public class Menu {
     }
 
     /**
-     * show salesman function and return salesman choice
+     * Show table product list and return id product selected
      * 
      * @return int
      */
-    public static int showMenuSalesman() {
+    public static int showMenuProduct() {
+        /**
+         * TODO:
+         * [] show header attributes of product
+         * [] display by table
+         * [] get id product
+         * [] check id valid and exist
+         * [] return id if valid
+         */
+
+    }
+
+    /**
+     * show permission salesman function and return salesman choice
+     * 
+     * @return int
+     */
+    public static int showMenuPermissionSalesman() {
         /**
          * TODO:
          * [x] display salesman function list
