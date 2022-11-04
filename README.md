@@ -1,6 +1,8 @@
 # Food & Drink Ordering Management System
 
-Nguyen Minh Tuan
+Nguyen Minh Tuan <br>
+Bui Hong Bao
+
 ## Login (Y/N)
 
     Y {
