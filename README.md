@@ -2,6 +2,7 @@
 
 Nguyen Minh Tuan <br>
 Bui Hong Bao
+Mai Trung Chinh
 
 ## Login (Y/N)
 
