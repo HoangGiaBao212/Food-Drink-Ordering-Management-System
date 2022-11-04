@@ -6,16 +6,13 @@ public abstract class ArrayList implements IList {
      * [x] Add method add object to array
      * [ ] Add method remove object from array
      */
-    public abstract class ArrayList implements IList {
-        private Object[] array;
-        private int total;
-        {
-            total = 0;
-            array = new ArrayList[100];
-        }
+    private Object[] array;
+    private int total;
 
-        ArrayList() {
-        }
+    ArrayList() {
+        total = 0;
+        array = new ArrayList[100];
+    }
 
     /**
      * Add new element to the end of array
@@ -33,8 +30,9 @@ public abstract class ArrayList implements IList {
             if (array[total] != null)
                 total++;
         } catch (Exception e) {
-            if(array[total] != null) total++;
-        } catch(Exception e) {
+            if (array[total] != null)
+                total++;
+        } catch (Exception e) {
             /**
              * FIXME: check object is null
              */
