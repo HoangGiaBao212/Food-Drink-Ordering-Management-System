@@ -1,15 +1,21 @@
 import java.util.Arrays;
 
 public abstract class ArrayList implements IList {
-    private Object[] array;
-    private int total;
-    {
-        total = 0;
-        array = new ArrayList[100];
-    }
+    /**
+     * TODO:
+     * [x] Add method add object to array
+     * [ ] Add method remove object from array
+     */
+    public abstract class ArrayList implements IList {
+        private Object[] array;
+        private int total;
+        {
+            total = 0;
+            array = new ArrayList[100];
+        }
 
-    ArrayList() {
-    }
+        ArrayList() {
+        }
 
     /**
      * Add new element to the end of array
@@ -27,6 +33,11 @@ public abstract class ArrayList implements IList {
             if (array[total] != null)
                 total++;
         } catch (Exception e) {
+            if(array[total] != null) total++;
+        } catch(Exception e) {
+            /**
+             * FIXME: check object is null
+             */
             return false;
         }
         return true;
