@@ -16,11 +16,11 @@ public class Menu {
     }
 
     /**
-     * Display customer function
+     * Show customer function and return customer choice
      * 
      * @return int
      */
-    public static int menuCustomer() {
+    public static int showMenuCustomer() {
         /**
          * TODO:
          * [x] display customer function list
@@ -38,4 +38,31 @@ public class Menu {
         } while (customerChoice < 0 || customerChoice > 2);
         return customerChoice;
     }
+
+    /**
+     * show salesman function and return salesman choice
+     * 
+     * @return int
+     */
+    public static int showMenuSalesman() {
+        /**
+         * TODO:
+         * [x] display salesman function list
+         * [x] get salesman choice
+         * [x] check salesman choice
+         * [x] return salesman choice if valid
+         */
+        System.out.println("1. Tạo hóa đơn.");
+        System.out.println("2. Tra cứu thông tin người dùng.");
+        System.out.println("3. Kết ca.");
+        System.out.println("0. Thoát.");
+
+        int salesmanChoice;
+        do {
+            System.out.print("Lựa chọn: ");
+            salesmanChoice = Integer.parseInt(sc.nextLine());
+        } while (salesmanChoice < 0 || salesmanChoice > 3);
+        return salesmanChoice;
+    }
+
 }
