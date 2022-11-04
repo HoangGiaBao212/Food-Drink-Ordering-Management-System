@@ -3,13 +3,11 @@ import java.util.Arrays;
 public abstract class ArrayList {
     private Object[] array;
     private int total;
-    private int maxLength;
     {
         total = 0;
-        maxLength = 100;
+        array = new ArrayList[100];
     }
     ArrayList(){
-        array = new ArrayList[maxLength];
     }
     public abstract Object search(int id);
 
@@ -18,8 +16,11 @@ public abstract class ArrayList {
             array[total] = obj;
         } catch (IndexOutOfBoundsException e) {
             array = Arrays.copyOf(array, total+1);
+            array[total] = obj;
+        } catch(Exception e) {
+            return false;
         }
-        return false;
+        return true;
     };
 
     public abstract boolean change(int id);
