@@ -1,5 +1,17 @@
 {
     "recommendations": [
-        "vscjava.vscode-java-pack"
+        "vscjava.vscode-java-pack",
+        "cschlosser.doxdocgen",
+        "streetsidesoftware.code-spell-checker",
+        "hediet.vscode-drawio",
+        "donjayamanne.git-extension-pack",
+        "bierner.github-markdown-preview",
+        "github.vscode-pull-request-github",
+        "pkief.material-icon-theme",
+        "sonarsource.sonarlint-vscode",
+        "wayou.vscode-todo-highlight",
+        "gruntfuggly.todo-tree",
+        "shardulm94.trailing-spaces",
+        "streetsidesoftware.code-spell-checker-vietnamese"
     ]
 }
