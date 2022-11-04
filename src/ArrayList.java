@@ -15,7 +15,7 @@ public abstract class ArrayList implements IList{
      * @param obj
      * @return boolean
      */
-    public boolean append(Object obj) {
+    public boolean append(Object obj) { 
         try {
             array[total] = obj;
         } catch (IndexOutOfBoundsException e) {
