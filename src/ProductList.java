@@ -30,7 +30,4 @@ public class ProductList extends ArrayList {
         // TODO Auto-generated method stub
         return false;
     }
-    public Person login(int id) {
-        return null;
-    }
 }
