@@ -35,7 +35,7 @@ public class Account {
     {
         return person;
     }
-    public void setPerson(String Person)
+    public void setPerson(String person)
     {
         this.person=person;
 
