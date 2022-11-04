@@ -11,7 +11,7 @@ public abstract class ArrayList {
     }
     public abstract Object search(int id);
 
-    public boolean append(Object obj) {
+    public boolean append(Object obj) { 
         try {
             array[total] = obj;
         } catch (IndexOutOfBoundsException e) {
