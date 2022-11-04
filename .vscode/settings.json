@@ -1,6 +1,15 @@
 {
+<<<<<<< HEAD
   "java.project.sourcePaths": ["src"],
   "java.project.outputPath": "bin",
   "java.project.referencedLibraries": ["lib/**/*.jar"],
   "cSpell.language": "en,vi,lorem"
+=======
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
+    "cSpell.language": "lorem,vi,en"
+>>>>>>> 66c7933eb42c7d6b1f8f7efd51eb541bfad3d5f6
 }
