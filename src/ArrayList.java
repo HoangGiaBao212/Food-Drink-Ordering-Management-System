@@ -30,14 +30,9 @@ public abstract class ArrayList implements IList {
             if (array[total] != null)
                 total++;
         } catch (Exception e) {
-            if (array[total] != null)
-                total++;
-        } catch (Exception e) {
-            /**
-             * FIXME: check object is null
-             */
+            e.printStackTrace();
             return false;
         }
         return true;
-    };
+    }
 }
