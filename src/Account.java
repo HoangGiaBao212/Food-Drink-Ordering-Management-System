@@ -1,10 +1,14 @@
 public class Account {
     private int id;
     private String acc, pass;
-    public Account(int id, String acc, String pass) {
+    private String person;
+
+    public Account(int id, String acc, String pass,String person ) {
         this.id = id;
         this.acc = acc;
         this.pass = pass;
+        this.person=person;
+
     }
     
     public Account() {
@@ -26,5 +30,14 @@ public class Account {
     }
     public void setPass(String pass) {
         this.pass = pass;
+    }
+    public String getPerson ()
+    {
+        return person;
+    }
+    public void setPerson(String Person)
+    {
+        this.person=person;
+
     }
 }
