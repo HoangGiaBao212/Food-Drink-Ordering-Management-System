@@ -1,28 +1,45 @@
 import java.util.Arrays;
 
-public abstract class ArrayList {
-    private Object[] array;
-    private int total;
-    private int maxLength;
-    {
-        total = 0;
-        maxLength = 100;
-    }
-    ArrayList(){
-        array = new ArrayList[maxLength];
-    }
-    public abstract Object search(int id);
+public abstract class ArrayList implements IList {
+    /**
+     * TODO:
+     * [x] Add method add object to array
+     * [ ] Add method remove object from array
+     */
+    public abstract class ArrayList implements IList {
+        private Object[] array;
+        private int total;
+        {
+            total = 0;
+            array = new ArrayList[100];
+        }
 
+        ArrayList() {
+        }
+
+    /**
+     * Add new element to the end of array
+     * if successfully, return true
+     *
+     * @param obj
+     * @return boolean
+     */
     public boolean append(Object obj) {
         try {
             array[total] = obj;
         } catch (IndexOutOfBoundsException e) {
-            array = Arrays.copyOf(array, total+1);
+            array = Arrays.copyOf(array, total + 1);
+            array[total] = obj;
+            if (array[total] != null)
+                total++;
+        } catch (Exception e) {
+            if(array[total] != null) total++;
+        } catch(Exception e) {
+            /**
+             * FIXME: check object is null
+             */
+            return false;
         }
-        return false;
+        return true;
     };
-
-    public abstract boolean change(int id);
-
-    public abstract boolean remove(int id);
 }
