@@ -1,4 +1,4 @@
-public class AccountList implements IList {
+public class AccountList extends ArrayList implements IList {
     private static int totalId = 0;
 
     @Override
