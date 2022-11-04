@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public abstract class ArrayList {
+public abstract class ArrayList implements IList{
     private Object[] array;
     private int total;
     {
@@ -9,21 +9,22 @@ public abstract class ArrayList {
     }
     ArrayList(){
     }
-    public abstract Object search(int id);
-
+    /**
+     * Add new element to the end of array
+     * if successfully, return true
+     * @param obj
+     * @return boolean
+     */
     public boolean append(Object obj) { 
         try {
             array[total] = obj;
         } catch (IndexOutOfBoundsException e) {
             array = Arrays.copyOf(array, total+1);
             array[total] = obj;
+            if(array[total] != null) total++;
         } catch(Exception e) {
             return false;
         }
         return true;
     };
-
-    public abstract boolean change(int id);
-
-    public abstract boolean remove(int id);
 }
