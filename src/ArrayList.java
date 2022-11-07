@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public abstract class ArrayList {
+public class ArrayList {
     protected Object[] array;
 
     public ArrayList() {
@@ -24,10 +24,6 @@ public abstract class ArrayList {
         array = Arrays.copyOf(array, array.length + 1);
         array[array.length - 1] = obj;
     }
-
-    public abstract Object search(String string);
-
-    public abstract Object find(int id);
 
     @Override
     public String toString() {

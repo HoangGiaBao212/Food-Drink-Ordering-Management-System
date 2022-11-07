@@ -21,6 +21,7 @@ public class App {
                         new Date(),
                         null,
                         0)));
+
         Menu.setAccountList(accountList);
         currentAccount = Menu.login();
         Menu.setAccount(currentAccount);

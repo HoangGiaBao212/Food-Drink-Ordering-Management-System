@@ -10,7 +10,6 @@ public class AccountList extends ArrayList {
         return null;
     }
 
-    @Override
     public Object find(int id) {
         for (Object object : array) {
             if (((Account) object).getId() == id) {
@@ -20,7 +19,6 @@ public class AccountList extends ArrayList {
         return null;
     }
 
-    @Override
     public Object search(String string) {
         for (Object object : array) {
             if (((Account) object).getPerson().getName().indexOf(string) != -1) {

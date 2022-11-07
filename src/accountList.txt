@@ -1,1 +1,2 @@
-Account=[id="0", username="root", password="1234", Person="Manager=[name="Root", address="VN", dateOfBirth="10-12-2003", salary="3000000"]"]
+Account=[id="0", username="root", password="1234", Person="Manager=[name="Root", address="VN", dateOfBirth="10-12-2003", salary="3000000"]"],
+Account=[id="1", username="tuan", password="1234", Person="Customer=[name="Nguyễn Minh Tuấn", address="Bình Phước, Việt Nam", dateOfBirth="10-12-2003", point="3000000"]"]
