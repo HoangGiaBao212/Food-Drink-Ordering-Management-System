@@ -56,19 +56,7 @@ public class Menu {
         return 0;
     }
 
-    /**
-     * Show permission customer function and return customer choice
-     * 
-     * @return int
-     */
     public static int showMenuPermissionCustomer() {
-        /**
-         * TODO:
-         * [x] display customer function list
-         * [x] get customer choice
-         * [x] check customer choice
-         * [x] return customer choice if valid
-         */
         System.out.println("1. Hiện danh sách sản phẩm.");
         System.out.println("2. Thông tin người dùng.");
         System.out.println("0. Thoát.");
@@ -80,36 +68,7 @@ public class Menu {
         return customerChoice;
     }
 
-    /**
-     * Show table product list and return id product selected
-     * 
-     * @return int
-     */
-    public static int showMenuProduct() {
-        /**
-         * TODO:
-         * [] show header attributes of product
-         * [] display by table
-         * [] get id product
-         * [] check id valid and exist
-         * [] return id if valid
-         */
-        return -1;
-    }
-
-    /**
-     * show permission salesman function and return salesman choice
-     * 
-     * @return int
-     */
     public static int showMenuPermissionSalesman() {
-        /**
-         * TODO:
-         * [x] display salesman function list
-         * [x] get salesman choice
-         * [x] check salesman choice
-         * [x] return salesman choice if valid
-         */
         System.out.println("1. Tạo hóa đơn.");
         System.out.println("2. Tra cứu thông tin người dùng.");
         System.out.println("3. Kết ca.");
@@ -124,13 +83,6 @@ public class Menu {
     }
 
     public static int showMenuPermissionManager() {
-        /**
-         * TODO:
-         * [x] display manager function list
-         * [x] get manager choice
-         * [x] check manager choice
-         * [x] return manager choice if valid
-         */
         System.out.println("1. Quản lý Sản phẩm");
         System.out.println("2. Quản lý Nhân viên");
         System.out.println("3. Quản lý Người dùng");
@@ -143,4 +95,17 @@ public class Menu {
         } while (choice < 0 || choice > 3);
         return choice;
     }
+    
+    public static int showMenuProduct() {
+        /**
+         * TODO:
+         * [] show header attributes of product
+         * [] display by table
+         * [] get id product
+         * [] check id valid and exist
+         * [] return id if valid
+         */
+        return -1;
+    }
+
 }
