@@ -45,55 +45,34 @@ public class Menu {
         return account;
     }
 
-    public static int showMenu() {
+    public static void showMenu() {
         if (currentAccount.getPerson() instanceof Customer) {
-            return showMenuPermissionCustomer();
+            showMenuPermissionCustomer();
         } else if (currentAccount.getPerson() instanceof Salesman) {
-            return showMenuPermissionSalesman();
+            showMenuPermissionSalesman();
         } else if (currentAccount.getPerson() instanceof Manager) {
-            return showMenuPermissionManager();
+            showMenuPermissionManager();
         }
-        return 0;
     }
 
-    public static int showMenuPermissionCustomer() {
+    public static void showMenuPermissionCustomer() {
         System.out.println("1. Hiện danh sách sản phẩm.");
         System.out.println("2. Thông tin người dùng.");
         System.out.println("0. Thoát.");
-        int customerChoice;
-        do {
-            System.out.print("Lựa chọn: ");
-            customerChoice = Integer.parseInt(scanner.nextLine());
-        } while (customerChoice < 0 || customerChoice > 2);
-        return customerChoice;
     }
 
-    public static int showMenuPermissionSalesman() {
+    public static void showMenuPermissionSalesman() {
         System.out.println("1. Tạo hóa đơn.");
         System.out.println("2. Tra cứu thông tin người dùng.");
         System.out.println("3. Kết ca.");
         System.out.println("0. Thoát.");
-
-        int choice;
-        do {
-            System.out.print("Lựa chọn: ");
-            choice = Integer.parseInt(scanner.nextLine());
-        } while (choice < 0 || choice > 3);
-        return choice;
     }
 
-    public static int showMenuPermissionManager() {
+    public static void showMenuPermissionManager() {
         System.out.println("1. Quản lý Sản phẩm");
         System.out.println("2. Quản lý Nhân viên");
         System.out.println("3. Quản lý Người dùng");
         System.out.println("0. Thoát");
-
-        int choice;
-        do {
-            System.out.print("Lựa chọn: ");
-            choice = Integer.parseInt(scanner.nextLine());
-        } while (choice < 0 || choice > 3);
-        return choice;
     }
     
     public static int showMenuProduct() {

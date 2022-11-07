@@ -26,10 +26,9 @@ public class App {
         currentAccount = Menu.login();
         Menu.setAccount(currentAccount);
         System.out.println(currentAccount);
-        int choice = -1;
-        while (choice != 0) {
-            choice = Menu.showMenu();
-        }
+        Menu.showMenu();
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     public static void main(String[] args) {
