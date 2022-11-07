@@ -1,6 +1,15 @@
 import java.util.Date;
 
 public class AccountList extends ArrayList {
+    public Account login(String username, String password) {
+        for (Object object : array) {
+            if(((Account)object).getUsername().equals(username) && ((Account)object).checkLogin(password)) {
+                return (Account)object;
+            }
+        }
+        return null;
+    }
+
     @Override
     public Object find(int id) {
         for (Object object : array) {

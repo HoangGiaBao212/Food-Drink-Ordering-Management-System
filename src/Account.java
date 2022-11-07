@@ -50,7 +50,9 @@ public class Account {
     public void setPerson(Person person) {
         this.person = person;
     }
-
+    public boolean checkLogin(String password) {
+        return (this.password).equals(password);
+    }
     @Override
     public String toString() {
         return "Account [id=" + id + ", username=" + username + ", password=" + password + ", person=" + person + "]";
