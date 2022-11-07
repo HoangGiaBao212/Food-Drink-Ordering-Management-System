@@ -1,18 +1,19 @@
 import java.util.Date;
 
-public abstract class Person {
-    private String name, adress;
-    private Date birth;
+public class Person {
+    private String name;
+    private String address;
+    private Date dateOfBirth;
     private Account account;
 
-    public Person(String name, String adress, Date birth, Account account) {
-        this.name = name;
-        this.adress = adress;
-        this.birth = birth;
-        this.account = account;
+    public Person() {
     }
 
-    public Person() {
+    public Person(String name, String address, Date dateOfBirth, Account account) {
+        this.name = name;
+        this.address = address;
+        this.dateOfBirth = dateOfBirth;
+        this.account = account;
     }
 
     public String getName() {
@@ -23,20 +24,20 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public Date getBirth() {
-        return birth;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setBirth(Date birth) {
-        this.birth = birth;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public Account getAccount() {
@@ -45,6 +46,11 @@ public abstract class Person {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    @Override
+    public String toString() {
+        return "Person [name=" + name + ", address=" + address + ", dateOfBirth=" + dateOfBirth + "]";
     }
 
 }

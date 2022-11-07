@@ -53,7 +53,7 @@ public class Menu {
          * [] check id valid and exist
          * [] return id if valid
          */
-
+        return -1;
     }
 
     /**

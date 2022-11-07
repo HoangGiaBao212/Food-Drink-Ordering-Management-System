@@ -1,38 +1,42 @@
 import java.util.Arrays;
 
-public abstract class ArrayList implements IList {
-    /**
-     * TODO:
-     * [x] Add method add object to array
-     * [ ] Add method remove object from array
-     */
-    private Object[] array;
-    private int total;
+public abstract class ArrayList {
+    protected Object[] array;
 
-    ArrayList() {
-        total = 0;
-        array = new ArrayList[100];
+    public ArrayList() {
+        array = new Object[0];
     }
 
-    /**
-     * Add new element to the end of array
-     * if successfully, return true
-     *
-     * @param obj
-     * @return boolean
-     */
-    public boolean append(Object obj) {
-        try {
-            array[total] = obj;
-        } catch (IndexOutOfBoundsException e) {
-            array = Arrays.copyOf(array, total + 1);
-            array[total] = obj;
-            if (array[total] != null)
-                total++;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+    public ArrayList(Object[] array) {
+        this.array = array;
+
+    }
+
+    public Object[] getArray() {
+        return array;
+    }
+
+    public void setArray(Object[] array) {
+        this.array = array;
+    }
+
+    public void append(Object obj) {
+        array = Arrays.copyOf(array, array.length + 1);
+        array[array.length - 1] = obj;
+    }
+
+    public abstract Object search(String string);
+
+    public abstract Object find(int id);
+
+    @Override
+    public String toString() {
+        String str = "[" + this.getClass().getName() + "[\n";
+        for (Object object : array) {
+            str += (object.toString() + '\n');
         }
-        return true;
+        str += "], size = " + array.length;
+        return str;
     }
+
 }
