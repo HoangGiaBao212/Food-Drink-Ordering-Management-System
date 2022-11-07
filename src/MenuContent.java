@@ -1,10 +1,16 @@
 
 public class MenuContent {
-    private static void showMenuLogin() {
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    public static void showMenuLogin() {
         System.out.println("Bạn có muốn đăng nhập không ?");
         System.out.println("1. Có");
         System.out.println("0. Không");
     }
+
     public static void showMenuPermissionCustomer() {
         System.out.println("1. Hiện danh sách sản phẩm.");
         System.out.println("2. Thông tin người dùng.");
