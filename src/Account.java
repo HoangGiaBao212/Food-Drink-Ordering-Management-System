@@ -12,6 +12,8 @@ public class Account {
         this.username = username;
         this.password = password;
         this.person = person;
+        if (this.person != null)
+            this.person.setAccount(this);
     }
 
     public int getId() {

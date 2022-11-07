@@ -1,10 +1,10 @@
 import java.util.Date;
 
 public class Person {
-    private String name;
-    private String address;
-    private Date dateOfBirth;
-    private Account account;
+    protected String name;
+    protected String address;
+    protected Date dateOfBirth;
+    protected Account account;
 
     public Person() {
     }
@@ -14,6 +14,8 @@ public class Person {
         this.address = address;
         this.dateOfBirth = dateOfBirth;
         this.account = account;
+        if (this.account != null)
+            this.account.setPerson(this);
     }
 
     public String getName() {

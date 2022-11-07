@@ -25,14 +25,14 @@ public class AccountList extends ArrayList {
         AccountList accountList = new AccountList();
 
         Account rootAccount = new Account(0, "root", "1234", null);
-        Person rootPerson = new Person("Admin", "VN", new Date(), null);
+        Person rootPerson = new Manager("Root", "VN", new Date(), rootAccount, 1000000, 10);
         rootAccount.setPerson(rootPerson);
         rootPerson.setAccount(rootAccount);
 
         accountList.append(rootAccount);
 
         System.out.println(accountList);
-        System.out.println(accountList.find(0));
+        System.out.println((accountList.find(0)).toString());
     }
 
 }
