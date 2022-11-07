@@ -9,9 +9,11 @@ public class Menu {
     public static void setAccount(Account account) {
         currentAccount = account;
     }
-    public static void setAccountList(AccountList accountList){
+
+    public static void setAccountList(AccountList accountList) {
         currentAccountList = accountList;
     }
+
     public static Account login() {
         System.out.println("Bạn có muốn đăng nhập không ?");
         System.out.println("1. Có");
@@ -31,7 +33,7 @@ public class Menu {
                     System.out.println("1. Có");
                     System.out.println("0. Không");
                     choice = Integer.parseInt(scanner.nextLine());
-                    if(choice == 0)
+                    if (choice == 0)
                         break;
                 }
             }
@@ -46,10 +48,10 @@ public class Menu {
     public static int showMenu() {
         if (currentAccount.getPerson() instanceof Customer) {
             return showMenuPermissionCustomer();
-        } else if (currentAccount.getPerson() instanceof Manager) {
-            return showMenuPermissionManager();
         } else if (currentAccount.getPerson() instanceof Salesman) {
             return showMenuPermissionSalesman();
+        } else if (currentAccount.getPerson() instanceof Manager) {
+            return showMenuPermissionManager();
         }
         return 0;
     }
@@ -129,10 +131,10 @@ public class Menu {
          * [x] check manager choice
          * [x] return manager choice if valid
          */
-        System.out.println("1. Tạo hóa đơn.");
-        System.out.println("2. Tra cứu thông tin người dùng.");
-        System.out.println("3. Kết ca.");
-        System.out.println("0. Thoát.");
+        System.out.println("1. Quản lý Sản phẩm");
+        System.out.println("2. Quản lý Nhân viên");
+        System.out.println("3. Quản lý Người dùng");
+        System.out.println("0. Thoát");
 
         int choice;
         do {
