@@ -15,12 +15,13 @@ public class Menu {
     }
 
     public static Account login() {
-        System.out.println("Bạn có muốn đăng nhập không ?");
-        System.out.println("1. Có");
-        System.out.println("0. Không");
         int choice;
-        choice = Integer.parseInt(scanner.nextLine());
         Account account = null;
+
+        MenuContent.clearScreen();
+        MenuContent.showMenuLogin();
+        choice = Integer.parseInt(scanner.nextLine());
+
         if (choice == 1) {
             while (account == null) {
                 System.out.println("Nhập username: ");
@@ -38,20 +39,22 @@ public class Menu {
                 }
             }
         }
+
         if (account == null) {
             System.out.println("Bạn đang dùng tài khoản khách");
             account = new Account(-1, "guest", "1234", new Customer("Guest", "VN", new Date(), null, 0));
         }
+
         return account;
     }
 
     public static void showMenu() {
         if (currentAccount.getPerson() instanceof Customer) {
-            showMenuPermissionCustomer();
+            MenuContent.showMenuPermissionCustomer();
         } else if (currentAccount.getPerson() instanceof Salesman) {
-            showMenuPermissionSalesman();
+            MenuContent.showMenuPermissionSalesman();
         } else if (currentAccount.getPerson() instanceof Manager) {
-            showMenuPermissionManager();
+            MenuContent.showMenuPermissionManager();
         }
     }
 
@@ -74,7 +77,7 @@ public class Menu {
         System.out.println("3. Quản lý Người dùng");
         System.out.println("0. Thoát");
     }
-    
+
     public static int showMenuProduct() {
         /**
          * TODO:
