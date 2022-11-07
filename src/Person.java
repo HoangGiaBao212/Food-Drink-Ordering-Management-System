@@ -1,6 +1,10 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Person {
+    private static final Scanner scanner = new Scanner(System.in);
     protected String name;
     protected String address;
     protected Date dateOfBirth;
@@ -52,7 +56,28 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person [name=" + name + ", address=" + address + ", dateOfBirth=" + dateOfBirth + "]";
+        return "Person [name=" + name + ", address=" + address + ", dateOfBirth=" + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + "]";
     }
 
+    public void input() {
+        System.out.print("Nhập tên: ");
+        name = scanner.nextLine();
+
+        System.out.print("Nhập địa chỉ: ");
+        address = scanner.nextLine();
+
+        SimpleDateFormat dateInput = new SimpleDateFormat("dd-MM-yyyy");
+        while (dateOfBirth == null) {
+            System.out.print("Nhập ngày sinh (dd-MM-yyyy): ");
+            String strDate = scanner.nextLine();
+
+            try {
+                dateOfBirth = dateInput.parse(strDate);
+                System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth));
+            } catch (Exception e) {
+                System.out.println("Lỗi nhập, vui lòng nhập lại: ");
+            }
+        }
+
+    }
 }

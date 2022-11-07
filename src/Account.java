@@ -1,4 +1,7 @@
+import java.util.Scanner;
+
 public class Account {
+    private static final Scanner scanner = new Scanner(System.in);
     private int id;
     private String username;
     private String password;
@@ -53,4 +56,12 @@ public class Account {
         return "Account [id=" + id + ", username=" + username + ", password=" + password + ", person=" + person + "]";
     }
 
+    public void input() {
+
+        System.out.print("Nhập username: ");
+        username = scanner.nextLine();
+        System.out.print("Nhập password: ");
+        password = scanner.next();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+    }
 }

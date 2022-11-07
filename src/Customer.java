@@ -1,7 +1,11 @@
 import java.util.Date;
+import java.util.Scanner;
 
 public class Customer extends Person {
-    private int point;
+    private int point = 0;
+
+    public Customer() {
+    }
 
     public Customer(int point) {
         this.point = point;
@@ -19,4 +23,15 @@ public class Customer extends Person {
     public void setPoint(int point) {
         this.point = point;
     }
+
+    public void input() {
+        // Scanner scanner = new Scanner(System.in);
+        super.input();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Customer [point=" + point + "]";
+    }
+    
 }

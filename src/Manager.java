@@ -1,7 +1,11 @@
 import java.util.Date;
 
-public class Manager extends Employee{
+public class Manager extends Employee {
     protected int level = 0;
+
+    public Manager() {
+
+    }
 
     public Manager(String name, String address, Date dateOfBirth, Account account, int salary, int level) {
         super(name, address, dateOfBirth, account, salary);
@@ -25,5 +29,5 @@ public class Manager extends Employee{
     public String toString() {
         return super.toString() + "\n" + "Manager [level=" + level + "]";
     }
-    
+
 }

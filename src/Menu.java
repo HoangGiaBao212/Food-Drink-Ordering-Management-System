@@ -12,7 +12,7 @@ public class Menu {
             // return account
         }
         System.out.println(" Bạn đang dùng tài khoản khách");
-        return null; // @TODO new person
+        return new Account(-1, "temp", "temp", new Person("Khách", null, null, null));
     }
 
     /**

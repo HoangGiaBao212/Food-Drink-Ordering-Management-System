@@ -7,6 +7,9 @@ abstract class Employee extends Person {
         return salary;
     }
 
+    public Employee() {
+    }
+
     public Employee(String name, String address, Date dateOfBirth, Account account, int salary) {
         super(name, address, dateOfBirth, account);
         this.salary = salary;
@@ -24,5 +27,5 @@ abstract class Employee extends Person {
     public String toString() {
         return super.toString() + "\n" + "Employee [salary=" + salary + "]";
     }
-    
+
 }
