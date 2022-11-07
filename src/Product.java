@@ -58,5 +58,10 @@ public class Product {
         return "Product [id=" + id + ", name=" + name + ", price=" + price + ", manufacturer=" + manufacturer + ", MFG="
                 + MFG + ", EXP=" + EXP + "]";
     }
-    
+    /**
+     * @phuonganhtq
+     * TODO:
+     * [ ] create input method for init this class
+     * [ ] create main to check and print test class
+     */
 }
