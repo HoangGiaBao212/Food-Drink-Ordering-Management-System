@@ -6,5 +6,12 @@ public class Manager extends Employee {
     public String toString() {
         return "Manager: " + super.toString();
     }
+
+    public Manager(String name, String address, Date dateOfBirth, Account account, int salary) {
+        super(name, address, dateOfBirth, account, salary);
+    }
+
+    public Manager() {
+    }
     
 }

@@ -25,7 +25,7 @@ public class AccountList extends ArrayList {
         AccountList accountList = new AccountList();
 
         Account rootAccount = new Account(0, "root", "1234", null);
-        Person rootPerson = new Manager("Root", "VN", new Date(), rootAccount, 1000000, 10);
+        Person rootPerson = new Manager("Root", "VN", new Date(), rootAccount, 1000000);
         rootAccount.setPerson(rootPerson);
         rootPerson.setAccount(rootAccount);
 
