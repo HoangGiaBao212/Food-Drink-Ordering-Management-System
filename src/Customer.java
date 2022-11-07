@@ -25,7 +25,6 @@ public class Customer extends Person {
     }
 
     public void input() {
-        // Scanner scanner = new Scanner(System.in);
         super.input();
     }
 
@@ -33,5 +32,5 @@ public class Customer extends Person {
     public String toString() {
         return super.toString() + "Customer [point=" + point + "]";
     }
-    
+
 }

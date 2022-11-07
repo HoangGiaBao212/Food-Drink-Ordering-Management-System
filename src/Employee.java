@@ -7,15 +7,11 @@ abstract class Employee extends Person {
         return salary;
     }
 
-    public Employee() {
+    protected Employee() {
     }
 
-    public Employee(String name, String address, Date dateOfBirth, Account account, int salary) {
+    protected Employee(String name, String address, Date dateOfBirth, Account account, int salary) {
         super(name, address, dateOfBirth, account);
-        this.salary = salary;
-    }
-
-    public Employee(int salary) {
         this.salary = salary;
     }
 

@@ -6,5 +6,8 @@
 	"java.project.referencedLibraries": [
 		"lib/**/*.jar"
 	],
-	"cSpell.language": "lorem,vi,en"
+	"cSpell.language": "lorem,vi,en",
+	"cSpell.words": [
+		"phuonganhtq"
+	]
 }
