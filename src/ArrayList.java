@@ -7,9 +7,12 @@ public class ArrayList {
         array = new Object[0];
     }
 
+    public ArrayList(ArrayList arrayList) {
+        array = arrayList.array;
+    }
+
     public ArrayList(Object[] array) {
         this.array = array;
-
     }
 
     public Object[] getArray() {
@@ -27,11 +30,10 @@ public class ArrayList {
 
     @Override
     public String toString() {
-        String str = "[" + this.getClass().getName() + "[\n";
+        String str = "";
         for (Object object : array) {
             str += (object.toString() + '\n');
         }
-        str += "], size = " + array.length;
         return str;
     }
 

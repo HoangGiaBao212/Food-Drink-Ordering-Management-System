@@ -1,6 +1,14 @@
 import java.util.Date;
 
 public class AccountList extends ArrayList {
+    
+    public AccountList() {
+    }
+
+    public AccountList(ArrayList arrayList) {
+        super(arrayList);
+    }
+
     public Account login(String username, String password) {
         for (Object object : array) {
             if (((Account) object).getUsername().equals(username) && ((Account) object).checkLogin(password)) {
@@ -27,19 +35,4 @@ public class AccountList extends ArrayList {
         }
         return null;
     }
-
-    public static void main(String[] args) {
-        AccountList accountList = new AccountList();
-
-        Account rootAccount = new Account(0, "root", "1234", null);
-        Person rootPerson = new Manager("Root", "VN", new Date(), rootAccount, 1000000);
-        rootAccount.setPerson(rootPerson);
-        rootPerson.setAccount(rootAccount);
-
-        accountList.append(rootAccount);
-
-        System.out.println(accountList);
-        System.out.println((accountList.find(0)).toString());
-    }
-
 }

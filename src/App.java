@@ -2,26 +2,15 @@ import java.util.Date;
 
 public class App {
     static Account currentAccount = null;
-    static AccountList accountList = new AccountList();
-    static ProductList productList = new ProductList();
-    static PaymentList paymentList = new PaymentList();
+    static AccountList accountList = null;
+    static ProductList productList = null;
+    static PaymentList paymentList = null;
 
     public static void init() {
-        // @TODO Add init data
+        accountList = new AccountList(FileUtil.readObjectFromFile("src/accountList.txt"));
     }
 
     public static void start() {
-        accountList.append(new Account(
-                -1,
-                "root",
-                "1234",
-                new Manager(
-                        "Root",
-                        "VN",
-                        new Date(),
-                        null,
-                        0)));
-
         Menu.setAccountList(accountList);
         currentAccount = Menu.login();
         Menu.setAccount(currentAccount);

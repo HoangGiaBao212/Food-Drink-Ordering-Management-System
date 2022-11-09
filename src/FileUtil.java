@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class FileUtil {
@@ -19,18 +20,11 @@ public class FileUtil {
 
     public static Object dataToObject(String dataString) {
         Object data = new Object();
-        // get type of class
-        int beginIndex = 0;
-        String str = "";
-        int endIndex = dataString.indexOf(" ", beginIndex);
-        if (dataString.substring(beginIndex, endIndex).equals("Account")) {
+        if (cutString(dataString, "", " ").equals("Account")) {
             data = new Account();
             ((Account) data).setId(Integer.parseInt(cutString(dataString, "id='", "'")));
             ((Account) data).setUsername(cutString(dataString, "username='", "'"));
             ((Account) data).setPassword(cutString(dataString, "password='", "'"));
-            str = "person='";
-            beginIndex = dataString.indexOf(str, endIndex) + str.length();
-            endIndex = dataString.indexOf(" ", beginIndex);
             if (cutString(dataString, "person='", " ").equals("Manager")) {
                 ((Account) data).setPerson(new Manager());
                 ((Employee) ((Account) data).getPerson())
@@ -50,7 +44,7 @@ public class FileUtil {
                 ((Account) data).getPerson().setDateOfBirth(
                         new SimpleDateFormat("dd-MM-yyyy").parse(cutString(dataString, "dateOfBirth='", "'")));
             } catch (ParseException e) {
-                e.printStackTrace();
+                ((Account) data).getPerson().setDateOfBirth(new Date());
             }
         }
         return data;
@@ -64,7 +58,6 @@ public class FileUtil {
 
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                System.out.println(data);
                 arrayList.append(dataToObject(data));
             }
             myReader.close();
