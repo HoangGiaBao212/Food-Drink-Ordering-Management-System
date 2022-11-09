@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,9 +9,6 @@ import java.util.Scanner;
 
 public class FileUtil {
     private FileUtil() {
-    }
-
-    public static void writeObjectToFile(String filepath, Object serObj) {
     }
 
     public static String cutString(String str, String beginString, String endString) {
@@ -50,12 +49,11 @@ public class FileUtil {
         return data;
     }
 
-    public static ArrayList readObjectFromFile(String filepath) {
+    public static ArrayList readDataFromFile(String filepath) {
         ArrayList arrayList = new ArrayList();
         try {
             File myObj = new File(filepath);
             Scanner myReader = new Scanner(myObj);
-
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 arrayList.append(dataToObject(data));
@@ -68,8 +66,13 @@ public class FileUtil {
         return arrayList;
     }
 
-    public static void main(String[] args) {
-        System.out.println(
-                readObjectFromFile("/home/alex/Documents/Food-Drink-Ordering-Management-System/src/accountList.txt"));
+    public static void writeDataToFile(String filepath, Object data) {
+        try {
+            FileOutputStream file = new FileOutputStream(filepath);
+            PrintStream output = new PrintStream(file);
+            output.print(data);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
