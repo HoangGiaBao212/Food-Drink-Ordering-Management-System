@@ -4,7 +4,7 @@ public class App {
     static Account currentAccount = null;
     static AccountList accountList = null;
     static ProductList productList = null;
-    static PaymentList paymentList = null;
+    static BillList paymentList = null;
 
     public static void init() {
         accountList = new AccountList(FileUtil.readDataFromFile("src/AccountData.txt"));
