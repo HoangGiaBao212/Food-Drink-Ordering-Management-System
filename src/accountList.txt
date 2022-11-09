@@ -8,7 +8,7 @@ Account [id='6', username='an', password='12346', person='Customer [name='Lươn
 Account [id='7', username='tung', password='12346', person='Customer [name='Phạm Quốc Tùng', address='Tân Kì , Qunagr Nam, Việt Nam', dateOfBirth='10-1-1999', point='2000000']']
 Account [id='8', username='chau', password='12346', person='Customer [name='Huỳnh Ngọc Châu', address='Tân An, Bình Dương , Việt Nam', dateOfBirth='10-12-2003', point='6000000']']
 Account [id='9', username='hoang', password='12346', person='Customer [name=' Bùi Minh Hoàng', address='Dĩ AN , Bình Dương , Việt Nam', dateOfBirth='10-1-2003', point='8000000']']
-Account [id='10', username='phuong, password='12346', person='Customer [name='Nguyễn Minh Phương', address='Tân Kì , Quảng Ninh, Việt Nam', dateOfBirth='10-12-2003', point='4000000']']
+Account [id='10', username='phuong', password='12346', person='Customer [name='Nguyễn Minh Phương', address='Tân Kì , Quảng Ninh, Việt Nam', dateOfBirth='10-12-2003', point='4000000']']
 Account [id='111', username='xinh', password='12346', person='Customer [name='Nguyễn Minh Xinh', address='Biên Hòa, Đòng nai, Việt Nam', dateOfBirth='10-12-2003', point='3000000']']
 Account [id='12', username='vu', password='12346', person='Customer [name='Lại Đức Vũ', address='Đức Phổ, Quảng nam , Việt Nam', dateOfdBirth='10-12-2003', point='3000000']']
 Account [id='113', username='duc', password='12346', person='Customer [name='Nguyễn Minh Đức', address='HÒN GAI , QUẢNG NINH, Việt Nam', dateOfBirth='10-12-2003', point='4000000']']

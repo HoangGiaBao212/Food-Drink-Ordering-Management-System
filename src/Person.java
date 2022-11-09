@@ -10,6 +10,7 @@ public class Person {
     protected Account account;
 
     public Person() {
+        dateOfBirth = new Date();
     }
 
     public Person(String name, String address, Date dateOfBirth, Account account) {
