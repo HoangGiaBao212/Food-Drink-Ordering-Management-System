@@ -45,6 +45,7 @@ public class Menu {
                 }
             }
         } else if (choice == -1) {
+            System.out.println("Kết thúc phiên!");
             return;
         }
 
@@ -59,10 +60,10 @@ public class Menu {
             currentAccount = null;
             if (currentAccount == null) {
                 login();
-            } else if (currentAccount == null) {
-                return;
             }
-            if (currentAccount.getPerson() instanceof Customer) {
+            if (currentAccount == null) {
+                return;
+            } else if (currentAccount.getPerson() instanceof Customer) {
                 menuPermissionCustomer();
             } else if (currentAccount.getPerson() instanceof Salesman) {
                 menuPermissionSalesman();
@@ -74,11 +75,16 @@ public class Menu {
 
     public static int getChoice() {
         int choice;
-        while(true) {
+        if (currentAccount == null) {
+            System.out.print("User > ");
+        } else {
+            System.out.print(currentAccount.getUsername() + " > ");
+        }
+        while (true) {
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 return choice;
-            } catch(Exception e) {
+            } catch (Exception e) {
                 System.out.println("Input không chính xác!!!");
             }
         }
@@ -107,9 +113,22 @@ public class Menu {
     }
 
     public static void menuPermissionSalesman() {
+
     }
 
     public static void menuPermissionManager() {
+        int choice;
+        while (true) {
+            MenuContent.showMenuPermissionManager();
+            choice = Menu.getChoice();
+            System.out.println(choice);
+            if (choice == 1) {
+            } else if (choice == 2) {
+            } else if (choice == 0) {
+                choice = -1;
+                break;
+            }
+        }
     }
 
 }
