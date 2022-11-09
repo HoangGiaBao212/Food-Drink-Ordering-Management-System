@@ -1,3 +1,5 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -58,7 +60,8 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account [id='" + id + "', username='" + username + "', password='" + password + "', person='" + person + "']";
+        return "Account [id='" + id + "', username='" + username + "', password='" + password + "', person='" + person
+                + "']";
     }
 
     public void input() {
@@ -68,8 +71,40 @@ public class Account {
         password = scanner.next();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
+        SimpleDateFormat dateInput = new SimpleDateFormat("dd-MM-yyyy");
         System.out.println(
-                new Account(0, "tuan", "1234", new Manager("Nguyen Minh Tuan", "Viet Nam", new Date(), null, 1000000)));
+                new Account(
+                        0,
+                        "tuan",
+                        "1234",
+                        new Manager(
+                                "Nguyen Minh Tuan",
+                                "Viet Nam",
+                                dateInput.parse("10-12-2003"),
+                                null,
+                                1000000)));
+        System.out.println(
+                new Account(
+                        0,
+                        "tuan",
+                        "1234",
+                        new Salesman(
+                                "Nguyen Minh Tuan",
+                                "Viet Nam",
+                                dateInput.parse("10-12-2003"),
+                                null,
+                                1000000)));
+        System.out.println(
+                new Account(
+                        0,
+                        "tuan",
+                        "1234",
+                        new Customer(
+                                "Nguyen Minh Tuan",
+                                "Viet Nam",
+                                dateInput.parse("10-12-2003"),
+                                null,
+                                1000000)));
     }
 }

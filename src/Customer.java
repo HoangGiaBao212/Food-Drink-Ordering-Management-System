@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -30,7 +31,8 @@ public class Customer extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + "Customer [point=" + point + "]";
+        return "Customer [name='" + name + "', address='" + address + "', dateOfBirth='"
+                + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + "', point='" + point + "']";
     }
 
 }
