@@ -11,8 +11,8 @@ public class Manager extends Employee {
 
     @Override
     public String toString() {
-        return "Manager [name=" + name + ", address=" + address + ", dateOfBirth="
-                + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + ", salary=" + salary + "]";
+        return "Manager [name='" + name + "', address='" + address + "', dateOfBirth='"
+                + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + "', salary='" + salary + "']";
     }
 
 }

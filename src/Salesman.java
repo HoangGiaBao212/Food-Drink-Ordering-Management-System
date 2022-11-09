@@ -11,7 +11,7 @@ public class Salesman extends Employee {
 
     @Override
     public String toString() {
-        return "Salesman [name=" + name + ", address=" + address + ", dateOfBirth="
-                + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + ", salary=" + salary + "]";
+        return "Salesman [name='" + name + "', address='" + address + "', dateOfBirth='"
+                + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + "', salary='" + salary + "']";
     }
 }

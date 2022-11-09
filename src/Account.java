@@ -51,12 +51,14 @@ public class Account {
     public void setPerson(Person person) {
         this.person = person;
     }
+
     public boolean checkLogin(String password) {
         return (this.password).equals(password);
     }
+
     @Override
     public String toString() {
-        return "Account [id=" + id + ", username=" + username + ", password=" + password + ", person=" + person + "]";
+        return "Account [id='" + id + "', username='" + username + "', password='" + password + "', person='" + person + "']";
     }
 
     public void input() {
@@ -65,7 +67,9 @@ public class Account {
         System.out.print("Nhập password: ");
         password = scanner.next();
     }
+
     public static void main(String[] args) {
-        System.out.println(new Account(0, "tuan", "1234", new Manager("Nguyen Minh Tuan", "Viet Nam", new Date(), null, 1000000)));
+        System.out.println(
+                new Account(0, "tuan", "1234", new Manager("Nguyen Minh Tuan", "Viet Nam", new Date(), null, 1000000)));
     }
 }
