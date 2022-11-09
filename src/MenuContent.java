@@ -18,7 +18,7 @@ public class MenuContent {
     }
 
     public static void showMenuPermissionCustomer() {
-        System.out.println("----------------------PERMISSION CUSTOMER ---------------")
+        System.out.println("----------------------PERMISSION CUSTOMER ---------------");
         System.out.println("| 1. Hiện danh sách sản phẩm.                            |");
         System.out.println("|     1. Chọn sản phẩm                                   |");
         System.out.println("|     2. Chỉnh sửa giỏ hàng                              |");

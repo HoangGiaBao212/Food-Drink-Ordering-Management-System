@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.Scanner;
 
 public class Account {
@@ -63,5 +64,8 @@ public class Account {
         username = scanner.nextLine();
         System.out.print("Nhập password: ");
         password = scanner.next();
+    }
+    public static void main(String[] args) {
+        System.out.println(new Account(0, "tuan", "1234", new Manager("Nguyen Minh Tuan", "Viet Nam", new Date(), null, 1000000)));
     }
 }

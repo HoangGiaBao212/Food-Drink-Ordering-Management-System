@@ -1,17 +1,18 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Manager extends Employee {
-
-    @Override
-    public String toString() {
-        return "Manager: " + super.toString();
+    public Manager() {
     }
 
     public Manager(String name, String address, Date dateOfBirth, Account account, int salary) {
         super(name, address, dateOfBirth, account, salary);
     }
 
-    public Manager() {
+    @Override
+    public String toString() {
+        return "Manager [name=" + name + ", address=" + address + ", dateOfBirth="
+                + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + ", salary=" + salary + "]";
     }
-    
+
 }
