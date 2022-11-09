@@ -2,9 +2,11 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Menu {
-    public static Scanner scanner = new Scanner(System.in);
-    public static Account currentAccount = null;
-    public static AccountList currentAccountList = null;
+    private static Scanner scanner = new Scanner(System.in);
+    private static Account currentAccount = null;
+    private static AccountList currentAccountList = null;
+    private static ProductList currentProductList = null;
+    private static BillList currentBillList = null;
 
     public static void setAccount(Account account) {
         currentAccount = account;
@@ -14,22 +16,28 @@ public class Menu {
         currentAccountList = accountList;
     }
 
-    public static Account login() {
-        int choice;
-        Account account = null;
+    public static void setProductList(ProductList productList) {
+        currentProductList = productList;
+    }
 
+    public static void setBillList(BillList billList) {
+        currentBillList = billList;
+    }
+    
+    public static void login() {
+        int choice;
         MenuContent.clearScreen();
         MenuContent.showMenuLogin();
         choice = Integer.parseInt(scanner.nextLine());
 
         if (choice == 1) {
-            while (account == null) {
+            while (currentAccount == null) {
                 System.out.println("Nhập username: ");
                 String username = scanner.nextLine();
                 System.out.println("Nhập password: ");
                 String password = scanner.nextLine();
-                account = currentAccountList.login(username, password);
-                if (account == null) {
+                currentAccount = currentAccountList.login(username, password);
+                if (currentAccount == null) {
                     System.out.println("Đăng nhập thất bại, đăng nhập lại ?");
                     System.out.println("1. Có");
                     System.out.println("0. Không");
@@ -40,12 +48,10 @@ public class Menu {
             }
         }
 
-        if (account == null) {
+        if (currentAccount == null) {
             System.out.println("Bạn đang dùng tài khoản khách");
-            account = new Account(-1, "guest", "1234", new Customer("Guest", "VN", new Date(), null, 0));
+            currentAccount = new Account(-1, "guest", "1234", new Customer("Guest", "VN", new Date(), null, 0));
         }
-
-        return account;
     }
 
     public static void showMenu() {
