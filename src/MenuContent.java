@@ -46,35 +46,6 @@ public class MenuContent {
 		System.out.println(" ------------------------------------------------------------------------");
 	}
 
-	public static void showMenuCustomer() {
-		int choice = -1;
-		while (choice != 0) {
-			System.out.println("----------------------PERMISSION CUSTOMER ---------------");
-			System.out.println("1. Hiện danh sách sản phẩm.");
-			System.out.println("2. Thông tin người dùng.");
-			System.out.println("0. Thoát.");
-			choice = Integer.parseInt(sc.nextLine());
-			switch (choice) {
-				case 1 -> {
-					System.out.println("| 1. Hiện danh sách sản phẩm.                            |");
-					System.out.println("|     1. Chọn sản phẩm                                   |");
-					System.out.println("|     2. Chỉnh sửa giỏ hàng                              |");
-					System.out.println("|     3. Thanh toán                                      |");
-					System.out.println("|     0. Thoát                                           |");
-				}
-
-				case 2 -> {
-					System.out.println("| 2. Thông tin người dùng.                               |");
-					System.out.println("|     1. Xem lịch sử                                     |");
-					System.out.println("|     2. Thay đổi thông tin                              |");
-					System.out.println("|     0. Thoát                                           |");
-				}
-				case 0 -> System.out.println("Ket thuc!");
-				default -> System.out.print("Nhap lai!");
-			}
-		}
-	}
-
 	public static void showMenuLoginFailed() {
 		System.out.println(" ---------------------------- [Login Failed] ----------------------------");
 		System.out.println("|  Đăng nhập thất bại, đăng nhập lại ?                                   |");
@@ -217,6 +188,35 @@ public class MenuContent {
 	// System.out.println("-------------------------------------------------------------");
 	// }
 	// }
+	public static void showMenuCustomer() {
+		int choice = -1;
+		while (choice != 0) {
+			System.out.println("----------------------PERMISSION CUSTOMER ---------------");
+			System.out.println("1. Hiện danh sách sản phẩm.");
+			System.out.println("2. Thông tin người dùng.");
+			System.out.println("0. Thoát.");
+			choice = Integer.parseInt(sc.nextLine());
+			switch (choice) {
+				case 1 -> {
+					System.out.println("| 1. Hiện danh sách sản phẩm.                            |");
+					System.out.println("|     1. Chọn sản phẩm                                   |");
+					System.out.println("|     2. Chỉnh sửa giỏ hàng                              |");
+					System.out.println("|     3. Thanh toán                                      |");
+					System.out.println("|     0. Thoát                                           |");
+				}
+
+				case 2 -> {
+					System.out.println("| 2. Thông tin người dùng.                               |");
+					System.out.println("|     1. Xem lịch sử                                     |");
+					System.out.println("|     2. Thay đổi thông tin                              |");
+					System.out.println("|     0. Thoát                                           |");
+				}
+				case 0 -> System.out.println("Ket thuc!");
+				default -> System.out.print("Nhap lai!");
+			}
+		}
+	}
+
 	public static void showMenuPermissionManager() {
 		System.out.println("-------------------PERMISSION MANAGER ----------------------");
 		System.out.println("| 1. Quản lý Sản phẩm.                                      |");
@@ -243,18 +243,33 @@ public class MenuContent {
 	}
 
 	public static void showMenuPermissionCustomerProduct(ProductList productList) {
+		System.out.println(" ----------------------------- [Product Menu] ---------------------------");
 		productList.display();
-		System.out.println("1. Chọn sản phẩm.");
-		System.out.println("2. Chỉnh sửa giỏ hàng");
-		System.out.println("3. Thanh toán");
-		System.out.println("0. Quay lại");
+		System.out.println(" ------------------------------------------------------------------------");
+		System.out.println("|  1. Chọn sản phẩm.                                                     |");
+		System.out.println("|  2. Chỉnh sửa giỏ hàng.                                                |");
+		System.out.println("|  3. Thanh toán.                                                        |");
+		System.out.println("|  0. Quay lại.                                                          |");
+		System.out.println(" ------------------------------------------------------------------------");
+	}
+
+	public static void showMenuPermissionCustomerProduct(Bill bill) {
+		System.out.println(" ------------------------------- [Bill Menu] ----------------------------");
+		bill.display();
+		System.out.println(" ------------------------------------------------------------------------");
+		System.out.println("|  1. Chỉnh sửa số lượng.                                                |");
+		System.out.println("|  2. Xóa sản phẩm                                                       |");
+		System.out.println("|  0. Quay lại.                                                          |");
+		System.out.println(" ------------------------------------------------------------------------");
 	}
 
 	public static void showMenuPermissionCustomerInfo(Account account) {
+		System.out.println(" ----------------------------- [Account Menu] ---------------------------");
 		account.display();
-		System.out.println("1. Xem lịch sử");
-		System.out.println("2. Thay đổi thông tin");
-		System.out.println("3. Thanh toán");
-		System.out.println("0. Quay lại");
+		System.out.println(" ------------------------------------------------------------------------");
+		System.out.println("|  1. Xem lịch sử mua hàng.                                              |");
+		System.out.println("|  2. Thay đổi thông tin.                                                |");
+		System.out.println("|  0. Quay lại.                                                          |");
+		System.out.println(" ------------------------------------------------------------------------");
 	}
 }
