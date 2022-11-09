@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Menu {
     private static Scanner scanner = new Scanner(System.in);
@@ -26,18 +27,18 @@ public class Menu {
 
     public static void login() {
         int choice;
-        MenuContent.clearScreen();
         MenuContent.showMenuLogin();
         choice = Menu.getChoice();
 
         if (choice == 1) {
             while (currentAccount == null) {
-                System.out.println("Nhập username: ");
+                System.out.print("Nhập username: ");
                 String username = Menu.getInput();
-                System.out.println("Nhập password: ");
+                System.out.print("Nhập password: ");
                 String password = Menu.getInput();
                 currentAccount = currentAccountList.login(username, password);
                 if (currentAccount == null) {
+                    MenuContent.clearScreen();
                     MenuContent.showMenuLoginFailed();
                     choice = Menu.getChoice();
                     if (choice == 0)
@@ -50,13 +51,16 @@ public class Menu {
         }
 
         if (currentAccount == null) {
-            System.out.println("Bạn đang dùng tài khoản khách");
+            MenuContent.notification("Bạn đang dùng tài khoản khách");
             currentAccount = new Account(-1, "guest", "1234", new Customer("Guest", "VN", new Date(), null, 0));
+        } else {
+            MenuContent.notification("Xin chào " + currentAccount.getPerson().getName() + " !");
         }
     }
 
     public static void showMenu() {
         while (true) {
+            MenuContent.clearScreen();
             currentAccount = null;
             if (currentAccount == null) {
                 login();
@@ -78,7 +82,8 @@ public class Menu {
         if (currentAccount == null) {
             System.out.print("User > ");
         } else {
-            System.out.print(currentAccount.getUsername() + " > ");
+            System.out.print(currentAccount.getUsername().substring(0, 1).toUpperCase()
+                    + currentAccount.getUsername().substring(1).toLowerCase() + " > ");
         }
         while (true) {
             try {
