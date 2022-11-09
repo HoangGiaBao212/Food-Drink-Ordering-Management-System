@@ -1,7 +1,7 @@
 public class AccountUtil {
     static AccountList accountList = null;
 
-    static public Account createAccount(char chosse) {
+    static public Account createAccount(char choice) {
         Account tempAccount = new Account();
         Person tempPerson = new Person();
         /**
@@ -12,11 +12,11 @@ public class AccountUtil {
          */
         tempAccount.input();
 
-        if (Character.toUpperCase(chosse) == '0') {
+        if (Character.toUpperCase(choice) == '0') {
             tempPerson = new Customer();
-        } else if (Character.toUpperCase(chosse) == '1') {
+        } else if (Character.toUpperCase(choice) == '1') {
             tempPerson = new Salesman();
-        } else if (Character.toUpperCase(chosse) == '2') {
+        } else if (Character.toUpperCase(choice) == '2') {
             tempPerson = new Manager();
         }
         tempPerson.input();
@@ -27,10 +27,5 @@ public class AccountUtil {
     }
 
     static public void updateAccount(Account account) {
-
-    }
-
-    public static void main(String[] args) {
-        System.out.println(AccountUtil.createAccount('1'));
     }
 }

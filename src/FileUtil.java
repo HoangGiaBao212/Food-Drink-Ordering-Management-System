@@ -52,15 +52,14 @@ public class FileUtil {
     public static ArrayList readDataFromFile(String filepath) {
         ArrayList arrayList = new ArrayList();
         try {
-            File myObj = new File(filepath);
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
+            File file = new File(filepath);
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String data = scanner.nextLine();
                 arrayList.append(dataToObject(data));
             }
-            myReader.close();
+            scanner.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
             e.printStackTrace();
         }
         return arrayList;

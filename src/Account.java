@@ -60,7 +60,12 @@ public class Account {
         return "Account [id='" + id + "', username='" + username + "', password='" + password + "', person='" + person
                 + "']";
     }
-
+    public void display(){
+        /**
+         * @TODO:
+         * [ ] show all info of account
+         */
+    }
     public void input() {
         System.out.print("Nhập username: ");
         username = scanner.nextLine();
