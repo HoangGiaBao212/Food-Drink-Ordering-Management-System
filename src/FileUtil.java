@@ -1,12 +1,7 @@
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class FileUtil {
@@ -14,6 +9,12 @@ public class FileUtil {
     }
 
     public static void writeObjectToFile(String filepath, Object serObj) {
+    }
+
+    public static String cutString(String str, String beginString, String endString) {
+        int beginIndex = str.indexOf(beginString) + beginString.length();
+        int endIndex = str.indexOf(endString, beginIndex);
+        return str.substring(beginIndex, endIndex);
     }
 
     public static Object dataToObject(String dataString) {
@@ -24,93 +25,32 @@ public class FileUtil {
         int endIndex = dataString.indexOf(" ", beginIndex);
         if (dataString.substring(beginIndex, endIndex).equals("Account")) {
             data = new Account();
-            str = "id='";
-            beginIndex = dataString.indexOf(str, endIndex) + str.length();
-            endIndex = dataString.indexOf("'", beginIndex);
-            ((Account) data).setId(Integer.parseInt(dataString.substring(beginIndex, endIndex)));
-            str = "username='";
-            beginIndex = dataString.indexOf(str, endIndex) + str.length();
-            endIndex = dataString.indexOf("'", beginIndex);
-            ((Account) data).setUsername(dataString.substring(beginIndex, endIndex));
-            str = "password='";
-            beginIndex = dataString.indexOf(str, endIndex) + str.length();
-            endIndex = dataString.indexOf("'", beginIndex);
-            ((Account) data).setPassword(dataString.substring(beginIndex, endIndex));
+            ((Account) data).setId(Integer.parseInt(cutString(dataString, "id='", "'")));
+            ((Account) data).setUsername(cutString(dataString, "username='", "'"));
+            ((Account) data).setPassword(cutString(dataString, "password='", "'"));
             str = "person='";
             beginIndex = dataString.indexOf(str, endIndex) + str.length();
             endIndex = dataString.indexOf(" ", beginIndex);
-            if (dataString.substring(beginIndex, endIndex).equals("Manager")) {
+            if (cutString(dataString, "person='", " ").equals("Manager")) {
                 ((Account) data).setPerson(new Manager());
-                str = "name='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
-                ((Account) data).getPerson().setName(dataString.substring(beginIndex, endIndex));
-                str = "address='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
-                ((Account) data).getPerson().setAddress(dataString.substring(beginIndex, endIndex));
-                str = "dateOfBirth='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
-                try {
-                    ((Account) data).getPerson().setDateOfBirth(
-                            new SimpleDateFormat("dd-MM-yyyy").parse(dataString.substring(beginIndex, endIndex)));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                str = "salary='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
                 ((Employee) ((Account) data).getPerson())
-                        .setSalary(Integer.parseInt(dataString.substring(beginIndex, endIndex)));
-            } else if (dataString.substring(beginIndex, endIndex).equals("Salesman")) {
-                ((Account) data).setPerson(new Manager());
-                str = "name='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
-                ((Account) data).getPerson().setName(dataString.substring(beginIndex, endIndex));
-                str = "address='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
-                ((Account) data).getPerson().setAddress(dataString.substring(beginIndex, endIndex));
-                str = "dateOfBirth='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
-                try {
-                    ((Account) data).getPerson().setDateOfBirth(
-                            new SimpleDateFormat("dd-MM-yyyy").parse(dataString.substring(beginIndex, endIndex)));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                str = "salary='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
+                        .setSalary(Integer.parseInt(cutString(dataString, "salary='", "'")));
+            } else if (cutString(dataString, "person='", " ").equals("Salesman")) {
+                ((Account) data).setPerson(new Salesman());
                 ((Employee) ((Account) data).getPerson())
-                        .setSalary(Integer.parseInt(dataString.substring(beginIndex, endIndex)));
-            } else if (dataString.substring(beginIndex, endIndex).equals("Customer")) {
+                        .setSalary(Integer.parseInt(cutString(dataString, "salary='", "'")));
+            } else if (cutString(dataString, "person='", " ").equals("Customer")) {
                 ((Account) data).setPerson(new Customer());
-                str = "name='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
-                ((Account) data).getPerson().setName(dataString.substring(beginIndex, endIndex));
-                str = "address='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
-                ((Account) data).getPerson().setAddress(dataString.substring(beginIndex, endIndex));
-                str = "dateOfBirth='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
-                try {
-                    ((Account) data).getPerson().setDateOfBirth(
-                            new SimpleDateFormat("dd-MM-yyyy").parse(dataString.substring(beginIndex, endIndex)));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                str = "point='";
-                beginIndex = dataString.indexOf(str, endIndex) + str.length();
-                endIndex = dataString.indexOf("'", beginIndex);
                 ((Customer) ((Account) data).getPerson())
-                        .setPoint(Integer.parseInt(dataString.substring(beginIndex, endIndex)));
+                        .setPoint(Integer.parseInt(cutString(dataString, "point='", "'")));
+            }
+            ((Account) data).getPerson().setName(cutString(dataString, "name='", "'"));
+            ((Account) data).getPerson().setAddress(cutString(dataString, "address='", "'"));
+            try {
+                ((Account) data).getPerson().setDateOfBirth(
+                        new SimpleDateFormat("dd-MM-yyyy").parse(cutString(dataString, "dateOfBirth='", "'")));
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
         }
         return data;
