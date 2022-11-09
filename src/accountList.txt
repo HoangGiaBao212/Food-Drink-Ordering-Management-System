@@ -1,11 +1,8 @@
 Account [id='0', username='huyen', password='12341', person='Manager [name='Trần Thị Huyền', address='VN', dateOfBirth='2-12-2003', salary='1000000']']
-
 Account [id='1', username='minh', password='12342', person='Manager [name='Bùi Đức Minh', address='VN', dateOfBirth='3-12-2003', salary='2000000']']
 Account [id='2', username='dat', password='12343', person='Manager [name='Đỗ Tiến Đạt', address='VN', dateOfBirth='13-12-2003', salary='3000000']']
 Account [id='3', username='huong', password='12344', person='Manager [name='Đặng Lê Hương', address='VN', dateOfBirth='12-12-2003', salary='4000000']']
 Account [id='4', username='vinh', password='12345', person='Manager [name='Trần Xuân Vinh', address='VN', dateOfBirth='12-12-2003', salary='5000000']']
-
-
 Account [id='5', username='tuan', password='12346', person='Customer [name='Nguyễn Minh Tuấn', address='Tân Phước, Bình Phước, Việt Nam', dateOfBirth='1-12-2003', point='1000000']']
 Account [id='6', username='an', password='12346', person='Customer [name='Lương Minh An', address='Tân Phú , TPHCM , Việt Nam', dateOfBirth='10-2-2003', point='3000000']']
 Account [id='7', username='tung', password='12346', person='Customer [name='Phạm Quốc Tùng', address='Tân Kì , Qunagr Nam, Việt Nam', dateOfBirth='10-1-1999', point='2000000']']
@@ -19,12 +16,9 @@ Account [id='133', username='quan', password='12346', person='Customer [name='Ng
 Account [id='1332', username='hoa', password='12346', person='Customer [name='Nguyễn Thanh Hoa', address='LONG THANH, ĐÒNG NAI, Việt Nam', dateOfBirth='10-12-2003', point='5000000']']
 Account [id='1221', username='linh', password='12346', person='Customer [name='Nguyễn Minh Lĩnh', address='Tân Phước, Bình Phước, Việt Nam', dateOfBirth='10-12-2003', point='6000000']']
 Account [id='135', username='bo', password='12346', person='Customer [name='Nguyễn Văn Bộ', address='TÂN TRIỀU , ĐỒNG NAI, Việt Nam', dateOfBirth='10-12-2003', point='8000000']']
-
 Account [id='152', username='tu', password='12346', person='Customer [name='Nguyễn Minh Tư', address='TÂN BÌNH, HCM, Việt Nam', dateOfBirth='10-12-2003', point='9000000']']
 Account [id='162', username='duong', password='12346', person='Customer [name='Nguyễn Tuấn Dương', address='TÂN PHÚ , HCM, Việt Nam', dateOfBirth='10-12-2003', point='5000000']']
 Account [id='198', username='phuoc', password='12346', person='Customer [name='Nguyễn Hoang Phước', address='QUẬN 7,HCM , Việt Nam', dateOfBirth='10-12-2003', point='9000000']']
-
-
 Account [id='21', username='thuong', password='12341', person='Salesman [name='Trần Thị Thương', address='VN', dateOfBirth='2-12-2003', salary='7000000']']
 Account [id='32', username='duc', password='12341', person='Salesman [name='Trần Thanh Đức', address='VN', dateOfBirth='2-12-2003', salary='8000000']']
 Account [id='23', username='huy', password='12341', person='Salesman [name='Trần Thị Huy', address='VN', dateOfBirth='2-1-2003', salary='5000000']']
