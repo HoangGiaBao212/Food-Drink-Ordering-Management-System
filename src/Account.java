@@ -1,6 +1,3 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Account {
@@ -71,41 +68,4 @@ public class Account {
         password = scanner.next();
     }
 
-    public static void main(String[] args) throws ParseException {
-        MenuContent.clearScreen();
-        SimpleDateFormat dateInput = new SimpleDateFormat("dd-MM-yyyy");
-        System.out.println(
-                new Account(
-                        0,
-                        "tuan",
-                        "1234",
-                        new Manager(
-                                "Nguyen Minh Tuan",
-                                "Viet Nam",
-                                dateInput.parse("10-12-2003"),
-                                null,
-                                1000000)));
-        System.out.println(
-                new Account(
-                        0,
-                        "tuan",
-                        "1234",
-                        new Salesman(
-                                "Nguyen Minh Tuan",
-                                "Viet Nam",
-                                dateInput.parse("10-12-2003"),
-                                null,
-                                1000000)));
-        System.out.println(
-                new Account(
-                        0,
-                        "tuan",
-                        "1234",
-                        new Customer(
-                                "Nguyen Minh Tuan",
-                                "Viet Nam",
-                                dateInput.parse("10-12-2003"),
-                                null,
-                                1000000)));
-    }
 }
