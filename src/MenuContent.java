@@ -17,6 +17,18 @@ public class MenuContent {
         System.out.println("------------------------------------");
     }
 
+    public static void showMenuLoginFailed() {
+        System.out.println("Đăng nhập thất bại, đăng nhập lại ?");
+        System.out.println("1. Có");
+        System.out.println("0. Không");
+    }
+
+    public static void showMenuReadDataFailed() {
+        System.out.println("Có lỗi trong quá trình đọc dữ liệu!. Tạo dữ liệu mới?");
+        System.out.println("1. Có");
+        System.out.println("0. Không và thoát");
+    }
+
     public static void showMenuPermissionCustomer() {
         System.out.println("----------------------PERMISSION CUSTOMER ---------------");
         System.out.println("| 1. Hiện danh sách sản phẩm.                            |");
@@ -103,5 +115,19 @@ public class MenuContent {
         System.out.println("|                                                           |");
         System.out.println("|0. Thoát.                                                  |");
         System.out.println("-------------------------------------------------------------");
+    }
+    public static void showMenuPermissionCustomerProduct(ProductList productList) {
+        productList.display();
+        System.out.println("1. Chọn sản phẩm.");
+        System.out.println("2. Chỉnh sửa giỏ hàng");
+        System.out.println("3. Thanh toán");
+        System.out.println("0. Quay lại");
+    }
+    public static void showMenuPermissionCustomerInfo(Account account) {
+        account.display();
+        System.out.println("1. Xem lịch sử");
+        System.out.println("2. Thay đổi thông tin");
+        System.out.println("3. Thanh toán");
+        System.out.println("0. Quay lại");
     }
 }

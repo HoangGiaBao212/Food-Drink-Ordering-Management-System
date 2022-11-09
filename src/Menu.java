@@ -23,25 +23,23 @@ public class Menu {
     public static void setBillList(BillList billList) {
         currentBillList = billList;
     }
-    
+
     public static void login() {
         int choice;
         MenuContent.clearScreen();
         MenuContent.showMenuLogin();
-        choice = Integer.parseInt(scanner.nextLine());
+        choice = Menu.getChoice();
 
         if (choice == 1) {
             while (currentAccount == null) {
                 System.out.println("Nhập username: ");
-                String username = scanner.nextLine();
+                String username = Menu.getInput();
                 System.out.println("Nhập password: ");
-                String password = scanner.nextLine();
+                String password = Menu.getInput();
                 currentAccount = currentAccountList.login(username, password);
                 if (currentAccount == null) {
-                    System.out.println("Đăng nhập thất bại, đăng nhập lại ?");
-                    System.out.println("1. Có");
-                    System.out.println("0. Không");
-                    choice = Integer.parseInt(scanner.nextLine());
+                    MenuContent.showMenuLoginFailed();
+                    choice = Menu.getChoice();
                     if (choice == 0)
                         break;
                 }
@@ -55,45 +53,51 @@ public class Menu {
     }
 
     public static void showMenu() {
-        if (currentAccount.getPerson() instanceof Customer) {
-            MenuContent.showMenuPermissionCustomer();
-        } else if (currentAccount.getPerson() instanceof Salesman) {
-            MenuContent.showMenuPermissionSalesman();
-        } else if (currentAccount.getPerson() instanceof Manager) {
-            MenuContent.showMenuPermissionManager();
+        while (true) {
+            currentAccount = null;
+            if (currentAccount == null) {
+                login();
+            }
+            if (currentAccount.getPerson() instanceof Customer) {
+                menuPermissionCustomer();
+            } else if (currentAccount.getPerson() instanceof Salesman) {
+                menuPermissionSalesman();
+            } else if (currentAccount.getPerson() instanceof Manager) {
+                menuPermissionManager();
+            }
         }
     }
 
-    public static void showMenuPermissionCustomer() {
-        System.out.println("1. Hiện danh sách sản phẩm.");
-        System.out.println("2. Thông tin người dùng.");
-        System.out.println("0. Thoát.");
+    public static int getChoice() {
+        return Integer.parseInt(scanner.nextLine());
     }
 
-    public static void showMenuPermissionSalesman() {
-        System.out.println("1. Tạo hóa đơn.");
-        System.out.println("2. Tra cứu thông tin người dùng.");
-        System.out.println("3. Kết ca.");
-        System.out.println("0. Thoát.");
+    public static String getInput() {
+        return scanner.nextLine();
     }
 
-    public static void showMenuPermissionManager() {
-        System.out.println("1. Quản lý Sản phẩm");
-        System.out.println("2. Quản lý Nhân viên");
-        System.out.println("3. Quản lý Người dùng");
-        System.out.println("0. Thoát");
+    public static void menuPermissionCustomer() {
+        int choice;
+        while (true) {
+            MenuContent.showMenuPermissionCustomer();
+            choice = Menu.getChoice();
+            System.out.println(choice);
+            if (choice == 1) {
+                MenuContent.showMenuPermissionCustomerProduct(currentProductList);
+            } else if (choice == 2) {
+
+                MenuContent.showMenuPermissionCustomerInfo(currentAccount);
+            } else if (choice == 0) {
+                choice = -1;
+                break;
+            }
+        }
     }
 
-    public static int showMenuProduct() {
-        /**
-         * TODO:
-         * [] show header attributes of product
-         * [] display by table
-         * [] get id product
-         * [] check id valid and exist
-         * [] return id if valid
-         */
-        return -1;
+    public static void menuPermissionSalesman() {
+    }
+
+    public static void menuPermissionManager() {
     }
 
 }

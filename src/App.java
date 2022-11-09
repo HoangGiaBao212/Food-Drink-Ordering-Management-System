@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class App {
-    private static final Scanner scanner = new Scanner(System.in);
     private static AccountList accountList = null;
     private static ProductList productList = null;
     private static BillList billList = null;
@@ -13,21 +12,20 @@ public class App {
             billList = new BillList(FileUtil.readDataFromFile("src/BillData.txt"));
         } catch (Exception e) {
             int choice = 0;
-            System.out.println("Có lỗi trong quá trình đọc dữ liệu!. Tạo dữ liệu mới?");
-            System.out.println("1. Có");
-            System.out.println("0. Không và thoát");
-            choice = Integer.parseInt(scanner.nextLine());
+            MenuContent.showMenuReadDataFailed();
+            choice = Menu.getChoice();
             if (choice == 1) {
                 accountList = new AccountList();
                 productList = new ProductList();
                 billList = new BillList();
             }
         }
+        Menu.setAccountList(accountList);
+        Menu.setProductList(productList);
+        Menu.setBillList(billList);
     }
 
     public static void start() {
-        Menu.setAccountList(accountList);
-        Menu.login();
         Menu.showMenu();
     }
 
