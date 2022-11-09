@@ -100,19 +100,32 @@ public class Menu {
     }
 
     public static void menuPermissionCustomer() {
-        int choice;
-        while (true) {
+        int choice = -1;
+        while (choice != 0) {
+            MenuContent.clearScreen();
             MenuContent.showMenuPermissionCustomer();
             choice = Menu.getChoice();
-            System.out.println(choice);
-            if (choice == 1) {
-                MenuContent.showMenuPermissionCustomerProduct(currentProductList);
-            } else if (choice == 2) {
-
-                MenuContent.showMenuPermissionCustomerInfo(currentAccount);
-            } else if (choice == 0) {
-                choice = -1;
-                break;
+            switch (choice) {
+                case 1:
+                    // Product
+                    while (choice != 0) {
+                        MenuContent.clearScreen();
+                        MenuContent.showMenuPermissionCustomerProduct(currentProductList);
+                        choice = Menu.getChoice();
+                    }
+                    choice = -1;
+                    break;
+                case 2:
+                    // Bill
+                    while (choice != 0) {
+                        MenuContent.clearScreen();
+                        MenuContent.showMenuPermissionCustomerInfo(currentAccount);
+                        choice = Menu.getChoice();
+                    }
+                    choice = -1;
+                    break;
+                default:
+                    break;
             }
         }
     }
