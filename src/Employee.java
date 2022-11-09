@@ -18,10 +18,4 @@ abstract class Employee extends Person {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-
-    @Override
-    public String toString() {
-        return super.toString() + "\n" + "Employee [salary=" + salary + "]";
-    }
-
 }
