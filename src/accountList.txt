@@ -1,36 +1,36 @@
-Account=[id='0', username='huyen', password='12341', Person='Manager=[name='Trần Thị Huyền ', address='VN', dateOfBirth='2-12-2003', salary='1000000']'],
+Account [id='0', username='huyen', password='12341', person='Manager [name='Trần Thị Huyền', address='VN', dateOfBirth='2-12-2003', salary='1000000']']
 
-Account=[id='1', username='minh', password='12342', Person='Manager=[name='Bùi Đức Minh ', address='VN', dateOfBirth='3-12-2003', salary='2000000']'],
-Account=[id='2', username='dat', password='12343', Person='Manager=[name='Đỗ Tiến Đạt', address='VN', dateOfBirth='13-12-2003', salary='3000000']'],
-Account=[id='3', username='huong', password='12344', Person='Manager=[name='Đặng Lê Hương', address='VN', dateOfBirth='12-12-2003', salary='4000000']'],
-Account=[id='4', username='vinh', password='12345', Person='Manager=[name='Trần Xuân Vinh', address='VN', dateOfBirth='12-12-2003', salary='5000000']'],
-
-
-Account=[id='5', username='tuan', password='12346', Person='Customer=[name='Nguyễn Minh Tuấn', address='Tân Phước, Bình Phước, Việt Nam', dateOfBirth='1-12-2003', point='1000000']']
-Account=[id='6', username='an', password='12346', Person='Customer=[name='Lương Minh An ', address='Tân Phú , TPHCM , Việt Nam', dateOfBirth='10-2-2003', point='3000000']']
-Account=[id='7', username='tung', password='12346', Person='Customer=[name='Phạm Quốc Tùng', address='Tân Kì , Qunagr Nam, Việt Nam', dateOfBirth='10-1-1999', point='2000000']']
-Account=[id='8', username='chau ', password='12346', Person='Customer=[name='Huỳnh Ngọc Châu ', address='Tân An, Bình Dương , Việt Nam', dateOfBirth='10-12-2003', point='6000000']']
-Account=[id='9', username='hoang', password='12346', Person='Customer=[name=' Bùi Minh Hoàng', address='Dĩ AN , Bình Dương , Việt Nam', dateOfBirth='10-1-2003', point='8000000']']
-Account=[id='10', username='phuong, password='12346', Person='Customer=[name='Nguyễn Minh Phương', address='Tân Kì , Quảng Ninh, Việt Nam', dateOfBirth='10-12-2003', point='4000000']']
-Account=[id='111', username='xinh', password='12346', Person='Customer=[name='Nguyễn Minh Xinh', address='Biên Hòa, Đòng nai, Việt Nam', dateOfBirth='10-12-2003', point='3000000']']
-Account=[id='12', username='vu', password='12346', Person='Customer=[name='Lại Đức Vũ', address='Đức Phổ, Quảng nam , Việt Nam', dateOfdBirth='10-12-2003', point='3000000']']
-Account=[id='113', username='duc', password='12346', Person='Customer=[name='Nguyễn Minh Đức', address='HÒN GAI , QUẢNG NINH, Việt Nam', dateOfBirth='10-12-2003', point='4000000']']
-Account=[id='133', username='quan', password='12346', Person='Customer=[name='Nguyễn Minh Quân', address='HA TÂY, HÀ NỘI, Việt Nam', dateOfBirth='10-12-2003', point='35000000']']
-Account=[id='1332', username='hoa', password='12346', Person='Customer=[name='Nguyễn Thanh Hoa', address='LONG THANH, ĐÒNG NAI, Việt Nam', dateOfBirth='10-12-2003', point='5000000']']
-Account=[id='1221', username='linh', password='12346', Person='Customer=[name='Nguyễn Minh Lĩnh', address='Tân Phước, Bình Phước, Việt Nam', dateOfBirth='10-12-2003', point='6000000']']
-Account=[id='135', username='bo', password='12346', Person='Customer=[name='Nguyễn Văn Bộ', address='TÂN TRIỀU , ĐỒNG NAI, Việt Nam', dateOfBirth='10-12-2003', point='8000000']']
-
-Account=[id='152', username='tu', password='12346', Person='Customer=[name='Nguyễn Minh Tư', address='TÂN BÌNH, HCM, Việt Nam', dateOfBirth='10-12-2003', point='9000000']']
-Account=[id='162', username='duong', password='12346', Person='Customer=[name='Nguyễn Tuấn Dương', address='TÂN PHÚ , HCM, Việt Nam', dateOfBirth='10-12-2003', point='5000000']']
-Account=[id='198', username='phuoc', password='12346', Person='Customer=[name='Nguyễn Hoang Phước', address='QUẬN 7,HCM , Việt Nam', dateOfBirth='10-12-2003', point='9000000']']
+Account [id='1', username='minh', password='12342', person='Manager [name='Bùi Đức Minh', address='VN', dateOfBirth='3-12-2003', salary='2000000']']
+Account [id='2', username='dat', password='12343', person='Manager [name='Đỗ Tiến Đạt', address='VN', dateOfBirth='13-12-2003', salary='3000000']']
+Account [id='3', username='huong', password='12344', person='Manager [name='Đặng Lê Hương', address='VN', dateOfBirth='12-12-2003', salary='4000000']']
+Account [id='4', username='vinh', password='12345', person='Manager [name='Trần Xuân Vinh', address='VN', dateOfBirth='12-12-2003', salary='5000000']']
 
 
-Account Account=[id='21', username='thuong', password='12341', Person='Salesman=[name='Trần Thị Thương  ', address='VN', dateOfBirth='2-12-2003', salary='7000000']'],
-Account Account=[id='32', username='duc', password='12341', Person='Salesman=[name='Trần Thanh Đức  ', address='VN', dateOfBirth='2-12-2003', salary='8000000']'],
-Account Account=[id='23', username='huy', password='12341', Person='Salesman=[name='Trần Thị Huy ', address='VN', dateOfBirth='2-1-2003', salary='5000000']'],
-Account Account=[id='43', username='huyen', password='12341', Person='Salesman=[name='Trần Thị Huyền ', address='VN', dateOfBirth='5-12-2003', salary='6000000']'],
-Account Account=[id='53', username='thang', password='12341', Person='Salesman=[name='Trần Thị Thăng ', address='VN', dateOfBirth='3-12-2003', salary='3000000']'],
-Account Account=[id='63', username='ly', password='12341', Person='Salesman=[name='Bùi Công Lý  ', address='VN', dateOfBirth='2-6-2003', salary='16000000']'],
-Account Account=[id='73', username='toan', password='12341', Person='Salesman=[name='Trần Thị Huyền Toan ', address='VN', dateOfBirth='2-1-2003', salary='13000000']'],
-Account Account=[id='83', username='hao', password='12341', Person='Salesman=[name='Trần Quân Hào ', address='VN', dateOfBirth='2-10-2003', salary='17000000']'],
-Account Account=[id='93', username='sinh', password='12341', Person='Salesman=[name='Lương Ưu Sinh ', address='VN', dateOfBirth='4-12-2003', salary='13000000']'],
+Account [id='5', username='tuan', password='12346', person='Customer [name='Nguyễn Minh Tuấn', address='Tân Phước, Bình Phước, Việt Nam', dateOfBirth='1-12-2003', point='1000000']']
+Account [id='6', username='an', password='12346', person='Customer [name='Lương Minh An', address='Tân Phú , TPHCM , Việt Nam', dateOfBirth='10-2-2003', point='3000000']']
+Account [id='7', username='tung', password='12346', person='Customer [name='Phạm Quốc Tùng', address='Tân Kì , Qunagr Nam, Việt Nam', dateOfBirth='10-1-1999', point='2000000']']
+Account [id='8', username='chau', password='12346', person='Customer [name='Huỳnh Ngọc Châu', address='Tân An, Bình Dương , Việt Nam', dateOfBirth='10-12-2003', point='6000000']']
+Account [id='9', username='hoang', password='12346', person='Customer [name=' Bùi Minh Hoàng', address='Dĩ AN , Bình Dương , Việt Nam', dateOfBirth='10-1-2003', point='8000000']']
+Account [id='10', username='phuong, password='12346', person='Customer [name='Nguyễn Minh Phương', address='Tân Kì , Quảng Ninh, Việt Nam', dateOfBirth='10-12-2003', point='4000000']']
+Account [id='111', username='xinh', password='12346', person='Customer [name='Nguyễn Minh Xinh', address='Biên Hòa, Đòng nai, Việt Nam', dateOfBirth='10-12-2003', point='3000000']']
+Account [id='12', username='vu', password='12346', person='Customer [name='Lại Đức Vũ', address='Đức Phổ, Quảng nam , Việt Nam', dateOfdBirth='10-12-2003', point='3000000']']
+Account [id='113', username='duc', password='12346', person='Customer [name='Nguyễn Minh Đức', address='HÒN GAI , QUẢNG NINH, Việt Nam', dateOfBirth='10-12-2003', point='4000000']']
+Account [id='133', username='quan', password='12346', person='Customer [name='Nguyễn Minh Quân', address='HA TÂY, HÀ NỘI, Việt Nam', dateOfBirth='10-12-2003', point='35000000']']
+Account [id='1332', username='hoa', password='12346', person='Customer [name='Nguyễn Thanh Hoa', address='LONG THANH, ĐÒNG NAI, Việt Nam', dateOfBirth='10-12-2003', point='5000000']']
+Account [id='1221', username='linh', password='12346', person='Customer [name='Nguyễn Minh Lĩnh', address='Tân Phước, Bình Phước, Việt Nam', dateOfBirth='10-12-2003', point='6000000']']
+Account [id='135', username='bo', password='12346', person='Customer [name='Nguyễn Văn Bộ', address='TÂN TRIỀU , ĐỒNG NAI, Việt Nam', dateOfBirth='10-12-2003', point='8000000']']
+
+Account [id='152', username='tu', password='12346', person='Customer [name='Nguyễn Minh Tư', address='TÂN BÌNH, HCM, Việt Nam', dateOfBirth='10-12-2003', point='9000000']']
+Account [id='162', username='duong', password='12346', person='Customer [name='Nguyễn Tuấn Dương', address='TÂN PHÚ , HCM, Việt Nam', dateOfBirth='10-12-2003', point='5000000']']
+Account [id='198', username='phuoc', password='12346', person='Customer [name='Nguyễn Hoang Phước', address='QUẬN 7,HCM , Việt Nam', dateOfBirth='10-12-2003', point='9000000']']
+
+
+Account [id='21', username='thuong', password='12341', person='Salesman [name='Trần Thị Thương', address='VN', dateOfBirth='2-12-2003', salary='7000000']']
+Account [id='32', username='duc', password='12341', person='Salesman [name='Trần Thanh Đức', address='VN', dateOfBirth='2-12-2003', salary='8000000']']
+Account [id='23', username='huy', password='12341', person='Salesman [name='Trần Thị Huy', address='VN', dateOfBirth='2-1-2003', salary='5000000']']
+Account [id='43', username='huyen', password='12341', person='Salesman [name='Trần Thị Huyền', address='VN', dateOfBirth='5-12-2003', salary='6000000']']
+Account [id='53', username='thang', password='12341', person='Salesman [name='Trần Thị Thăng', address='VN', dateOfBirth='3-12-2003', salary='3000000']']
+Account [id='63', username='ly', password='12341', person='Salesman [name='Bùi Công Lý', address='VN', dateOfBirth='2-6-2003', salary='16000000']']
+Account [id='73', username='toan', password='12341', person='Salesman [name='Trần Thị Huyền Toan', address='VN', dateOfBirth='2-1-2003', salary='13000000']']
+Account [id='83', username='hao', password='12341', person='Salesman [name='Trần Quân Hào', address='VN', dateOfBirth='2-10-2003', salary='17000000']']
+Account [id='93', username='sinh', password='12341', person='Salesman [name='Lương Ưu Sinh', address='VN', dateOfBirth='4-12-2003', salary='13000000']']

@@ -72,6 +72,7 @@ public class Account {
     }
 
     public static void main(String[] args) throws ParseException {
+        MenuContent.clearScreen();
         SimpleDateFormat dateInput = new SimpleDateFormat("dd-MM-yyyy");
         System.out.println(
                 new Account(
