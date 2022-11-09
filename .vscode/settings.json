@@ -6,7 +6,7 @@
 	"java.project.referencedLibraries": [
 		"lib/**/*.jar"
 	],
-	"terminal.integrated.fontFamily": "'MesloLGS NF','sans-serif', 'Droid Sans Mono', 'monospace', monospace",
+	"terminal.integrated.fontFamily": "'MesloLGS NF','Arial','monospace','sans-serif', 'Droid Sans Mono'",
 	"cSpell.language": "lorem,vi,en",
 	"cSpell.words": [
 		"phuonganhtq"
