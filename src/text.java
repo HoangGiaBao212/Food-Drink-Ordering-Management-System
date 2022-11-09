@@ -34,7 +34,7 @@ public class text {
                     }
                     case 2 -> {
                         System.out.println(" đoạn này mình show giỏ hàng ra");
-                        
+
                         System.out.println("|             1/ Xóa sản phẩm                            |");
                         System.out.println("|             2/ Chỉnh sửa số lượng                      |");
                         System.out.println("|             0/ Quay lại                                |");
@@ -45,7 +45,8 @@ public class text {
                                 System.out.println(" đoạn này mình cho nhập id cần xóa sau đó gọi hàm thực hiện xóa");
                             }
                             case 2 -> {
-                                System.out.println(" đoạn này mình cho nhập id cần chỉnh sửa số lượng sau đó gọi hàm thực hiện");
+                                System.out.println(
+                                        " đoạn này mình cho nhập id cần chỉnh sửa số lượng sau đó gọi hàm thực hiện");
                             }
                         }
                     }
