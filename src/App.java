@@ -30,9 +30,9 @@ public class App {
     }
 
     public static void end() {
-        FileUtil.writeDataToFile("src/AccountData.txt", accountList);
-        FileUtil.writeDataToFile("src/ProductData.txt", productList);
-        FileUtil.writeDataToFile("src/BillData.txt", billList);
+        FileUtil.writeDataToFile("src/AccountData", accountList);
+        FileUtil.writeDataToFile("src/ProductData", productList);
+        FileUtil.writeDataToFile("src/BillData", billList);
     }
 
     public static void main(String[] args) {

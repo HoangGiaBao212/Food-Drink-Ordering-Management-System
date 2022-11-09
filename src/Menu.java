@@ -44,6 +44,8 @@ public class Menu {
                         break;
                 }
             }
+        } else if (choice == -1) {
+            return;
         }
 
         if (currentAccount == null) {
@@ -57,6 +59,8 @@ public class Menu {
             currentAccount = null;
             if (currentAccount == null) {
                 login();
+            } else if (currentAccount == null) {
+                return;
             }
             if (currentAccount.getPerson() instanceof Customer) {
                 menuPermissionCustomer();
@@ -69,7 +73,15 @@ public class Menu {
     }
 
     public static int getChoice() {
-        return Integer.parseInt(scanner.nextLine());
+        int choice;
+        while(true) {
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+                return choice;
+            } catch(Exception e) {
+                System.out.println("Input không chính xác!!!");
+            }
+        }
     }
 
     public static String getInput() {
