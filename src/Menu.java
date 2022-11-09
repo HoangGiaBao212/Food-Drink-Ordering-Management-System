@@ -105,6 +105,8 @@ public class Menu {
             MenuContent.clearScreen();
             MenuContent.showMenuPermissionCustomer();
             choice = Menu.getChoice();
+            Bill bill = new Bill();
+            bill.setIdCustomer(currentAccount.getId());
             switch (choice) {
                 case 1:
                     // Product
@@ -112,6 +114,21 @@ public class Menu {
                         MenuContent.clearScreen();
                         MenuContent.showMenuPermissionCustomerProduct(currentProductList);
                         choice = Menu.getChoice();
+                        switch (choice) {
+                            case 1:
+                                int idProduct;
+                                int amount;
+                                System.out.print("Nhập id sản phẩm: ");
+                                idProduct = Menu.getChoice();
+                                System.out.print("Nhập số lượng: ");
+                                amount = Menu.getChoice();
+                                bill.append(idProduct, amount);
+                                break;
+                            case 2:
+                                break;
+                            default:
+                                break;
+                        }
                     }
                     choice = -1;
                     break;

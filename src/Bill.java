@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Bill {
     int id;
     int idCustomer;
@@ -7,6 +9,12 @@ public class Bill {
     int point;
 
     public Bill() {
+        id = -1;
+        idCustomer = -1;
+        idSalesman = -1;
+        idProduct = new int[0];
+        amount = new int[0];
+        point = 0;
     }
 
     public Bill(int id, int idCustomer, int idSalesman, int[] idProduct, int[] amount, int point) {
@@ -65,7 +73,21 @@ public class Bill {
     public void setPoint(int point) {
         this.point = point;
     }
+
+    public void append(int idProduct, int amount) {
+        for (int i = 0; i < this.idProduct.length; i++) {
+            if (this.idProduct[i] == idProduct) {
+                this.amount[i] += amount;
+                return;
+            }
+        }
+        this.idProduct = Arrays.copyOf(this.idProduct, this.idProduct.length);
+        this.amount = Arrays.copyOf(this.amount, this.amount.length);
+        this.idProduct[this.idProduct.length - 1] = idProduct;
+        this.amount[this.amount.length - 1] = amount;
+    }
+
     public void display() {
-        
+
     }
 }
