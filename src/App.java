@@ -4,12 +4,15 @@ public class App {
     private static AccountList accountList = null;
     private static ProductList productList = null;
     private static BillList billList = null;
+    private static final String AccountDataPath = "./AccountData";
+    private static final String ProductDataPath = "./AccountData";
+    private static final String BillDataPath = "./AccountData";
 
     public static void init() {
         try {
-            accountList = new AccountList(FileUtil.readDataFromFile("src/AccountData.txt"));
-            productList = new ProductList(FileUtil.readDataFromFile("src/ProductData.txt"));
-            billList = new BillList(FileUtil.readDataFromFile("src/BillData.txt"));
+            accountList = new AccountList(FileUtil.readDataFromFile(AccountDataPath));
+            productList = new ProductList(FileUtil.readDataFromFile(ProductDataPath));
+            billList = new BillList(FileUtil.readDataFromFile(BillDataPath));
         } catch (Exception e) {
             int choice = 0;
             MenuContent.showMenuReadDataFailed();
@@ -30,9 +33,9 @@ public class App {
     }
 
     public static void end() {
-        FileUtil.writeDataToFile("src/AccountData", accountList);
-        FileUtil.writeDataToFile("src/ProductData", productList);
-        FileUtil.writeDataToFile("src/BillData", billList);
+        FileUtil.writeDataToFile(AccountDataPath, accountList);
+        FileUtil.writeDataToFile(ProductDataPath, productList);
+        FileUtil.writeDataToFile(BillDataPath, billList);
     }
 
     public static void main(String[] args) {
