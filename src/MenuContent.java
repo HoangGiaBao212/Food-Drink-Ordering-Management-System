@@ -20,7 +20,6 @@ public class MenuContent {
         System.out.println("------------------------------------");
     }
 
-<<<<<<< HEAD
     public static void showMenuCustomer() {
         int choice = -1;
         while (choice != 0) {
@@ -48,7 +47,8 @@ public class MenuContent {
                 default -> System.out.print("Nhap lai!");
             }
         }
-=======
+    }
+
     public static void showMenuLoginFailed() {
         System.out.println("Đăng nhập thất bại, đăng nhập lại ?");
         System.out.println("1. Có");
@@ -88,99 +88,99 @@ public class MenuContent {
         System.out.println("|                                                        |");
         System.out.println("| 0. Thoát.                                              |");
         System.out.println("----------------------------------------------------------");
->>>>>>> 12f444d1b0320b5ae427dc421923b9e6474571c6
     }
 
-//     public static void showMenuPermissionCustomer() {
-//         System.out.println("----------------------PERMISSION CUSTOMER ---------------");
-//         System.out.println("| 1. Hiện danh sách sản phẩm.                            |");
-//         System.out.println("|     1. Chọn sản phẩm                                   |");
-//         System.out.println("|     2. Chỉnh sửa giỏ hàng                              |");
-//         System.out.println("|         1, Chọn sản phẩm muôn sửa                      |");
-//         System.out.println("|             1/ Xóa sản phẩm                            |");
-//         System.out.println("|             2/ Chỉnh sửa số lượng                      |");
-//         System.out.println("|             0/ Quay lại                                |");
-//         System.out.println("|     3. Thanh toán                                      |");
-//         System.out.println("|         1, Thanh toán bằng tiền mặt                    |");
-//         System.out.println("          2, Thanh toán bằng thẻ                         |");
-//         System.out.println("|             1/ Bạn có muôn sử dụng điểm không ?        |");
-//         System.out.println("|                 Y. Có                                  |");
-//         System.out.println("|                 N. Không                               |");
-//         System.out.println("|             2/ Thoát                                   |");
-//         System.out.println("|     4. Thoát                                           |");
-//         System.out.println("|                                                        |");
-//         System.out.println("| 2. Thông tin người dùng.                               |");
-//         System.out.println("|     1. Xem lịch sử                                     |");
-//         System.out.println("|     2. Thay đổi thông tin                              |");
-//         System.out.println("|             1/ Đổi mật khẩu                            |");
-//         System.out.println("|             0/ Thoát                                   |");
-//         System.out.println("|     3. Thoát                                           |");
-//         System.out.println("|                                                        |");
-//         System.out.println("| 0. Thoát.                                              |");
-//         System.out.println("----------------------------------------------------------");
-//     }
+    // public static void showMenuPermissionCustomer() {
+    // System.out.println("----------------------PERMISSION CUSTOMER
+    // ---------------");
+    // System.out.println("| 1. Hiện danh sách sản phẩm. |");
+    // System.out.println("| 1. Chọn sản phẩm |");
+    // System.out.println("| 2. Chỉnh sửa giỏ hàng |");
+    // System.out.println("| 1, Chọn sản phẩm muôn sửa |");
+    // System.out.println("| 1/ Xóa sản phẩm |");
+    // System.out.println("| 2/ Chỉnh sửa số lượng |");
+    // System.out.println("| 0/ Quay lại |");
+    // System.out.println("| 3. Thanh toán |");
+    // System.out.println("| 1, Thanh toán bằng tiền mặt |");
+    // System.out.println(" 2, Thanh toán bằng thẻ |");
+    // System.out.println("| 1/ Bạn có muôn sử dụng điểm không ? |");
+    // System.out.println("| Y. Có |");
+    // System.out.println("| N. Không |");
+    // System.out.println("| 2/ Thoát |");
+    // System.out.println("| 4. Thoát |");
+    // System.out.println("| |");
+    // System.out.println("| 2. Thông tin người dùng. |");
+    // System.out.println("| 1. Xem lịch sử |");
+    // System.out.println("| 2. Thay đổi thông tin |");
+    // System.out.println("| 1/ Đổi mật khẩu |");
+    // System.out.println("| 0/ Thoát |");
+    // System.out.println("| 3. Thoát |");
+    // System.out.println("| |");
+    // System.out.println("| 0. Thoát. |");
+    // System.out.println("----------------------------------------------------------");
+    // }
 
-<<<<<<< HEAD
-//     public static void showMenuPermissionSalesman() {
-//         System.out.println("-----------------PERMISSION SALESMAN ----------------------");
-//         System.out.println("| 1. Tạo hóa đơn.                                          |");
-//         System.out.println("|     1. Chọn sản phẩm                                   |");
-//         System.out.println("|     2. Chỉnh sửa giỏ hàng                              |");
-//         System.out.println("|         1, Chọn sản phẩm muôn sửa                      |");
-//         System.out.println("|             1/ Xóa sản phẩm                            |");
-//         System.out.println("|             2/ Chỉnh sửa số lượng                      |");
-//         System.out.println("|             0/ Quay lại                                |");
-//         System.out.println("|     3. Thanh toán                                      |");
-//         System.out.println("|         1, Thanh toán bằng tiền mặt                    |");
-//         System.out.println("          2, Thanh toán bằng thẻ                         |");
-//         System.out.println("|             1/ Bạn có muôn sử dụng điểm không ?        |");
-//         System.out.println("|                 Y. Có                                  |");
-//         System.out.println("|                 N. Không                               |");
-//         System.out.println("|             2/ Thoát                                   |");
-//         System.out.println("|     4. Thoát                                           |");
-//         System.out.println("|                                                        |");
-//         System.out.println("| 2. Tra cứu thông tin người dùng.                       |");
-//         System.out.println("|     1. Xem danh sách người dùng                        |");
-//         System.out.println("|     2. Chọn người dùng                                 |");
-//         System.out.println("|         1, Xem lịch sử                                 |");
-//         System.out.println("|         2, Thay đổi thông tin                          |");
-//         System.out.println("|              1/ Đổi mật khẩu                           |");
-//         System.out.println("|              0/ Thoát                                  |");
-//         System.out.println("|         3, Thoát                                       |");
-//         System.out.println("|     3. Thoát                                           |");
-//         System.out.println("|                                                        |");
-//         System.out.println("| 3. Kết ca.                                             |");
-//         System.out.println("|                                                        |");
-//         System.out.println("|0. Thoát.                                               |");
-//         System.out.println("----------------------------------------------------------");
-//     }
+    // public static void showMenuPermissionSalesman() {
+    // System.out.println("-----------------PERMISSION SALESMAN
+    // ----------------------");
+    // System.out.println("| 1. Tạo hóa đơn. |");
+    // System.out.println("| 1. Chọn sản phẩm |");
+    // System.out.println("| 2. Chỉnh sửa giỏ hàng |");
+    // System.out.println("| 1, Chọn sản phẩm muôn sửa |");
+    // System.out.println("| 1/ Xóa sản phẩm |");
+    // System.out.println("| 2/ Chỉnh sửa số lượng |");
+    // System.out.println("| 0/ Quay lại |");
+    // System.out.println("| 3. Thanh toán |");
+    // System.out.println("| 1, Thanh toán bằng tiền mặt |");
+    // System.out.println(" 2, Thanh toán bằng thẻ |");
+    // System.out.println("| 1/ Bạn có muôn sử dụng điểm không ? |");
+    // System.out.println("| Y. Có |");
+    // System.out.println("| N. Không |");
+    // System.out.println("| 2/ Thoát |");
+    // System.out.println("| 4. Thoát |");
+    // System.out.println("| |");
+    // System.out.println("| 2. Tra cứu thông tin người dùng. |");
+    // System.out.println("| 1. Xem danh sách người dùng |");
+    // System.out.println("| 2. Chọn người dùng |");
+    // System.out.println("| 1, Xem lịch sử |");
+    // System.out.println("| 2, Thay đổi thông tin |");
+    // System.out.println("| 1/ Đổi mật khẩu |");
+    // System.out.println("| 0/ Thoát |");
+    // System.out.println("| 3, Thoát |");
+    // System.out.println("| 3. Thoát |");
+    // System.out.println("| |");
+    // System.out.println("| 3. Kết ca. |");
+    // System.out.println("| |");
+    // System.out.println("|0. Thoát. |");
+    // System.out.println("----------------------------------------------------------");
+    // }
 
-//     public static void showMenuPermissionManager() {
-//         System.out.println("-------------------PERMISSION MANAGER ----------------------");
-//         System.out.println("| 1. Quản lý Sản phẩm.                                      |");
-//         System.out.println("|       1. Xem danh sách sản phẩm.                          |");
-//         System.out.println("|       2. Thêm sản phẩm.                                   |");
-//         System.out.println("|       3. Tạo sản phẩm mới.                                |");
-//         System.out.println("|       4. Xóa sản phẩm.                                    |");
-//         System.out.println("|       0. Quay lại.                                        |");
-//         System.out.println("|                                                           |");
-//         System.out.println("| 2. Quản lý Nhân viên.                                     |");
-//         System.out.println("|       1. Xem danh sách nhân viên.                         |");
-//         System.out.println("|       2. Thêm nhân viên.                                  |");
-//         System.out.println("|       3. Xóa nhân viên.                                   |");
-//         System.out.println("|       0. Quay lại.                                        |");
-//         System.out.println("|                                                           |");
-//         System.out.println("| 3. Quản lý Người dùng.                                    |");
-//         System.out.println("|       1. Xem danh sách người dùng.                        |");
-//         System.out.println("|       2. Thêm người dùng.                                 |");
-//         System.out.println("|       3. Xóa người dùng.                                  |");
-//         System.out.println("|       4. Quay lại.                                        |");
-//         System.out.println("|                                                           |");
-//         System.out.println("|0. Thoát.                                                  |");
-//         System.out.println("-------------------------------------------------------------");
-//     }
-// }
-=======
+    // public static void showMenuPermissionManager() {
+    // System.out.println("-------------------PERMISSION MANAGER
+    // ----------------------");
+    // System.out.println("| 1. Quản lý Sản phẩm. |");
+    // System.out.println("| 1. Xem danh sách sản phẩm. |");
+    // System.out.println("| 2. Thêm sản phẩm. |");
+    // System.out.println("| 3. Tạo sản phẩm mới. |");
+    // System.out.println("| 4. Xóa sản phẩm. |");
+    // System.out.println("| 0. Quay lại. |");
+    // System.out.println("| |");
+    // System.out.println("| 2. Quản lý Nhân viên. |");
+    // System.out.println("| 1. Xem danh sách nhân viên. |");
+    // System.out.println("| 2. Thêm nhân viên. |");
+    // System.out.println("| 3. Xóa nhân viên. |");
+    // System.out.println("| 0. Quay lại. |");
+    // System.out.println("| |");
+    // System.out.println("| 3. Quản lý Người dùng. |");
+    // System.out.println("| 1. Xem danh sách người dùng. |");
+    // System.out.println("| 2. Thêm người dùng. |");
+    // System.out.println("| 3. Xóa người dùng. |");
+    // System.out.println("| 4. Quay lại. |");
+    // System.out.println("| |");
+    // System.out.println("|0. Thoát. |");
+    // System.out.println("-------------------------------------------------------------");
+    // }
+    // }
     public static void showMenuPermissionManager() {
         System.out.println("-------------------PERMISSION MANAGER ----------------------");
         System.out.println("| 1. Quản lý Sản phẩm.                                      |");
@@ -205,6 +205,7 @@ public class MenuContent {
         System.out.println("|0. Thoát.                                                  |");
         System.out.println("-------------------------------------------------------------");
     }
+
     public static void showMenuPermissionCustomerProduct(ProductList productList) {
         productList.display();
         System.out.println("1. Chọn sản phẩm.");
@@ -212,6 +213,7 @@ public class MenuContent {
         System.out.println("3. Thanh toán");
         System.out.println("0. Quay lại");
     }
+
     public static void showMenuPermissionCustomerInfo(Account account) {
         account.display();
         System.out.println("1. Xem lịch sử");
@@ -220,4 +222,3 @@ public class MenuContent {
         System.out.println("0. Quay lại");
     }
 }
->>>>>>> 12f444d1b0320b5ae427dc421923b9e6474571c6
