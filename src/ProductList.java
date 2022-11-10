@@ -39,7 +39,7 @@ public class ProductList extends ArrayList {
             {
             }
         }
-}
+    }
     public void display(){
         /**
          * @TODO:

@@ -87,7 +87,18 @@ public class Bill {
         this.amount[this.amount.length - 1] = amount;
     }
 
+    @Override
+    public String toString() {
+        return "Bill [id=" + id + ", idCustomer=" + idCustomer + ", idSalesman=" + idSalesman + ", idProduct="
+                + Arrays.toString(idProduct) + ", amount=" + Arrays.toString(amount) + ", point=" + point + "]";
+    }
+
     public void display() {
 
     }
+
+    // public static void main(String[] args) {
+    //     Bill bill = new Bill(0, 0, 0, new int[] { 1, 2, 3 }, new int[] { 3, 4, 5 }, 7);
+    //     System.out.println(bill.toString());
+    // }
 }
