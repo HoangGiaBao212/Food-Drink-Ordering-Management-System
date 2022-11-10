@@ -11,17 +11,6 @@ public class MenuContent {
 
 	public static void clearScreen() {
 		System.out.print("\033[H\033[2J");
-		try {
-			String os = System.getProperty("os.name");
-
-			if (os.contains("Windows")) {
-				Runtime.getRuntime().exec("cls");
-			} else {
-				Runtime.getRuntime().exec("clear");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		System.out.flush();
 	}
 
