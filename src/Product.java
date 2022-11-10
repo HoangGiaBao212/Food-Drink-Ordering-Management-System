@@ -5,6 +5,7 @@ public class Product {
     private String name;
     private int price;
     private int count;
+    private String category;
     private String brand;
     private Date MFG;
     private Date EXP;
