@@ -41,6 +41,11 @@ public class FileUtil {
                         ((Customer) ((Account) data).getPerson())
                                 .setPoint(Integer.parseInt(cutString(dataString, "point='", "'")));
                     }
+                    default -> {
+                        System.out.println("AccountData sai định dạng!");
+                        System.out.println(dataString);
+                        System.exit(1);
+                    }
                 }
                 ((Account) data).getPerson().setName(cutString(dataString, "name='", "'"));
                 ((Account) data).getPerson().setAddress(cutString(dataString, "address='", "'"));
@@ -71,6 +76,18 @@ public class FileUtil {
                 } catch (ParseException e) {
                     ((Product) data).setEXP(new Date());
                 }
+            }
+            case "Bill" -> {
+                data = new Bill();
+                ((Bill) data).setId(Integer.parseInt(cutString(dataString, "id='", "'")));
+                ((Bill) data).setIdCustomer(Integer.parseInt(cutString(dataString, "idCustomer='", "'")));
+                ((Bill) data).setIdSalesman(Integer.parseInt(cutString(dataString, "idSalesman='", "'")));
+
+            }
+            default -> {
+                System.out.println("Data sai định dạng!");
+                System.out.println(dataString);
+                System.exit(1);
             }
         }
         return data;
