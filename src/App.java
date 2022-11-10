@@ -5,7 +5,7 @@ public class App {
     private static ProductList productList = null;
     private static BillList billList = null;
     private static final String AccountDataPath = "./data/AccountData";
-    private static final String ProductDataPath = "./data/AccountData";
+    private static final String ProductDataPath = "./data/ProductData";
     private static final String BillDataPath = "./data/AccountData";
 
     public static void init() {

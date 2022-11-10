@@ -51,6 +51,27 @@ public class FileUtil {
                     ((Account) data).getPerson().setDateOfBirth(new Date());
                 }
             }
+            case "Product" -> {
+                data = new Product();
+                ((Product) data).setId(Integer.parseInt(cutString(dataString, "id='", "'")));
+                ((Product) data).setName(cutString(dataString, "id='", "'"));
+                ((Product) data).setPrice(Integer.parseInt(cutString(dataString, "price='", "'")));
+                ((Product) data).setCount(Integer.parseInt(cutString(dataString, "count='", "'")));
+                ((Product) data).setCategory(cutString(dataString, "category='", "'"));
+                ((Product) data).setBrand(cutString(dataString, "brand='", "'"));
+                try {
+                    ((Product) data).setMFG(
+                            new SimpleDateFormat("dd-MM-yyyy").parse(cutString(dataString, "MFG='", "'")));
+                } catch (ParseException e) {
+                    ((Product) data).setMFG(new Date());
+                }
+                try {
+                    ((Product) data).setEXP(
+                            new SimpleDateFormat("dd-MM-yyyy").parse(cutString(dataString, "EXP='", "'")));
+                } catch (ParseException e) {
+                    ((Product) data).setEXP(new Date());
+                }
+            }
         }
         return data;
     }
@@ -79,5 +100,9 @@ public class FileUtil {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(readDataFromFile("./data/ProductData"));
     }
 }

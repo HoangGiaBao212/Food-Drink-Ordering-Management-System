@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Product {
     private int id;
@@ -13,11 +14,12 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String name, int price, int count, String brand, Date MFG, Date EXP) {
+    public Product(int id, String name, int price, int count, String category, String brand, Date MFG, Date EXP) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.count = count;
+        this.category = category;
         this.brand = brand;
         this.MFG = MFG;
         this.EXP = EXP;
@@ -77,5 +79,26 @@ public class Product {
 
     public void setEXP(Date EXP) {
         this.EXP = EXP;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Product [id='" + id + "', name='" + name + "', price='" + price + "', count='" + count + "', category='"
+                + category + "', brand='" + brand + "', MFG='" + new SimpleDateFormat("dd-MM-yyyy").format(MFG)
+                + "', EXP='"
+                + new SimpleDateFormat("dd-MM-yyyy").format(EXP) + "']";
+    }
+
+    public static void main(String[] args) {
+        Product product = new Product(0, "Kem", 1234, 3, "food", "docto", new Date(), new Date());
+        System.out.println(product.toString());
     }
 }
