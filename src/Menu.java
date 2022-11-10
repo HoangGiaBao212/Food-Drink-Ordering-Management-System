@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Menu {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     private static Account currentAccount = null;
     private static AccountList currentAccountList = null;
     private static ProductList currentProductList = null;
@@ -94,7 +94,17 @@ public class Menu {
             }
         }
     }
-
+    public static int getInputNumber() {
+        int choice;
+        while (true) {
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+                return choice;
+            } catch (Exception e) {
+                System.out.println("Input không chính xác!!!");
+            }
+        }
+    }
     public static String getInput() {
         return scanner.nextLine();
     }
