@@ -82,6 +82,17 @@ public class FileUtil {
                 ((Bill) data).setId(Integer.parseInt(cutString(dataString, "id='", "'")));
                 ((Bill) data).setIdCustomer(Integer.parseInt(cutString(dataString, "idCustomer='", "'")));
                 ((Bill) data).setIdSalesman(Integer.parseInt(cutString(dataString, "idSalesman='", "'")));
+                String[] idProdutsString = cutString(dataString, "idProduct='[", "]'").split(", ");
+                int[] idProductsInt = new int[idProdutsString.length];
+                for (int i = 0; i < idProdutsString.length; i++)
+                    idProductsInt[i] = Integer.parseInt(idProdutsString[i]);
+                ((Bill) data).setIdProduct(idProductsInt);
+                String[] amountsString = cutString(dataString, "amount='[", "]'").split(", ");
+                int[] amountsInt = new int[amountsString.length];
+                for (int i = 0; i < amountsString.length; i++)
+                    amountsInt[i] = Integer.parseInt(amountsString[i]);
+                ((Bill) data).setAmount(amountsInt);
+                ((Bill) data).setPoint(Integer.parseInt(cutString(dataString, "point='", "'")));
 
             }
             default -> {
@@ -120,6 +131,6 @@ public class FileUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(readDataFromFile("./data/ProductData"));
+        System.out.println(readDataFromFile("./data/BillData"));
     }
 }
