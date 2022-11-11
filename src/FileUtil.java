@@ -59,7 +59,7 @@ public class FileUtil {
             case "Product" -> {
                 data = new Product();
                 ((Product) data).setId(Integer.parseInt(cutString(dataString, "id='", "'")));
-                ((Product) data).setName(cutString(dataString, "id='", "'"));
+                ((Product) data).setName(cutString(dataString, "name='", "'"));
                 ((Product) data).setPrice(Integer.parseInt(cutString(dataString, "price='", "'")));
                 ((Product) data).setCount(Integer.parseInt(cutString(dataString, "count='", "'")));
                 ((Product) data).setCategory(cutString(dataString, "category='", "'"));
