@@ -82,10 +82,10 @@ public class FileUtil {
                 ((Bill) data).setId(Integer.parseInt(cutString(dataString, "id='", "'")));
                 ((Bill) data).setIdCustomer(Integer.parseInt(cutString(dataString, "idCustomer='", "'")));
                 ((Bill) data).setIdSalesman(Integer.parseInt(cutString(dataString, "idSalesman='", "'")));
-                String[] idProdutsString = cutString(dataString, "idProduct='[", "]'").split(", ");
-                int[] idProductsInt = new int[idProdutsString.length];
-                for (int i = 0; i < idProdutsString.length; i++)
-                    idProductsInt[i] = Integer.parseInt(idProdutsString[i]);
+                String[] idProductString = cutString(dataString, "idProduct='[", "]'").split(", ");
+                int[] idProductsInt = new int[idProductString.length];
+                for (int i = 0; i < idProductString.length; i++)
+                    idProductsInt[i] = Integer.parseInt(idProductString[i]);
                 ((Bill) data).setIdProduct(idProductsInt);
                 String[] amountsString = cutString(dataString, "amount='[", "]'").split(", ");
                 int[] amountsInt = new int[amountsString.length];
@@ -125,6 +125,7 @@ public class FileUtil {
             FileOutputStream file = new FileOutputStream(filepath);
             PrintStream output = new PrintStream(file);
             output.print(data);
+            output.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

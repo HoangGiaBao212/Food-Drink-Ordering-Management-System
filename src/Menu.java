@@ -1,6 +1,5 @@
 import java.util.Date;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Menu {
     private static final Scanner scanner = new Scanner(System.in);
@@ -113,7 +112,7 @@ public class Menu {
         int choice = -1;
         while (choice != 0) {
             MenuContent.clearScreen();
-            MenuContent.showMenuPermissionCustomer();
+            MenuContent.showMenuCustomer();
             choice = Menu.getChoice();
             Bill bill = new Bill();
             bill.setIdCustomer(currentAccount.getId());
@@ -164,7 +163,7 @@ public class Menu {
     public static void menuPermissionManager() {
         int choice;
         while (true) {
-            MenuContent.showMenuPermissionManager();
+            MenuContent.showMenuManager();
             choice = Menu.getChoice();
             System.out.println(choice);
             if (choice == 1) {

@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -57,7 +56,7 @@ public class MenuContent {
 		System.out.println("|  2. Thông tin người dùng.                                              |");
 		System.out.println("|  0. Thoát.                                                             |");
 		System.out.println(" ------------------------------------------------------------------------");
-		
+	}
 	public static void showMenuManager() {
 		System.out.println("-------------------PERMISSION MANAGER ----------------------");
 		System.out.println("| 1. Quản lý Sản phẩm.                                      |");

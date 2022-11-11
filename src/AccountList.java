@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class AccountList extends ArrayList {
     
     public AccountList() {
