@@ -57,12 +57,22 @@ public class MenuContent {
 		System.out.println("|  0. Thoát.                                                             |");
 		System.out.println(" ------------------------------------------------------------------------");
 	}
+
+	public static void showMenuSalesman() {
+		System.out.println("-------------------PERMISSION MANAGER -----------------------");
+		System.out.println("| 1. Tạo hóa đơn.                                           |");
+		System.out.println("| 2. Tra cứu thông tin người dùng.                          |");
+		System.out.println("| 3. Kết ca.                                                |");
+		System.out.println("| 0. Thoát.                                                 |");
+		System.out.println("-------------------------------------------------------------");
+	}
+
 	public static void showMenuManager() {
-		System.out.println("-------------------PERMISSION MANAGER ----------------------");
+		System.out.println("-------------------PERMISSION MANAGER -----------------------");
 		System.out.println("| 1. Quản lý Sản phẩm.                                      |");
 		System.out.println("| 2. Quản lý Nhân viên.                                     |");
 		System.out.println("| 3. Quản lý Người dùng.                                    |");
-		System.out.println("| 0. Thoát.                                                  |");
+		System.out.println("| 0. Thoát.                                                 |");
 		System.out.println("-------------------------------------------------------------");
 	}
 
@@ -96,5 +106,5 @@ public class MenuContent {
 		System.out.println("|  0. Quay lại.                                                          |");
 		System.out.println(" ------------------------------------------------------------------------");
 	}
-}
 
+}

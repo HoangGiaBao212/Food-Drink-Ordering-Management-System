@@ -93,6 +93,7 @@ public class Menu {
             }
         }
     }
+
     public static int getInputNumber() {
         int choice;
         while (true) {
@@ -104,6 +105,7 @@ public class Menu {
             }
         }
     }
+
     public static String getInput() {
         return scanner.nextLine();
     }
@@ -157,6 +159,18 @@ public class Menu {
     }
 
     public static void menuPermissionSalesman() {
+        int choice;
+        while (true) {
+            MenuContent.showMenuSalesman();
+            choice = Menu.getChoice();
+            System.out.println(choice);
+            if (choice == 1) {
+            } else if (choice == 2) {
+            } else if (choice == 0) {
+                choice = -1;
+                break;
+            }
+        }
 
     }
 
