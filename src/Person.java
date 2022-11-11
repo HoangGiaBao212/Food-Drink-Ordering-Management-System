@@ -54,9 +54,15 @@ public class Person {
         this.account = account;
     }
 
+    // public void display(String type) {
+    //     display("list");
+    //     System.out.printf("|%15s|%50s|%13s|\n", name, address, new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth));
+    // }
+
     @Override
     public String toString() {
-        return "Person [name='" + name + "', address='" + address + "', dateOfBirth='" + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + "']";
+        return "Person [name='" + name + "', address='" + address + "', dateOfBirth='"
+                + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + "']";
     }
 
     public void input() {

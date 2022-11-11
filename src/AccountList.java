@@ -1,5 +1,5 @@
 public class AccountList extends ArrayList {
-    
+
     public AccountList() {
     }
 
@@ -32,5 +32,38 @@ public class AccountList extends ArrayList {
             }
         }
         return null;
+    }
+
+    public void display(String type) {
+        for (Object object : array) {
+            Person person = ((Account)object).getPerson();
+            switch (type) {
+                case "Customer":
+                    if (person instanceof Customer) {
+                        // person.display("list");
+                        System.out.printf("|%15s|%40s|\n", person.name, person.address);
+                    }
+                    break;
+                case "Salesman":
+                    if (person instanceof Salesman) {
+                        System.out.println(person);
+                    }
+                    break;
+                case "Manager":
+                    if (person instanceof Manager) {
+                        System.out.println(person);
+                    }
+                    break;
+                default:
+                    /**
+                     * @TODO:
+                     *        fix later
+                     */
+                    break;
+            }
+        }
+    }
+
+    public static void display() {
     }
 }

@@ -28,6 +28,21 @@ public class Customer extends Person {
         super.input();
     }
 
+    public void display(String type) {
+        switch (type.toLowerCase()) {
+            case "info":
+                /**
+                 * @TODO: add case this
+                 */
+                break;
+            case "list":
+            
+                break;
+            default:
+                break;
+        }
+    }
+
     @Override
     public String toString() {
         return "Customer [name='" + name + "', address='" + address + "', dateOfBirth='"

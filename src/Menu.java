@@ -1,3 +1,4 @@
+import java.lang.reflect.Type;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -159,16 +160,19 @@ public class Menu {
     }
 
     public static void menuPermissionSalesman() {
-        int choice;
-        while (true) {
+        int choice = -1 ;
+        while (choice != 0) {
             MenuContent.showMenuSalesman();
             choice = Menu.getChoice();
             System.out.println(choice);
-            if (choice == 1) {
-            } else if (choice == 2) {
-            } else if (choice == 0) {
-                choice = -1;
-                break;
+            switch (choice) {
+                case 1:
+                case 2:
+                    System.out.printf("|%15s|%50s|%13s|%13s|\n","Name","Địa Chỉ","Ngày sinh", "Điểm");
+                    currentAccountList.display("Customer");
+                    break;
+                default:
+                    break;
             }
         }
 
