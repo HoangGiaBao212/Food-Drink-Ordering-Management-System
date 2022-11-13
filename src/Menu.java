@@ -1,5 +1,4 @@
 import java.io.Console;
-import java.lang.reflect.Type;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -70,11 +69,11 @@ public class Menu {
             if (currentAccount == null) {
                 return;
             } else if (currentAccount.getPerson() instanceof Customer) {
-                menuPermissionCustomer();
+                menuCustomer();
             } else if (currentAccount.getPerson() instanceof Salesman) {
-                menuPermissionSalesman();
+                menuSalesman();
             } else if (currentAccount.getPerson() instanceof Manager) {
-                menuPermissionManager();
+                menuManager();
             }
         }
     }
@@ -122,7 +121,7 @@ public class Menu {
         return scanner.nextLine();
     }
 
-    public static void menuPermissionCustomer() {
+    public static void menuCustomer() {
         int choice = -1;
         while (choice != 0) {
             MenuContent.clearScreen();
@@ -135,19 +134,30 @@ public class Menu {
                     // Product
                     while (choice != 0) {
                         MenuContent.clearScreen();
-                        MenuContent.showMenuPermissionCustomerProduct(currentProductList);
+                        MenuContent.showMenuCustomerProduct(currentProductList);
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1:
                                 int idProduct;
                                 int amount;
                                 System.out.print("Nhập id sản phẩm: ");
-                                idProduct = Menu.getChoice();
+                                idProduct = Menu.getInputNumber();
                                 System.out.print("Nhập số lượng: ");
-                                amount = Menu.getChoice();
+                                amount = Menu.getInputNumber();
                                 bill.append(idProduct, amount);
                                 break;
                             case 2:
+                                MenuContent.clearScreen();
+                                MenuContent.showMenuCustomerProduct(bill);
+                                while (choice != 0) {
+                                    choice = Menu.getChoice();
+                                    switch (choice) {
+                                        case 1:
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
                                 break;
                             default:
                                 break;
@@ -159,7 +169,7 @@ public class Menu {
                     // Bill
                     while (choice != 0) {
                         MenuContent.clearScreen();
-                        MenuContent.showMenuPermissionCustomerInfo(currentAccount);
+                        MenuContent.showMenuCustomerInfo(currentAccount);
                         choice = Menu.getChoice();
                     }
                     choice = -1;
@@ -170,7 +180,7 @@ public class Menu {
         }
     }
 
-    public static void menuPermissionSalesman() {
+    public static void menuSalesman() {
         int choice = -1;
         while (choice != 0) {
             MenuContent.showMenuSalesman();
@@ -189,7 +199,7 @@ public class Menu {
 
     }
 
-    public static void menuPermissionManager() {
+    public static void menuManager() {
         int choice;
         while (true) {
             MenuContent.showMenuManager();

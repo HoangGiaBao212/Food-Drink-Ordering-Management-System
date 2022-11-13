@@ -18,7 +18,7 @@ public class MenuContent {
 		System.out.println(str);
 
 		try {
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.SECONDS.sleep(0);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -76,7 +76,7 @@ public class MenuContent {
 	}
 
 	// ─ │ ┌ ┐ ┘ └ ┬ ┴ ┤ ├ ┼
-	public static void showMenuPermissionCustomerProduct(ProductList productList) {
+	public static void showMenuCustomerProduct(ProductList productList) {
 		System.out.println("┌────────────────────────────────── [Product Menu] ──────────────────────────────────┐");
 		productList.display();
 		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
@@ -87,17 +87,18 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuPermissionCustomerProduct(Bill bill) {
-		System.out.println(" ------------------------------- [Bill Menu] ----------------------------");
+	public static void showMenuCustomerProduct(Bill bill) {
+		System.out.println("┌──────────────────────────────────── [Bill Menu] ───────────────────────────────────┐");
 		bill.display();
-		System.out.println(" ------------------------------------------------------------------------");
-		System.out.println("|  1. Chỉnh sửa số lượng.                                                |");
-		System.out.println("|  2. Xóa sản phẩm                                                       |");
-		System.out.println("|  0. Quay lại.                                                          |");
-		System.out.println("└────────────────────────────────────────────────────────────────────────┘");
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("│  1. Chọn sản phẩm.                                                                 │");
+		System.out.println("│  1. Chỉnh sửa số lượng.                                                            │");
+		System.out.println("│  2. Xóa sản phẩm.                                                                  │");
+		System.out.println("│  0. Quay lại.                                                                      │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuPermissionCustomerInfo(Account account) {
+	public static void showMenuCustomerInfo(Account account) {
 		System.out.println(" ----------------------------- [Account Menu] ---------------------------");
 		account.display();
 		System.out.println(" ------------------------------------------------------------------------");

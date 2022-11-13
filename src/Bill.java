@@ -75,16 +75,18 @@ public class Bill {
     }
 
     public void append(int idProduct, int amount) {
+
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
                 this.amount[i] += amount;
                 return;
             }
         }
-        this.idProduct = Arrays.copyOf(this.idProduct, this.idProduct.length);
-        this.amount = Arrays.copyOf(this.amount, this.amount.length);
-        this.idProduct[this.idProduct.length - 1] = idProduct;
-        this.amount[this.amount.length - 1] = amount;
+
+        this.idProduct = Arrays.copyOf(this.idProduct, this.idProduct.length + 1);
+        this.amount = Arrays.copyOf(this.amount, this.amount.length + 1);
+        this.idProduct[this.idProduct.length-1] = idProduct;
+        this.amount[this.amount.length-1] = amount;
     }
 
     @Override
@@ -92,9 +94,11 @@ public class Bill {
         return "Bill [id='" + id + "', idCustomer='" + idCustomer + "', idSalesman='" + idSalesman + "', idProduct='"
                 + Arrays.toString(idProduct) + "', amount='" + Arrays.toString(amount) + "', point='" + point + "']";
     }
-
+    /**
+     * This method 
+     */
     public void display() {
-
+        
     }
 
     public static void main(String[] args) {
