@@ -1,3 +1,4 @@
+import java.io.Console;
 import java.lang.reflect.Type;
 import java.util.Date;
 import java.util.Scanner;
@@ -35,7 +36,8 @@ public class Menu {
                 System.out.print("Nhập username: ");
                 String username = Menu.getInput();
                 System.out.print("Nhập password: ");
-                String password = Menu.getInput();
+                // String password = Menu.getInput();
+                String password = Menu.getInputPassword();
                 currentAccount = currentAccountList.login(username, password);
                 if (currentAccount == null) {
                     MenuContent.clearScreen();
@@ -107,6 +109,15 @@ public class Menu {
         }
     }
 
+    public static String getInputPassword() {
+        Console console = System.console();
+        String password = "";
+        for (char element : console.readPassword()) {
+            password += element;
+        }
+        return password;
+    }
+
     public static String getInput() {
         return scanner.nextLine();
     }
@@ -160,7 +171,7 @@ public class Menu {
     }
 
     public static void menuPermissionSalesman() {
-        int choice = -1 ;
+        int choice = -1;
         while (choice != 0) {
             MenuContent.showMenuSalesman();
             choice = Menu.getChoice();
@@ -168,7 +179,7 @@ public class Menu {
             switch (choice) {
                 case 1:
                 case 2:
-                    System.out.printf("|%15s|%50s|%13s|%13s|\n","Name","Địa Chỉ","Ngày sinh", "Điểm");
+                    System.out.printf("|%15s|%50s|%13s|%13s|\n", "Name", "Địa Chỉ", "Ngày sinh", "Điểm");
                     currentAccountList.display("Customer");
                     break;
                 default:

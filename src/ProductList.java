@@ -42,15 +42,15 @@ public class ProductList extends ArrayList {
          * @TODO:
          *        [x] Show list product
          */
-        System.out.println("┌────┬───────────────┬────────────┬─────┬───────┬──────────┬────────────┬────────────┐");
-        System.out.println(String.format("|%-4s|%-15s|%-12s|%-5s|%-7s|%-10s|%-12s|%-12s|", "id", "Tên", "Giá", "SL",
+        System.out.println("├────┬───────────────┬────────────┬─────┬───────┬──────────┬────────────┬────────────┤");
+        System.out.println(String.format("│%-4s│%-15s│%-12s│%-5s│%-7s│%-10s│%-12s│%-12s│", "id", "Tên", "Giá", "SL",
                 "Loại", "Hiệu",
                 "NSX", "HSD"));
         System.out.println("├────┼───────────────┼────────────┼─────┼───────┼──────────┼────────────┼────────────┤");
 
         for (Object object : array) {
             System.out.println(
-                    String.format("|%-4d|%-15s|%-12d|%-5d|%-7s|%-10s|%-12s|%-12s|", ((Product) object).getId(),
+                    String.format("│%-4d│%-15s│%-12d│%-5d│%-7s│%-10s│%-12s│%-12s│", ((Product) object).getId(),
                             ((Product) object).getName(),
                             ((Product) object).getPrice(),
                             ((Product) object).getCount(),
@@ -59,7 +59,7 @@ public class ProductList extends ArrayList {
                             new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getMFG()),
                             new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getEXP())));
         }
-        System.out.println("└────┴───────────────┴────────────┴─────┴───────┴──────────┴────────────┴────────────┘");
+        System.out.println("├────┴───────────────┴────────────┴─────┴───────┴──────────┴────────────┴────────────┤");
 
     }
 }

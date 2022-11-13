@@ -75,15 +75,16 @@ public class MenuContent {
 		System.out.println("-------------------------------------------------------------");
 	}
 
+	// ─ │ ┌ ┐ ┘ └ ┬ ┴ ┤ ├ ┼
 	public static void showMenuPermissionCustomerProduct(ProductList productList) {
-		System.out.println(" ----------------------------- [Product Menu] ---------------------------");
+		System.out.println("┌────────────────────────────────── [Product Menu] ──────────────────────────────────┐");
 		productList.display();
-		System.out.println(" ------------------------------------------------------------------------");
-		System.out.println("|  1. Chọn sản phẩm.                                                     |");
-		System.out.println("|  2. Chỉnh sửa giỏ hàng.                                                |");
-		System.out.println("|  3. Thanh toán.                                                        |");
-		System.out.println("|  0. Quay lại.                                                          |");
-		System.out.println(" ------------------------------------------------------------------------");
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("│  1. Chọn sản phẩm.                                                                 │");
+		System.out.println("│  2. Chỉnh sửa giỏ hàng.                                                            │");
+		System.out.println("│  3. Thanh toán.                                                                    │");
+		System.out.println("│  0. Quay lại.                                                                      │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
 	public static void showMenuPermissionCustomerProduct(Bill bill) {
@@ -93,7 +94,7 @@ public class MenuContent {
 		System.out.println("|  1. Chỉnh sửa số lượng.                                                |");
 		System.out.println("|  2. Xóa sản phẩm                                                       |");
 		System.out.println("|  0. Quay lại.                                                          |");
-		System.out.println(" ------------------------------------------------------------------------");
+		System.out.println("└────────────────────────────────────────────────────────────────────────┘");
 	}
 
 	public static void showMenuPermissionCustomerInfo(Account account) {
