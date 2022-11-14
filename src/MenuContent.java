@@ -98,12 +98,12 @@ public class MenuContent {
 	}
 
 	public static void showMenuCustomerInfo(Account account) {
-		System.out.println(" ----------------------------- [Account Menu] ---------------------------");
+		System.out.println("┌────────────────────────────────── [Account Menu] ──────────────────────────────────┐");
 		account.display();
-		System.out.println(" ------------------------------------------------------------------------");
-		System.out.println("|  1. Xem lịch sử mua hàng.                                              |");
-		System.out.println("|  2. Thay đổi thông tin.                                                |");
-		System.out.println("|  0. Quay lại.                                                          |");
-		System.out.println(" ------------------------------------------------------------------------");
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("│  1. Xem lịch sử mua hàng.                                                          │");
+		System.out.println("│  2. Thay đổi thông tin.                                                            │");
+		System.out.println("│  0. Quay lại.                                                                      │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 }
