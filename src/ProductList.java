@@ -12,7 +12,6 @@ public class ProductList extends ArrayList {
         for (Object object : array) {
             if (((Product) object).getId() == id) {
                 return object;
-
             }
         }
         return null;
@@ -58,7 +57,7 @@ public class ProductList extends ArrayList {
                             ((Product) object).getCount(),
                             ((Product) object).getPrice()));
         }
-        //System.out.println("├────┴───────────────┴───────┴──────────┴────────────┴────────────┴─────┴────────────┤");
+        // System.out.println("├────┴───────────────┴───────┴──────────┴────────────┴────────────┴─────┴────────────┤");
         System.out.println("├────┼───────────────┼───────┼──────────┼────────────┼────────────┼─────┼────────────┤");
 
     }

@@ -25,6 +25,22 @@ public class Menu {
         currentBillList = billList;
     }
 
+    public static AccountList getCurrentAccountList() {
+        return currentAccountList;
+    }
+
+    public static void setCurrentAccountList(AccountList currentAccountList) {
+        Menu.currentAccountList = currentAccountList;
+    }
+
+    public static ProductList getCurrentProductList() {
+        return currentProductList;
+    }
+
+    public static void setCurrentProductList(ProductList currentProductList) {
+        Menu.currentProductList = currentProductList;
+    }
+
     public static void login() {
         int choice;
         MenuContent.showMenuLogin();
