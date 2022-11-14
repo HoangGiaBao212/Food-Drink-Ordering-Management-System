@@ -118,6 +118,6 @@ public class Bill {
     public static void main(String[] args) throws Exception {
         Bill bill = new Bill(0, 0, 0, new int[] { 1, 2, 3 }, new int[] { 3, 4, 5 }, 7,
                 new SimpleDateFormat("dd-MM-yyyy").parse("12-12-2022"));
-        System.out.println(bill.toString());
+        System.out.println(bill.toString()); 
     }
 }
