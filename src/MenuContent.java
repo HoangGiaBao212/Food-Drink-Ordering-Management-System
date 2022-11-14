@@ -86,7 +86,7 @@ public class MenuContent {
 	public static void showMenuCustomerProduct(ProductList productList) {
 		System.out.println("┌────────────────────────────────── [Product Menu] ──────────────────────────────────┐");
 		productList.display();
-		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("├────┴───────────────┴───────┴──────────┴────────────┴────────────┴─────┴────────────┤");
 		System.out.println("│  1. Chọn sản phẩm.                                                                 │");
 		System.out.println("│  2. Chỉnh sửa giỏ hàng.                                                            │");
 		System.out.println("│  3. Thanh toán.                                                                    │");
