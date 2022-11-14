@@ -113,10 +113,4 @@ public class MenuContent {
 		System.out.println("│  0. Quay lại.                                                                      │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
-
-	public static void main(String[] args) {
-		Bill bill1 = new Bill(0, 0, 0, new int[] { 1, 2, 3 }, new int[] { 3, 4, 5 }, 7);
-		Bill bill2 = new Bill(1, 0, 0, new int[] { 1, 2, 3 }, new int[] { 3, 4, 5 }, 7);
-		showMenuCustomerProduct(bill1);
-	}
 }

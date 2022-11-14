@@ -93,6 +93,12 @@ public class FileUtil {
                     amountsInt[i] = Integer.parseInt(amountsString[i]);
                 ((Bill) data).setAmount(amountsInt);
                 ((Bill) data).setPoint(Integer.parseInt(cutString(dataString, "point='", "'")));
+                try {
+                    ((Bill) data).setPaymentTime(
+                            new SimpleDateFormat("dd-MM-yyyy").parse(cutString(dataString, "paymentTime='", "'")));
+                } catch (ParseException e) {
+                    ((Bill) data).setPaymentTime(new Date());
+                }
 
             }
             default -> {
