@@ -15,10 +15,12 @@ public class MenuContent {
 
 	public static void notification(String str) {
 		MenuContent.clearScreen();
+		System.out.println("┌─────────────────────────────────── [Notification] ─────────────────────────────────┐");
 		System.out.println(str);
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 
 		try {
-			TimeUnit.SECONDS.sleep(0);
+			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
