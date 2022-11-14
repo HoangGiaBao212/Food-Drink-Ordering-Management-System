@@ -91,7 +91,6 @@ public class MenuContent {
 		System.out.println("┌──────────────────────────────────── [Bill Menu] ───────────────────────────────────┐");
 		bill.display();
 		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
-		System.out.println("│  1. Chọn sản phẩm.                                                                 │");
 		System.out.println("│  1. Chỉnh sửa số lượng.                                                            │");
 		System.out.println("│  2. Xóa sản phẩm.                                                                  │");
 		System.out.println("│  0. Quay lại.                                                                      │");
