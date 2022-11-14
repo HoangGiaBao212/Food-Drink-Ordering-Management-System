@@ -16,7 +16,7 @@ public class MenuContent {
 	public static void notification(String str) {
 		MenuContent.clearScreen();
 		System.out.println("┌─────────────────────────────────── [Notification] ─────────────────────────────────┐");
-		System.out.println(str);
+		System.out.println(String.format("│  %-82s│", str));
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 
 		try {
