@@ -27,11 +27,11 @@ public class MenuContent {
 	}
 
 	public static void showMenuLogin() {
-		System.out.println(" -------------------------------- [Login] -------------------------------");
-		System.out.println("|  Bạn có muốn đăng nhập không ?                                         |");
-		System.out.println("|      1. Có                                                             |");
-		System.out.println("|      0. Không                                                          |");
-		System.out.println(" ------------------------------------------------------------------------");
+		System.out.println("┌────────────────────────────────────── [Login] ─────────────────────────────────────┐");
+		System.out.println("│  Bạn có muốn đăng nhập không ?                                                     │");
+		System.out.println("│      1. Có                                                                         │");
+		System.out.println("│      0. Không                                                                      │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
 	public static void showMenuLoginFailed() {
