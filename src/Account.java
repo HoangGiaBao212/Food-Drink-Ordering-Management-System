@@ -1,3 +1,4 @@
+import java.text.Format;
 import java.util.Scanner;
 
 public class Account {
@@ -57,14 +58,26 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account [id='" + id + "', username='" + username + "', password='" + password + "', person='" + person
+
+      return "Account [id='" + id + "', username='" + username + "', password='" + password + "', person='" + person
                 + "']";
+
+
+
+
+
     }
     public void display(){
         /**
          * @TODO:
          * [ ] show all info of account
          */
+
+
+System.out.printf(String.format("%-13d%-25s%-10s%20s\n",id,username,password,getPerson()));
+
+
+
     }
     public void input() {
         System.out.print("Nhập username: ");
@@ -72,5 +85,8 @@ public class Account {
         System.out.print("Nhập password: ");
         password = scanner.next();
     }
-
+ public static void main(String [] args )
+ {
+    System.out.printf("%-13s%-25s%-10s%12s\n","id ","username ","password","Person ");
+ }
 }

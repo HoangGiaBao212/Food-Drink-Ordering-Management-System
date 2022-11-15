@@ -41,17 +41,17 @@ public class AccountList extends ArrayList {
                 case "Customer":
                     if (person instanceof Customer) {
                         // person.display("list");
-                        System.out.printf("|%15s|%40s|\n", person.name, person.address);
+                        System.out.printf("|%15s|%40s|%40s|\n", ((Customer) person).name,  ((Customer)person).address);
                     }
                     break;
                 case "Salesman":
                     if (person instanceof Salesman) {
-                        System.out.println(person);
+                        System.out.printf("|%15s|%40s\n", ((Salesman)person).name, ((Salesman)person ).salary );
                     }
                     break;
                 case "Manager":
                     if (person instanceof Manager) {
-                        System.out.println(person);
+                        System.out.printf("|%15s|%40s|\n ",((Manager)person).name,(( Manager)person).salary);
                     }
                     break;
                 default:
@@ -64,6 +64,6 @@ public class AccountList extends ArrayList {
         }
     }
 
-    public static void display() {
+
     }
-}
+
