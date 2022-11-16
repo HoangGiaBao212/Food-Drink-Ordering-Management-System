@@ -63,7 +63,7 @@ public class ProductList extends ArrayList {
     }
 
     public static void main(String[] args) {
-        ProductList pd = new ProductList();
+        ProductList pd = new ProductList( );
         pd.display();
     }
 }

@@ -15,4 +15,5 @@ public class Manager extends Employee {
                 + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + "', salary='" + salary + "']";
     }
 
+    
 }
