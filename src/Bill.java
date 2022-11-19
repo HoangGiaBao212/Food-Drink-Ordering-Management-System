@@ -114,7 +114,7 @@ public class Bill {
      */
     public void display() {
 
-       
+
     }
 
     public static void main(String[] args) throws Exception {

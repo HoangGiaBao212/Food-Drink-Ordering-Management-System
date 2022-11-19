@@ -7,7 +7,15 @@ public class ProductList extends ArrayList {
     ProductList(ArrayList arrayList) {
         super(arrayList);
     }
+public void apppendProduct ( )
 
+{
+
+
+
+array=Arrays.copyOf( array,array.length+1);
+array [array.length -1]= new Product();
+}
     public Object find(int id) {
         for (Object object : array) {
             if (((Product) object).getId() == id) {
@@ -29,10 +37,6 @@ public class ProductList extends ArrayList {
 
     public void removeProduct (String name )
      {
-        /**
-         * @TODO: Add method to remove object and desc array
-         *
-         */
 
 for ( int i =0;i<array.length ;i++)
 {
@@ -54,6 +58,7 @@ break;
     // Product [id='0', name='Kem', price='1234', count='3', category='null',
     // brand='docto', MFG='01-12-2003', EXP='01-12-2003']
     // ─ │ ┌ ┐ ┘ └ ┬ ┴ ┤ ├ ┼
+   
     public void display() {
         /**
          * @TODO:
