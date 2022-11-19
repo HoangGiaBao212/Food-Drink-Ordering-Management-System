@@ -1,5 +1,5 @@
 import java.text.SimpleDateFormat;
-
+import java.util.Arrays;
 public class ProductList extends ArrayList {
     ProductList() {
     }
@@ -27,10 +27,28 @@ public class ProductList extends ArrayList {
         return null;
     }
 
-    public void remove(int id) {
+    public void removeProduct (String name )
+     {
         /**
          * @TODO: Add method to remove object and desc array
+         *
          */
+
+for ( int i =0;i<array.length ;i++)
+{
+for ( Object object : array )
+        if ( ((Product) object ).getName().equals(name))
+{
+        for( int j =i ;j<array.length-1;i++)
+        {
+            array[j]=array[j+1];
+array=Arrays.copyOf( array,array.length-1);
+break;
+
+
+        }
+    }
+     }
     }
 
     // Product [id='0', name='Kem', price='1234', count='3', category='null',
