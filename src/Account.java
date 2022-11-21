@@ -73,7 +73,13 @@ public class Account {
          * [ ] show all info of account
          */
 
-
+// id
+// username
+// password
+// Ho va ten getPerson().getName()
+// Dia chi
+// ngay sinh
+// diem
 System.out.printf(String.format("%-13d%-25s%-10s%20s\n",id,username,password,getPerson()));
 
 
