@@ -112,14 +112,49 @@ public class Bill {
     /**
      * This method
      */
-    public void display() {
+    public void display(ProductList productList) {
+        System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+        System.out.println(String.format("│%-15s:%-68d│", "id", id));
+        System.out.println(String.format("│%-15s:%-68d│", "Ten khach hang", idCustomer));
+        System.out.println(String.format("│%-15s:%-68d│", "Ten nhan vien", idSalesman));
+        System.out.println(String.format("│%-15s:%-68d│", "Diem", point));
+        System.out.println(String.format("│%-15s:%-68s│", "Ngay",
+                new SimpleDateFormat("dd-MM-yyyy").format(paymentTime)));
+        System.out.println("├────┬────────────────────┬──────────────┬─────┬─────────────────────────────────────┤");
+        System.out.println(
+                String.format("│%-4s│%-20s│%-14s│%-5s│%-37s│", "Id", "Ten san pham", "Gia goc", "SL", "Thanh Tien"));
+        System.out.println("├────┼────────────────────┼──────────────┼─────┼─────────────────────────────────────┤");
+        int totalAll = 0;
+        for (int i = 0; i < idProduct.length; i++) {
+            Product product = (Product) productList.find(idProduct[i]);
+            int total = product.getPrice() * amount[i];
+            totalAll += total;
+            System.out.println(
+                    String.format("│%-4d│%-20s│%-14s│%-5s│%-37s│", product.getId(), product.getName(),
+                            product.getPrice(), amount[i], total));
+        }
+        System.out.println("├────┴────────────────────┴──────────────┴─────┼─────────────────────────────────────┤");
+        System.out.println(
+                String.format("│%-46s│%-37d│", "Tong tien thanh toan", totalAll));
 
-
+        // for (Object object : array) {
+        // System.out.println(
+        // String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│", ((Product)
+        // object).getId(),
+        // ((Product) object).getName(),
+        // ((Product) object).getCategory(),
+        // ((Product) object).getBrand(),
+        // new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getMFG()),
+        // new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getEXP()),
+        // ((Product) object).getCount(),
+        // ((Product) object).getPrice()));
+        // }
+        // System.out.println("├────┴───────────────┴───────┴──────────┴────────────┴────────────┴─────┴────────────┤");
     }
 
     public static void main(String[] args) throws Exception {
         Bill bill = new Bill(0, 0, 0, new int[] { 1, 2, 3 }, new int[] { 3, 4, 5 }, 7,
                 new SimpleDateFormat("dd-MM-yyyy").parse("12-12-2022"));
-        System.out.println(bill.toString()); 
+        System.out.println(bill.toString());
     }
 }

@@ -164,7 +164,7 @@ public class Menu {
                                 break;
                             case 2:
                                 MenuContent.clearScreen();
-                                MenuContent.showMenuCustomerProduct(bill);
+                                MenuContent.showMenuCustomerProduct(bill, currentProductList);
                                 while (choice != 0) {
                                     choice = Menu.getChoice();
                                     switch (choice) {

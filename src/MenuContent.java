@@ -94,10 +94,10 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuCustomerProduct(Bill bill) {
+	public static void showMenuCustomerProduct(Bill bill, ProductList productList) {
 		System.out.println("┌──────────────────────────────────── [Bill Menu] ───────────────────────────────────┐");
-		bill.display();
-		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		bill.display(productList);
+		System.out.println("├──────────────────────────────────────────────┴─────────────────────────────────────┤");
 		System.out.println("│  1. Chỉnh sửa số lượng.                                                            │");
 		System.out.println("│  2. Xóa sản phẩm.                                                                  │");
 		System.out.println("│  0. Quay lại.                                                                      │");
