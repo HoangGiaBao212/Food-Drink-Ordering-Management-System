@@ -59,40 +59,36 @@ public class Account {
     @Override
     public String toString() {
 
-      return "Account [id='" + id + "', username='" + username + "', password='" + password + "', person='" + person
+        return "Account [id='" + id + "', username='" + username + "', password='" + password + "', person='" + person
                 + "']";
 
-
-
-
-
     }
-    public void display(){
+
+    public void display() {
         /**
          * @TODO:
-         * [ ] show all info of account
+         *        [ ] show all info of account
          */
 
-// id
-// username
-// password
-// Ho va ten getPerson().getName()
-// Dia chi
-// ngay sinh
-// diem
-System.out.printf(String.format("%-13d%-25s%-10s%20s\n",id,username,password,getPerson()));
-
-
+        // id
+        // username
+        // password
+        // Ho va ten getPerson().getName()
+        // Dia chi
+        // ngay sinh
+        // diem
+        System.out.printf(String.format("%-13d%-25s%-10s%20s\n", id, username, password, getPerson()));
 
     }
+
     public void input() {
         System.out.print("Nhập username: ");
         username = scanner.nextLine();
         System.out.print("Nhập password: ");
         password = scanner.next();
     }
- public static void main(String [] args )
- {
-    System.out.printf("%-13s%-25s%-10s%12s\n","id ","username ","password","Person ");
- }
+
+    public static void main(String[] args) {
+        System.out.printf("%-13s%-25s%-10s%12s\n", "id ", "username ", "password", "Person ");
+    }
 }

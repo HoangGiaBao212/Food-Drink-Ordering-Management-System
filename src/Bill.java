@@ -1,5 +1,4 @@
 import java.util.Date;
-import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
@@ -102,6 +101,18 @@ public class Bill {
         this.amount[this.amount.length - 1] = amount;
     }
 
+    public boolean delete(int idProduct) {
+        for (int i = 0; i < this.idProduct.length; i++) {
+            if (this.idProduct[i] == idProduct) {
+                for (int j = i; j < this.idProduct.length - 1; j++)
+                    this.idProduct[j] = this.idProduct[j + 1];
+                this.idProduct = Arrays.copyOf(this.idProduct, this.idProduct.length - 1);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean changeAmount(int idProduct, int newAmount) {
         for (int i = 0; i < this.idProduct.length; i++) {
             System.out.println(this.idProduct[i] + " ");
@@ -142,11 +153,11 @@ public class Bill {
             totalAll += total;
             System.out.println(
                     String.format("│%-4d│%-20s│%-14s│%-5s│%-37s│", product.getId(), product.getName(),
-                            product.getPrice(), amount[i], total));
+                            product.getPrice(), amount[i], String.format("%,d VND", total)));
         }
         System.out.println("├────┴────────────────────┴──────────────┴─────┼─────────────────────────────────────┤");
         System.out.println(
-                String.format("│%-46s│%-37d│", "Tong tien thanh toan", totalAll));
+                String.format("│%-46s│%-37s│", "Tong tien thanh toan", String.format("%,d VND", totalAll)));
     }
 
     public static void main(String[] args) throws Exception {
