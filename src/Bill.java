@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
@@ -88,7 +89,6 @@ public class Bill {
     }
 
     public void append(int idProduct, int amount) {
-
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
                 this.amount[i] += amount;
@@ -100,6 +100,17 @@ public class Bill {
         this.amount = Arrays.copyOf(this.amount, this.amount.length + 1);
         this.idProduct[this.idProduct.length - 1] = idProduct;
         this.amount[this.amount.length - 1] = amount;
+    }
+
+    public boolean changeAmount(int idProduct, int newAmount) {
+        for (int i = 0; i < this.idProduct.length; i++) {
+            System.out.println(this.idProduct[i] + " ");
+            if (this.idProduct[i] == idProduct) {
+                this.amount[i] = newAmount;
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -136,20 +147,6 @@ public class Bill {
         System.out.println("├────┴────────────────────┴──────────────┴─────┼─────────────────────────────────────┤");
         System.out.println(
                 String.format("│%-46s│%-37d│", "Tong tien thanh toan", totalAll));
-
-        // for (Object object : array) {
-        // System.out.println(
-        // String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│", ((Product)
-        // object).getId(),
-        // ((Product) object).getName(),
-        // ((Product) object).getCategory(),
-        // ((Product) object).getBrand(),
-        // new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getMFG()),
-        // new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getEXP()),
-        // ((Product) object).getCount(),
-        // ((Product) object).getPrice()));
-        // }
-        // System.out.println("├────┴───────────────┴───────┴──────────┴────────────┴────────────┴─────┴────────────┤");
     }
 
     public static void main(String[] args) throws Exception {
