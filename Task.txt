@@ -1,21 +1,26 @@
 Nguyễn Minh Tuấn:
-    - Thiết kế class
+    - Thiết kế Thực thể, kế thừa, phương thức
     - Thiết kế luồng chạy ứng dụng
-    - Chức năng đọc ghi file
-    - Chức năng đăng nhập
-    - Tạo class ArrayList từ mảng Object
+    - Chức năng đọc ghi file (FileUtil)
+    - Chức năng đăng nhập (AccountList, Account)
+    - Tạo class ArrayList từ mảng Object (ArrayList)
+    - Thiết kế giao diện (MenuContent)
+    - Thiết kế class khởi chạy (App, Menu)
 Mai Trung Chỉnh:
-    - Thiết kế class
+    - Thiết kế Thực thể, kế thừa, phương thức
+    - Thiết kế giao diện (MenuContent)
     - Thiết kế luồng chạy ứng dụng
     - Content cho menu
     - menu và chức năng của salesman
 Bùi Hồng Bảo:
-    - Thiết kế class
+    - Thiết kế Thực thể, kế thừa, phương thức
     - Thiết kế luồng chạy ứng dụng
-    - Format code đọc ghi file
+    - Thiết kế giao diện
+    - Format code đọc ghi file (FileUtil)
 Lê Thị Phương Anh:
     -
 Đỗ Thế Tùng:
+    - Thiết kế Thực thể, kế thừa, phương thức
     - Thiết kế class
     - Thiết kế luồng chạy ứng dụng
     -
