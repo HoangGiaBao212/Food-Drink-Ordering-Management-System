@@ -80,9 +80,13 @@ public class Account implements IAccount {
         // diem
         // ─ │ ┌ ┐ ┘ └ ┬ ┴ ┤ ├ ┼
         System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
-        System.out.println(String.format("│  %-12s :%-68s│", "Id", id));
+        if (id == -1)
+            System.out.println(String.format("│  %-12s :%-68s│", "Id", "Guess Account"));
+
+        else
+            System.out.println(String.format("│  %-12s :%-68s│", "Id", id));
         System.out.println(String.format("│  %-12s :%-68s│", "Username", username));
-        System.out.println(String.format("│  %-12s :%-68s│", "Password", password));//chuyen sang **
+        System.out.println(String.format("│  %-12s :%-68s│", "Password", "*".repeat(password.length())));
         System.out.println(String.format("│  %-12s :%-68s│", "Họ và tên", person.getName()));
         System.out.println(String.format("│  %-12s :%-68s│", "Địa chỉ", person.getAddress()));
         System.out.println(String.format("│  %-12s :%-68s│", "Ngày sinh",

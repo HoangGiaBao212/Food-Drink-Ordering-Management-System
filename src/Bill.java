@@ -139,7 +139,6 @@ public class Bill {
             }
         }
         MenuContent.notification("Không tìm thấy sản phẩm!");
-        return;
     }
 
     @Override
