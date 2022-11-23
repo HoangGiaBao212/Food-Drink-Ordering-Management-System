@@ -10,7 +10,6 @@ Mai Trung Chỉnh:
     - Thiết kế Thực thể, kế thừa, phương thức
     - Thiết kế giao diện (MenuContent)
     - Thiết kế luồng chạy ứng dụng
-    - Content cho menu
     - menu và chức năng của salesman
 Bùi Hồng Bảo:
     - Thiết kế Thực thể, kế thừa, phương thức

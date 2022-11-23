@@ -88,7 +88,4 @@ public class Account implements IAccount {
         password = scanner.next();
     }
 
-    public static void main(String[] args) {
-        System.out.printf("%-13s%-25s%-10s%12s\n", "id ", "username ", "password", "Person ");
-    }
 }

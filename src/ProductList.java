@@ -85,8 +85,5 @@ break;
 
     }
 
-    public static void main(String[] args) {
-        ProductList pd = new ProductList( );
-        pd.display();
-    }
+
 }
