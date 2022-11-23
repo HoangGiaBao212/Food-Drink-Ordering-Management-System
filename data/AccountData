@@ -4,7 +4,7 @@ Account [id='2', username='minh', password='12342', person='Manager [name='minh'
 Account [id='3', username='dat', password='12343', person='Manager [name='dat', address='VN', dateOfBirth='13-12-2003', salary='3000000']']
 Account [id='4', username='huong', password='12344', person='Manager [name='huong', address='VN', dateOfBirth='12-12-2003', salary='4000000']']
 Account [id='5', username='vinh', password='12345', person='Manager [name='vinh', address='VN', dateOfBirth='12-12-2003', salary='5000000']']
-Account [id='6', username='tuan', password='12346', person='Customer [name='tuan', address='Tân Phước, Bình Phước, Việt Nam', dateOfBirth='01-12-2003', point='1000000']']
+Account [id='6', username='tuan', password='12346', person='Customer [name='Tuan11', address='Tân Phước, Bình Phước, Việt Nam', dateOfBirth='01-12-2003', point='1000000']']
 Account [id='7', username='an', password='12346', person='Customer [name='an', address='Tân Phú , TPHCM , Việt Nam', dateOfBirth='10-02-2003', point='3000000']']
 Account [id='8', username='tung', password='12346', person='Customer [name='tung', address='Tân Kì , Quảng Nam, Việt Nam', dateOfBirth='10-01-1999', point='2000000']']
 Account [id='9', username='chau', password='12346', person='Customer [name='chau', address='Tân An, Bình Dương , Việt Nam', dateOfBirth='10-12-2003', point='6000000']']

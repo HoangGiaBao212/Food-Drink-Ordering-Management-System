@@ -49,7 +49,7 @@ public class FileUtil {
                         System.exit(1);
                     }
                 }
-                ((Account) data).getPerson().setName(cutString(dataString, "name='", "'"));
+                ((Account) data).getPerson().setName(cutString(dataString, "[name='", "'"));
                 ((Account) data).getPerson().setAddress(cutString(dataString, "address='", "'"));
                 try {
                     ((Account) data).getPerson().setDateOfBirth(
@@ -138,5 +138,4 @@ public class FileUtil {
             e.printStackTrace();
         }
     }
-
 }
