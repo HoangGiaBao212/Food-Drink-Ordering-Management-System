@@ -227,26 +227,25 @@ public class Menu {
         int choice = -1;
         while (choice != 0) {
             MenuContent.showMenuSalesman();
+            Bill bill = new Bill();
             choice = Menu.getChoice();
             System.out.println(choice);
             switch (choice) {
                 case 1:
+                    System.out.printf("Nhập thông tin người mua:");
                     int idProduct;
                     int amount;
                     System.out.print("Nhập id sản phẩm: ");
                     idProduct = Menu.getInputNumber();
                     System.out.print("Nhập số lượng: ");
                     amount = Menu.getInputNumber();
+                    bill.append(idProduct, amount, currentProductList);
                     break;
-                case 2:
-                    System.out.println(
-                            "┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
-                    System.out.println(
-                            "├─────┬───────────┬───────────────────────────────────┬────────────────────┬─────────┤");
-                    System.out.println(String.format("│%5s│%11s│%35s│%20s│%9s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm"));
-                    System.out.println(
-                            "├─────┼───────────┼───────────────────────────────────┼────────────────────┼─────────┤");
+                case 2: // chức năng hiện ds người dùng
+                    MenuContent.showMenuCustomerListInfo();
                     currentAccountList.display("Customer");
+                    System.out.println(
+                        "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
                     break;
                 default:
                     break;
@@ -260,12 +259,55 @@ public class Menu {
         while (true) {
             MenuContent.showMenuManager();
             choice = Menu.getChoice();
+            Bill bill = new Bill();
             System.out.println(choice);
-            if (choice == 1) {
-            } else if (choice == 2) {
-            } else if (choice == 0) {
-                choice = -1;
-                break;
+            switch (choice) {
+                case 1: // quản lý sản phẩm
+                    MenuContent.clearScreen();
+                    MenuContent.showMenuManagerProduct(currentProductList, bill);
+                    choice = Menu.getChoice();
+                    switch (choice) {
+                        case 1: // thêm sp
+                        case 2: // sửa sp
+                        case 3: // xóa sp
+                        default:
+                            break;
+                    }
+                    break;
+                case 2: // quản lý nhân viên
+                    MenuContent.clearScreen();
+                    MenuContent.showMenuSalesmanListInfo();
+                    currentAccountList.display("Salesman");
+                    System.out.println(
+                            "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
+                    MenuContent.showMenuManagerSalesman();
+                    choice = Menu.getChoice();
+                    switch (choice) {
+                        case 1: // thêm nhân viên
+                        case 2: // sửa
+                        case 3: // xóa
+                        default:
+                            break;
+                    }
+                    break;
+                case 3: // quản lý khách hàng
+                    MenuContent.clearScreen();
+                    MenuContent.showMenuCustomerListInfo();
+                    currentAccountList.display("Customer");
+                    System.out.println(
+                            "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
+                    MenuContent.showMenuManagerCustomer();
+                    choice = Menu.getChoice();
+                    switch (choice) {
+                        case 1: // thêm khách hàng
+                        case 2: // sửa
+                        case 3: // xóa
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
             }
         }
     }
