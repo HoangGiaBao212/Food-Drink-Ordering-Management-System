@@ -191,11 +191,20 @@ public class Menu {
                                 }
                                 choice = -1;
                                 break;
+                            case 3:
+                                currentProductList.updateProductList(bill);
+                                currentBillList.append(bill);
+                                MenuContent.notification("Thanh toán thành công!");
+                                choice = 0;
+                                break;
                             default:
                                 break;
                         }
 
                     }
+                    // if (completePayment)
+                    // choice = 0;
+                    // else
                     choice = -1;
                     break;
                 case 2:
@@ -230,10 +239,13 @@ public class Menu {
                     amount = Menu.getInputNumber();
                     break;
                 case 2:
-                    System.out.println("┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
-                    System.out.println("├─────┬───────────┬───────────────────────────────────┬────────────────────┬─────────┤");
-                    System.out.printf("│%5s│%11s│%35s│%20s│%9s│\n","ID","Name", "Địa Chỉ", "Ngày sinh", "Điểm");
-                    System.out.println("├─────┼───────────┼───────────────────────────────────┼────────────────────┼─────────┤");
+                    System.out.println(
+                            "┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
+                    System.out.println(
+                            "├─────┬───────────┬───────────────────────────────────┬────────────────────┬─────────┤");
+                    System.out.printf("│%5s│%11s│%35s│%20s│%9s│\n", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm");
+                    System.out.println(
+                            "├─────┼───────────┼───────────────────────────────────┼────────────────────┼─────────┤");
                     currentAccountList.display("Customer");
                     break;
                 default:

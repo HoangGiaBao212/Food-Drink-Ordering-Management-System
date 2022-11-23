@@ -36,6 +36,17 @@ public class ProductList extends ArrayList {
         return null;
     }
 
+    public void updateProductList(Bill bill) {
+        for (int i = 0; i < bill.getIdProduct().length; i++) {
+            for (Object object : array) {
+                if (bill.getIdProduct()[i] == ((Product) object).getId()) {
+                    ((Product) object).setCount(((Product) object).getCount() - bill.getAmount()[i]);
+                    break;
+                }
+            }
+        }
+    }
+
     public void removeProduct(String name) {
         for (int i = 0; i < array.length; i++) {
             for (Object object : array)
