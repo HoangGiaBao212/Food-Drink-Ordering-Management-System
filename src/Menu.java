@@ -160,7 +160,13 @@ public class Menu {
                                 idProduct = Menu.getInputNumber();
                                 System.out.print("Nhập số lượng: ");
                                 amount = Menu.getInputNumber();
-                                bill.append(idProduct, amount);
+                                Product product = (Product) currentProductList.find(idProduct);
+                                if (currentProductList.checkEnough(idProduct, amount)) {
+                                    bill.append(idProduct, amount);
+                                    currentProductList.changeCount(idProduct, product.getCount() - amount);
+                                } else {
+                                    MenuContent.notification("Không đủ số lượng!");
+                                }
                                 break;
                             case 2:
                                 boolean found;
@@ -175,8 +181,7 @@ public class Menu {
                                             idProduct = Menu.getInputNumber();
                                             System.out.print("Nhập số lượng: ");
                                             newAmount = Menu.getInputNumber();
-                                            found = bill.changeAmount(idProduct, newAmount);
-                                            if (!found)
+                                            if (bill.changeAmount(idProduct, newAmount))
                                                 MenuContent.notification("Thay đổi số lượng không thành công!");
                                             break;
                                         case 2:

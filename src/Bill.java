@@ -91,6 +91,7 @@ public class Bill {
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
                 this.amount[i] += amount;
+
                 return;
             }
         }
@@ -104,9 +105,12 @@ public class Bill {
     public boolean delete(int idProduct) {
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
-                for (int j = i; j < this.idProduct.length - 1; j++)
+                for (int j = i; j < this.idProduct.length - 1; j++) {
                     this.idProduct[j] = this.idProduct[j + 1];
+                    this.amount[j] = this.amount[j + 1];
+                }
                 this.idProduct = Arrays.copyOf(this.idProduct, this.idProduct.length - 1);
+                this.amount = Arrays.copyOf(this.amount, this.amount.length - 1);
                 return true;
             }
         }
@@ -136,11 +140,11 @@ public class Bill {
      */
     public void display(ProductList productList) {
         System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
-        System.out.println(String.format("│%-15s:%-68d│", "id", id));
-        System.out.println(String.format("│%-15s:%-68d│", "Ten khach hang", idCustomer));
-        System.out.println(String.format("│%-15s:%-68d│", "Ten nhan vien", idSalesman));
-        System.out.println(String.format("│%-15s:%-68d│", "Diem", point));
-        System.out.println(String.format("│%-15s:%-68s│", "Ngay",
+        System.out.println(String.format("│  %-15s:%-66d│", "id", id));
+        System.out.println(String.format("│  %-15s:%-66d│", "Ten khach hang", idCustomer));
+        System.out.println(String.format("│  %-15s:%-66d│", "Ten nhan vien", idSalesman));
+        System.out.println(String.format("│  %-15s:%-66d│", "Diem", point));
+        System.out.println(String.format("│  %-15s:%-66s│", "Ngay",
                 new SimpleDateFormat("dd-MM-yyyy").format(paymentTime)));
         System.out.println("├────┬────────────────────┬──────────────┬─────┬─────────────────────────────────────┤");
         System.out.println(
@@ -153,11 +157,11 @@ public class Bill {
             totalAll += total;
             System.out.println(
                     String.format("│%-4d│%-20s│%-14s│%-5s│%-37s│", product.getId(), product.getName(),
-                            product.getPrice(), amount[i], String.format("%,d VND", total)));
+                            product.getPrice(), amount[i], String.format("%,d", total)));
         }
         System.out.println("├────┴────────────────────┴──────────────┴─────┼─────────────────────────────────────┤");
         System.out.println(
-                String.format("│%-46s│%-37s│", "Tong tien thanh toan", String.format("%,d VND", totalAll)));
+                String.format("│  %-44s│%-37s│", "Tong tien thanh toan", String.format("%,d VND", totalAll)));
     }
 
     public static void main(String[] args) throws Exception {

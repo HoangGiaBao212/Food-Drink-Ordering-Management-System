@@ -1,4 +1,5 @@
 import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 public class Account {
@@ -77,8 +78,16 @@ public class Account {
         // Dia chi
         // ngay sinh
         // diem
-        System.out.printf(String.format("%-13d%-25s%-10s%20s\n", id, username, password, getPerson()));
-
+        // ─ │ ┌ ┐ ┘ └ ┬ ┴ ┤ ├ ┼
+        System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+        System.out.println(String.format("│  %-12s :%-68s│", "Id", id));
+        System.out.println(String.format("│  %-12s :%-68s│", "Username", username));
+        System.out.println(String.format("│  %-12s :%-68s│", "Password", password));
+        System.out.println(String.format("│  %-12s :%-68s│", "Họ và tên", person.getName()));
+        System.out.println(String.format("│  %-12s :%-68s│", "Địa chỉ", person.getAddress()));
+        System.out.println(String.format("│  %-12s :%-68s│", "Ngày sinh",
+                new SimpleDateFormat("dd-MM-yyyy").format((person.getDateOfBirth()))));
+        System.out.println(String.format("│  %-12s :%-68s│", "Điểm", ((Customer) person).getPoint()));
     }
 
     public void input() {
