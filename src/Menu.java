@@ -160,7 +160,7 @@ public class Menu {
                                 idProduct = Menu.getInputNumber();
                                 System.out.print("Nhập số lượng: ");
                                 amount = Menu.getInputNumber();
-                                bill.append(idProduct, amount);
+                                bill.append(idProduct, amount, currentProductList);
                                 break;
                             case 2:
                                 boolean found;

@@ -87,15 +87,24 @@ public class Bill {
         this.paymentTime = paymentTime;
     }
 
-    public void append(int idProduct, int amount) {
+    public void append(int idProduct, int amount, ProductList productList) {
+        Product product = (Product) productList.find(idProduct);
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
+                if (this.amount[i] + amount > product.getCount()) {
+                    MenuContent.notification("Không đủ số lượng!");
+                    return;
+                }
                 this.amount[i] += amount;
-
+                if (this.amount[i] <= 0)
+                    this.delete(idProduct);
                 return;
             }
         }
-
+        if (amount > product.getCount()) {
+            MenuContent.notification("Không đủ số lượng!");
+            return;
+        }
         this.idProduct = Arrays.copyOf(this.idProduct, this.idProduct.length + 1);
         this.amount = Arrays.copyOf(this.amount, this.amount.length + 1);
         this.idProduct[this.idProduct.length - 1] = idProduct;
