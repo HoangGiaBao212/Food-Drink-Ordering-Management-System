@@ -228,9 +228,10 @@ public class Menu {
                     amount = Menu.getInputNumber();
                     break;
                 case 2:
-                    System.out.println(
-                            "┌────────────────────────────────────────────────────────────────────────────────────┐");
-                    System.out.printf("│%15s│%35s│%13s│%13s│\n", "Name", "Địa Chỉ", "Ngày sinh", "Điểm");
+                    System.out.println("┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
+                    System.out.println("├─────┬───────────┬───────────────────────────────────┬────────────────────┬─────────┤");
+                    System.out.printf("│%5s│%11s│%35s│%20s│%9s│\n","ID","Name", "Địa Chỉ", "Ngày sinh", "Điểm");
+                    System.out.println("├─────┼───────────┼───────────────────────────────────┼────────────────────┼─────────┤");
                     currentAccountList.display("Customer");
                     break;
                 default:

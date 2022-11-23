@@ -1,3 +1,5 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
 public class AccountList extends ArrayList {
 
     public AccountList() {
@@ -36,12 +38,12 @@ public class AccountList extends ArrayList {
 
     public void display(String type) {
         for (Object object : array) {
+            // Account account =  ((Account) object).getId();
             Person person = ((Account) object).getPerson();
             switch (type) {
                 case "Customer":
                     if (person instanceof Customer) {
-                        // person.display("list");
-                        System.out.printf("│%15s│%35s│\n", ((Customer) person).name, ((Customer) person).address);
+                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│\n",((Account) object).getId(), ((Customer) person).getName(), ((Customer) person).address, new SimpleDateFormat("dd-MM-yyyy").format(((Customer) person).getDateOfBirth()), ((Customer) person).getPoint() );
                     }
                     break;
                 case "Salesman":
