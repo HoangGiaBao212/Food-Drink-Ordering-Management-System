@@ -89,6 +89,11 @@ public class Bill {
 
     public void append(int idProduct, int amount, ProductList productList) {
         Product product = (Product) productList.find(idProduct);
+        if (product == null) {
+            MenuContent.notification("Id sản phẩm không đúng!");
+            return;
+        }
+
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
                 if (this.amount[i] + amount > product.getCount()) {
