@@ -88,7 +88,6 @@ public class Bill {
     }
 
     public void append(int idProduct, int amount) {
-
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
                 this.amount[i] += amount;
@@ -102,6 +101,29 @@ public class Bill {
         this.amount[this.amount.length - 1] = amount;
     }
 
+    public boolean delete(int idProduct) {
+        for (int i = 0; i < this.idProduct.length; i++) {
+            if (this.idProduct[i] == idProduct) {
+                for (int j = i; j < this.idProduct.length - 1; j++)
+                    this.idProduct[j] = this.idProduct[j + 1];
+                this.idProduct = Arrays.copyOf(this.idProduct, this.idProduct.length - 1);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean changeAmount(int idProduct, int newAmount) {
+        for (int i = 0; i < this.idProduct.length; i++) {
+            System.out.println(this.idProduct[i] + " ");
+            if (this.idProduct[i] == idProduct) {
+                this.amount[i] = newAmount;
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Bill [id='" + id + "', idCustomer='" + idCustomer + "', idSalesman='" + idSalesman + "', idProduct='"
@@ -112,14 +134,35 @@ public class Bill {
     /**
      * This method
      */
-    public void display() {
-
-
+    public void display(ProductList productList) {
+        System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+        System.out.println(String.format("│%-15s:%-68d│", "id", id));
+        System.out.println(String.format("│%-15s:%-68d│", "Ten khach hang", idCustomer));
+        System.out.println(String.format("│%-15s:%-68d│", "Ten nhan vien", idSalesman));
+        System.out.println(String.format("│%-15s:%-68d│", "Diem", point));
+        System.out.println(String.format("│%-15s:%-68s│", "Ngay",
+                new SimpleDateFormat("dd-MM-yyyy").format(paymentTime)));
+        System.out.println("├────┬────────────────────┬──────────────┬─────┬─────────────────────────────────────┤");
+        System.out.println(
+                String.format("│%-4s│%-20s│%-14s│%-5s│%-37s│", "Id", "Ten san pham", "Gia goc", "SL", "Thanh Tien"));
+        System.out.println("├────┼────────────────────┼──────────────┼─────┼─────────────────────────────────────┤");
+        int totalAll = 0;
+        for (int i = 0; i < idProduct.length; i++) {
+            Product product = (Product) productList.find(idProduct[i]);
+            int total = product.getPrice() * amount[i];
+            totalAll += total;
+            System.out.println(
+                    String.format("│%-4d│%-20s│%-14s│%-5s│%-37s│", product.getId(), product.getName(),
+                            product.getPrice(), amount[i], String.format("%,d VND", total)));
+        }
+        System.out.println("├────┴────────────────────┴──────────────┴─────┼─────────────────────────────────────┤");
+        System.out.println(
+                String.format("│%-46s│%-37s│", "Tong tien thanh toan", String.format("%,d VND", totalAll)));
     }
 
     public static void main(String[] args) throws Exception {
         Bill bill = new Bill(0, 0, 0, new int[] { 1, 2, 3 }, new int[] { 3, 4, 5 }, 7,
                 new SimpleDateFormat("dd-MM-yyyy").parse("12-12-2022"));
-        System.out.println(bill.toString()); 
+        System.out.println(bill.toString());
     }
 }

@@ -3,7 +3,7 @@ public class AccountUtil {
 
     static public Account createAccount(char choice) {
         Account tempAccount = new Account();
-        Person tempPerson = new Person();
+        Person tempPerson = null;
         /**
          * 0, Tạo tài khoản cho Khách
          * 1, Tạo tài khoản cho Salesman
