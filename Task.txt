@@ -13,7 +13,6 @@ Bùi Hồng Bảo:
     - Thiết kế luồng chạy ứng dụng
     - Format code đọc ghi file
 Lê Thị Phương Anh:
-    - Thiết kế class
     -
 Đỗ Thế Tùng:
     - Thiết kế class
