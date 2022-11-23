@@ -1,7 +1,7 @@
 import java.text.Format;
 import java.util.Scanner;
 
-public class Account {
+public class Account implements IAccount {
     private static final Scanner scanner = new Scanner(System.in);
     private int id;
     private String username;

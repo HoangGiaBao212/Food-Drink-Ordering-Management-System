@@ -2,7 +2,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Person {
+public abstract class Person {
     private static final Scanner scanner = new Scanner(System.in);
     protected String name;
     protected String address;
