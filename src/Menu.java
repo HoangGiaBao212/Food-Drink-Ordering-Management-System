@@ -150,7 +150,7 @@ public class Menu {
                     // Product
                     while (choice != 0) {
                         MenuContent.clearScreen();
-                        MenuContent.showMenuCustomerProduct(currentProductList);
+                        MenuContent.showMenuCustomerProduct(currentProductList, bill);
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1:
@@ -189,10 +189,12 @@ public class Menu {
                                             break;
                                     }
                                 }
+                                choice = -1;
                                 break;
                             default:
                                 break;
                         }
+
                     }
                     choice = -1;
                     break;

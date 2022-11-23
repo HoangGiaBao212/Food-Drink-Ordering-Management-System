@@ -14,7 +14,11 @@ Mai Trung Chỉnh:
 Bùi Hồng Bảo:
     - Thiết kế Thực thể, kế thừa, phương thức
     - Thiết kế luồng chạy ứng dụng
-    - Thiết kế giao diện
+    - Thiết kế giao diện (MenuContent)
+        + Account info
+        + Bill info
+        + Bill List
+        + Product List
     - Chức năng đọc ghi file (FileUtil, ProductList, BillList)
 Lê Thị Phương Anh:
     -

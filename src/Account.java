@@ -82,7 +82,7 @@ public class Account implements IAccount {
         System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
         System.out.println(String.format("│  %-12s :%-68s│", "Id", id));
         System.out.println(String.format("│  %-12s :%-68s│", "Username", username));
-        System.out.println(String.format("│  %-12s :%-68s│", "Password", password));
+        System.out.println(String.format("│  %-12s :%-68s│", "Password", password));//chuyen sang **
         System.out.println(String.format("│  %-12s :%-68s│", "Họ và tên", person.getName()));
         System.out.println(String.format("│  %-12s :%-68s│", "Địa chỉ", person.getAddress()));
         System.out.println(String.format("│  %-12s :%-68s│", "Ngày sinh",

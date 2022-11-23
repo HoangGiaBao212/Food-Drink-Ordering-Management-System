@@ -53,7 +53,7 @@ public class ProductList extends ArrayList {
     // brand='docto', MFG='01-12-2003', EXP='01-12-2003']
     // ─ │ ┌ ┐ ┘ └ ┬ ┴ ┤ ├ ┼
 
-    public void display() {
+    public void display(Bill bill) {
         /**
          * @TODO:
          *        [x] Show list product
@@ -74,13 +74,24 @@ public class ProductList extends ArrayList {
                             ((Product) object).getCount(),
                             ((Product) object).getPrice()));
         }
-        // System.out.println("├────┴───────────────┴───────┴──────────┴────────────┴────────────┴─────┴────────────┤");
         System.out.println("├────┼───────────────┼───────┼──────────┼────────────┼────────────┼─────┼────────────┤");
+        if (bill.getIdProduct().length == 0)
+            return;
 
-    }
+        for (int i = 0; i < bill.getIdProduct().length; i++) {
+            Product product = (Product) this.find(bill.getIdProduct()[i]);
+            int total = bill.getAmount()[i] * product.getPrice();
+            System.out.println(
+                    String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│",
+                            product.getId(),
+                            product.getName(),
+                            product.getCategory(),
+                            product.getBrand(),
+                            new SimpleDateFormat("dd-MM-yyyy").format(product.getMFG()),
+                            new SimpleDateFormat("dd-MM-yyyy").format(product.getEXP()),
+                            bill.getAmount()[i],
+                            String.format("%,d VND", total)));
+        }
 
-    public static void main(String[] args) {
-        ProductList pd = new ProductList();
-        pd.display();
     }
 }
