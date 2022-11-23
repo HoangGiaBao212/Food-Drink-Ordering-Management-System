@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
+
 public class AccountList extends ArrayList {
 
     public AccountList() {
@@ -38,22 +39,31 @@ public class AccountList extends ArrayList {
 
     public void display(String type) {
         for (Object object : array) {
-            // Account account =  ((Account) object).getId();
+            // Account account = ((Account) object).getId();
             Person person = ((Account) object).getPerson();
             switch (type) {
                 case "Customer":
                     if (person instanceof Customer) {
-                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│\n",((Account) object).getId(), ((Customer) person).getName(), ((Customer) person).address, new SimpleDateFormat("dd-MM-yyyy").format(((Customer) person).getDateOfBirth()), ((Customer) person).getPoint() );
+                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│\n", ((Account) object).getId(),
+                                ((Customer) person).getName(), ((Customer) person).address,
+                                new SimpleDateFormat("dd-MM-yyyy").format(((Customer) person).getDateOfBirth()),
+                                ((Customer) person).getPoint());
                     }
                     break;
                 case "Salesman":
                     if (person instanceof Salesman) {
-                        System.out.printf("│%15s│%35s│\n", ((Salesman) person).name, ((Salesman) person).salary);
+                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│\n", ((Account) object).getId(),
+                                ((Salesman) person).getName(), ((Salesman) person).address,
+                                new SimpleDateFormat("dd-MM-yyyy").format(((Salesman) person).getDateOfBirth()),
+                                ((Salesman) person).getSalary());
                     }
                     break;
                 case "Manager":
                     if (person instanceof Manager) {
-                        System.out.printf("│%15s│%35s│\n", ((Manager) person).name, ((Manager) person).salary);
+                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│\n", ((Account) object).getId(),
+                                ((Manager) person).getName(), ((Manager) person).address,
+                                new SimpleDateFormat("dd-MM-yyyy").format(((Manager) person).getDateOfBirth()),
+                                ((Manager) person).getSalary();
                     }
                     break;
                 default:
