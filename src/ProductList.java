@@ -1,5 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+
 public class ProductList extends ArrayList {
     ProductList() {
     }
@@ -7,15 +8,15 @@ public class ProductList extends ArrayList {
     ProductList(ArrayList arrayList) {
         super(arrayList);
     }
-public void apppendProduct ( )
 
-{
+    public void apppendProduct()
 
+    {
 
+        array = Arrays.copyOf(array, array.length + 1);
+        array[array.length - 1] = new Product();
+    }
 
-array=Arrays.copyOf( array,array.length+1);
-array [array.length -1]= new Product();
-}
     public Object find(int id) {
         for (Object object : array) {
             if (((Product) object).getId() == id) {
@@ -35,31 +36,23 @@ array [array.length -1]= new Product();
         return null;
     }
 
-    public void removeProduct (String name )
-     {
-
-for ( int i =0;i<array.length ;i++)
-{
-for ( Object object : array )
-        if ( ((Product) object ).getName().equals(name))
-{
-        for( int j =i ;j<array.length-1;i++)
-        {
-            array[j]=array[j+1];
-array=Arrays.copyOf( array,array.length-1);
-break;
-
-
+    public void removeProduct(String name) {
+        for (int i = 0; i < array.length; i++) {
+            for (Object object : array)
+                if (((Product) object).getName().equals(name)) {
+                    for (int j = i; j < array.length - 1; i++) {
+                        array[j] = array[j + 1];
+                        array = Arrays.copyOf(array, array.length - 1);
+                        break;
+                    }
+                }
         }
-        return false;
-    }
-     }
     }
 
     // Product [id='0', name='Kem', price='1234', count='3', category='null',
     // brand='docto', MFG='01-12-2003', EXP='01-12-2003']
     // ─ │ ┌ ┐ ┘ └ ┬ ┴ ┤ ├ ┼
-   
+
     public void display() {
         /**
          * @TODO:
@@ -87,7 +80,7 @@ break;
     }
 
     public static void main(String[] args) {
-        ProductList pd = new ProductList( );
+        ProductList pd = new ProductList();
         pd.display();
     }
 }

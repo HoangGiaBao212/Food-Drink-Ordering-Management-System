@@ -160,13 +160,7 @@ public class Menu {
                                 idProduct = Menu.getInputNumber();
                                 System.out.print("Nhập số lượng: ");
                                 amount = Menu.getInputNumber();
-                                Product product = (Product) currentProductList.find(idProduct);
-                                if (currentProductList.checkEnough(idProduct, amount)) {
-                                    bill.append(idProduct, amount);
-                                    currentProductList.changeCount(idProduct, product.getCount() - amount);
-                                } else {
-                                    MenuContent.notification("Không đủ số lượng!");
-                                }
+                                bill.append(idProduct, amount);
                                 break;
                             case 2:
                                 boolean found;
@@ -215,6 +209,7 @@ public class Menu {
                     break;
             }
         }
+
     }
 
     public static void menuSalesman() {
