@@ -163,7 +163,6 @@ public class Menu {
                                 bill.append(idProduct, amount, currentProductList);
                                 break;
                             case 2:
-                                boolean found;
                                 while (choice != 0) {
                                     MenuContent.clearScreen();
                                     MenuContent.showMenuCustomerProduct(bill, currentProductList);
@@ -175,15 +174,12 @@ public class Menu {
                                             idProduct = Menu.getInputNumber();
                                             System.out.print("Nhập số lượng: ");
                                             newAmount = Menu.getInputNumber();
-                                            if (bill.changeAmount(idProduct, newAmount))
-                                                MenuContent.notification("Thay đổi số lượng không thành công!");
+                                            bill.changeAmount(idProduct, newAmount, currentProductList);
                                             break;
                                         case 2:
                                             System.out.print("Nhập id sản phẩm: ");
                                             idProduct = Menu.getInputNumber();
-                                            found = bill.delete(idProduct);
-                                            if (!found)
-                                                MenuContent.notification("Xóa không thành công!");
+                                            bill.delete(idProduct);
                                             break;
                                         default:
                                             break;

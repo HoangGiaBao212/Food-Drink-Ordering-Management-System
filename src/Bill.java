@@ -111,7 +111,7 @@ public class Bill {
         this.amount[this.amount.length - 1] = amount;
     }
 
-    public boolean delete(int idProduct) {
+    public void delete(int idProduct) {
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
                 for (int j = i; j < this.idProduct.length - 1; j++) {
@@ -120,21 +120,26 @@ public class Bill {
                 }
                 this.idProduct = Arrays.copyOf(this.idProduct, this.idProduct.length - 1);
                 this.amount = Arrays.copyOf(this.amount, this.amount.length - 1);
-                return true;
+                return;
             }
         }
-        return false;
+        MenuContent.notification("Không tìm thấy sản phẩm!");
+        return;
     }
 
-    public boolean changeAmount(int idProduct, int newAmount) {
+    public void changeAmount(int idProduct, int newAmount, ProductList productList) {
         for (int i = 0; i < this.idProduct.length; i++) {
-            System.out.println(this.idProduct[i] + " ");
             if (this.idProduct[i] == idProduct) {
+                if (newAmount > ((Product) productList.find(idProduct)).getCount()) {
+                    MenuContent.notification("Không đủ số lượng!");
+                    return;
+                }
                 this.amount[i] = newAmount;
-                return true;
+                return;
             }
         }
-        return false;
+        MenuContent.notification("Không tìm thấy sản phẩm!");
+        return;
     }
 
     @Override
