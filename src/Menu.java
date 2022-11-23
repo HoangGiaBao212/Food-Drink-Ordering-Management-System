@@ -204,8 +204,16 @@ public class Menu {
             System.out.println(choice);
             switch (choice) {
                 case 1:
+                    int idProduct;
+                    int amount;
+                    System.out.print("Nhập id sản phẩm: ");
+                    idProduct = Menu.getInputNumber();
+                    System.out.print("Nhập số lượng: ");
+                    amount = Menu.getInputNumber();
+                    break;
                 case 2:
-                    System.out.printf("|%15s|%50s|%13s|%13s|\n", "Name", "Địa Chỉ", "Ngày sinh", "Điểm");
+                    System.out.println("┌────────────────────────────────────────────────────────────────────────────────────┐");
+                    System.out.printf("│%15s│%35s│%13s│%13s│\n", "Name", "Địa Chỉ", "Ngày sinh", "Điểm");
                     currentAccountList.display("Customer");
                     break;
                 default:
