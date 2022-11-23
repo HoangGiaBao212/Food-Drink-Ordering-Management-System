@@ -239,7 +239,7 @@ public class Menu {
                             "┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
                     System.out.println(
                             "├─────┬───────────┬───────────────────────────────────┬────────────────────┬─────────┤");
-                    System.out.printf("│%5s│%11s│%35s│%20s│%9s│\n", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm");
+                    System.out.println(String.format("│%5s│%11s│%35s│%20s│%9s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm"));
                     System.out.println(
                             "├─────┼───────────┼───────────────────────────────────┼────────────────────┼─────────┤");
                     currentAccountList.display("Customer");
