@@ -2,7 +2,7 @@ import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-public class Account {
+public class Account implements IAccount {
     private static final Scanner scanner = new Scanner(System.in);
     private int id;
     private String username;
@@ -97,7 +97,4 @@ public class Account {
         password = scanner.next();
     }
 
-    public static void main(String[] args) {
-        System.out.printf("%-13s%-25s%-10s%12s\n", "id ", "username ", "password", "Person ");
-    }
 }

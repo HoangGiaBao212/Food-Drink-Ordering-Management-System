@@ -2,7 +2,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Person {
+public abstract class Person {
     private static final Scanner scanner = new Scanner(System.in);
     protected String name;
     protected String address;
@@ -55,8 +55,9 @@ public class Person {
     }
 
     // public void display(String type) {
-    //     display("list");
-    //     System.out.printf("|%15s|%50s|%13s|\n", name, address, new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth));
+    // display("list");
+    // System.out.printf("|%15s|%50s|%13s|\n", name, address, new
+    // SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth));
     // }
 
     @Override

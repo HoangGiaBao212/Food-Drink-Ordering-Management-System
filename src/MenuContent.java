@@ -66,7 +66,7 @@ public class MenuContent {
 	}
 
 	public static void showMenuSalesman() {
-		System.out.println("┌────────────────────────────────── [Menu Customer] ─────────────────────────────────┐");
+		System.out.println("┌────────────────────────────────── [Menu Salesman] ─────────────────────────────────┐");
 		System.out.println("│  1. Tạo hóa đơn.                                                                   │");
 		System.out.println("│  2. Tra cứu thông tin khách hàng.                                                  │");
 		System.out.println("│  0. Thoát                                                                          │");

@@ -44,13 +44,4 @@ public class BillList extends ArrayList {
         System.out.println("└────┴─────────────────────────┴─────────────────────────┴────────────┴───────────────┘");
     }
 
-    public static void main(String[] args) {
-        App.init();
-        BillList bl = new BillList();
-        bl.append(new Bill(0, 0, 0, new int[] { 0, 1, 3 }, new int[] { 3, 4, 5 }, 7, new Date()));
-        bl.append(new Bill(1, 1, 1, new int[] { 1, 3 }, new int[] { 3, 4 }, 7, new Date()));
-        bl.append(new Bill(2, 2, 2, new int[] { 0 }, new int[] { 100 }, 0, new Date()));
-        bl.display(Menu.getCurrentAccountList(), Menu.getCurrentProductList());
-
-    }
 }

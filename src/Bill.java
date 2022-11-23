@@ -164,9 +164,4 @@ public class Bill {
                 String.format("│  %-44s│%-37s│", "Tong tien thanh toan", String.format("%,d VND", totalAll)));
     }
 
-    public static void main(String[] args) throws Exception {
-        Bill bill = new Bill(0, 0, 0, new int[] { 1, 2, 3 }, new int[] { 3, 4, 5 }, 7,
-                new SimpleDateFormat("dd-MM-yyyy").parse("12-12-2022"));
-        System.out.println(bill.toString());
-    }
 }

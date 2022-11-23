@@ -97,8 +97,4 @@ public class Product {
                 + new SimpleDateFormat("dd-MM-yyyy").format(EXP) + "']";
     }
 
-    public static void main(String[] args) {
-        Product product = new Product(0, "Kem", 1234, 3, "food", "docto", new Date(), new Date());
-        System.out.println(product.toString());
-    }
 }
