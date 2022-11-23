@@ -196,11 +196,7 @@ public class Menu {
                             default:
                                 break;
                         }
-
                     }
-                    // if (completePayment)
-                    // choice = 0;
-                    // else
                     choice = -1;
                     break;
                 case 2:
@@ -209,6 +205,14 @@ public class Menu {
                         MenuContent.clearScreen();
                         MenuContent.showMenuCustomerInfo(currentAccount);
                         choice = Menu.getChoice();
+                        switch (choice) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            default:
+                                break;
+                        }
                     }
                     choice = -1;
                     break;
@@ -239,7 +243,7 @@ public class Menu {
                             "┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
                     System.out.println(
                             "├─────┬───────────┬───────────────────────────────────┬────────────────────┬─────────┤");
-                    System.out.printf("│%5s│%11s│%35s│%20s│%9s│\n", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm");
+                    System.out.printf("│%5s│%11s│%35s│%20s│%9s│%n", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm");
                     System.out.println(
                             "├─────┼───────────┼───────────────────────────────────┼────────────────────┼─────────┤");
                     currentAccountList.display("Customer");

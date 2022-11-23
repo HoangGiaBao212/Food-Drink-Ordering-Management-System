@@ -44,15 +44,15 @@ public class AccountList extends ArrayList {
             switch (type) {
                 case "Customer":
                     if (person instanceof Customer) {
-                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│\n", ((Account) object).getId(),
-                                ((Customer) person).getName(), ((Customer) person).address,
+                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│%n", ((Account) object).getId(),
+                                ((Account) object).getPerson().getName(), ((Customer) person).address,
                                 new SimpleDateFormat("dd-MM-yyyy").format(((Customer) person).getDateOfBirth()),
                                 ((Customer) person).getPoint());
                     }
                     break;
                 case "Salesman":
                     if (person instanceof Salesman) {
-                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│\n", ((Account) object).getId(),
+                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│%n", ((Account) object).getId(),
                                 ((Salesman) person).getName(), ((Salesman) person).address,
                                 new SimpleDateFormat("dd-MM-yyyy").format(((Salesman) person).getDateOfBirth()),
                                 ((Salesman) person).getSalary());
@@ -60,10 +60,10 @@ public class AccountList extends ArrayList {
                     break;
                 case "Manager":
                     if (person instanceof Manager) {
-                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│\n", ((Account) object).getId(),
+                        System.out.printf("│%5d│%11s│%35s│%20s│%9d│%n", ((Account) object).getId(),
                                 ((Manager) person).getName(), ((Manager) person).address,
                                 new SimpleDateFormat("dd-MM-yyyy").format(((Manager) person).getDateOfBirth()),
-                                ((Manager) person).getSalary();
+                                ((Manager) person).getSalary());
                     }
                     break;
                 default:
