@@ -1,10 +1,16 @@
 Nguyễn Minh Tuấn:
-    - Đọc ghi file
+    - Chức năng đọc ghi file
+    - Chức năng đăng nhập
+    - Tạo class ArrayList từ mảng Object
+    - Thiết kế luồng chạy ứng dụng
 Mai Trung Chỉnh:
+    - Thiết kế luồng chạy ứng dụng
     -
 Bùi Hồng Bảo:
+    - Thiết kế luồng chạy ứng dụng
     - Format code đọc ghi file
 Lê Thị Phương Anh:
     -
 Đỗ Thế Tùng:
+    - Thiết kế luồng chạy ứng dụng
     -
