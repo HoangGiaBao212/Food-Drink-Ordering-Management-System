@@ -160,5 +160,4 @@ public class Bill {
                 String.format("│%-46s│%-37s│", "Tong tien thanh toan", String.format("%,d VND", totalAll)));
     }
 
-
 }

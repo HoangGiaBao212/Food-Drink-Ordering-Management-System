@@ -36,22 +36,22 @@ public class AccountList extends ArrayList {
 
     public void display(String type) {
         for (Object object : array) {
-            Person person = ((Account)object).getPerson();
+            Person person = ((Account) object).getPerson();
             switch (type) {
                 case "Customer":
                     if (person instanceof Customer) {
                         // person.display("list");
-                        System.out.printf("│%15s│%35s│\n", ((Customer) person).name,  ((Customer)person).address);
+                        System.out.printf("│%15s│%35s│\n", ((Customer) person).name, ((Customer) person).address);
                     }
                     break;
                 case "Salesman":
                     if (person instanceof Salesman) {
-                        System.out.printf("│%15s│%35s│\n", ((Salesman)person).name, ((Salesman)person ).salary );
+                        System.out.printf("│%15s│%35s│\n", ((Salesman) person).name, ((Salesman) person).salary);
                     }
                     break;
                 case "Manager":
                     if (person instanceof Manager) {
-                        System.out.printf("│%15s│%35s│\n",((Manager)person).name,(( Manager)person).salary);
+                        System.out.printf("│%15s│%35s│\n", ((Manager) person).name, ((Manager) person).salary);
                     }
                     break;
                 default:
@@ -64,6 +64,4 @@ public class AccountList extends ArrayList {
         }
     }
 
-
-    }
-
+}

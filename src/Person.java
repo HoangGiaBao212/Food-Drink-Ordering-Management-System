@@ -55,8 +55,9 @@ public abstract class Person {
     }
 
     // public void display(String type) {
-    //     display("list");
-    //     System.out.printf("|%15s|%50s|%13s|\n", name, address, new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth));
+    // display("list");
+    // System.out.printf("|%15s|%50s|%13s|\n", name, address, new
+    // SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth));
     // }
 
     @Override
