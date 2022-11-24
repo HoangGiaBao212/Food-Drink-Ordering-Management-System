@@ -277,22 +277,24 @@ public class Menu {
             MenuContent.clearScreen();
             MenuContent.showMenuSalesman();
             choice = Menu.getChoice();
+            int idCustomer;
+            Account accountCustomer;
             switch (choice) {
                 case 1:
                     Bill bill = new Bill();
                     bill.setId(currentBillList.getNewId());
                     bill.setIdSalesman(currentAccount.getId());
                     System.out.print("Nhập id khách hàng: ");
-                    int idCustomer = Menu.getInputNumber();
-                    Account accountCus = currentAccountList.getById(idCustomer);
-                    if (accountCus == null || accountCus.getPerson() instanceof Employee) {
+                    idCustomer = Menu.getInputNumber();
+                    accountCustomer = currentAccountList.getById(idCustomer);
+                    if (accountCustomer == null || accountCustomer.getPerson() instanceof Employee) {
                         MenuContent.notification("Không tìm thấy id!");
                         MenuContent.clearScreen();
                         MenuContent.showMenuSearchIdFailed();
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1:
-                                accountCus = new Account(-1, "guest", "1234",
+                                accountCustomer = new Account(-1, "guest", "1234",
                                         new Customer("Guest", "VN", new Date(), null, 0));
                                 break;
                             case 2:
@@ -359,14 +361,13 @@ public class Menu {
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1:
-                                // int idCustomer;
                                 System.out.print("Nhập id cần Tìm: ");
                                 idCustomer = Menu.getInputNumber();
-                                Account account = currentAccountList.getById(idCustomer);
-                                if (account != null && account.getPerson() instanceof Customer) {
+                                accountCustomer = currentAccountList.getById(idCustomer);
+                                if (accountCustomer != null && accountCustomer.getPerson() instanceof Customer) {
                                     while (choice != 0) {
                                         MenuContent.clearScreen();
-                                        MenuContent.showMenuCustomerListInfo(account);
+                                        MenuContent.showMenuCustomerListInfo(accountCustomer);
                                         choice = Menu.getChoice();
                                     }
                                 } else
@@ -381,7 +382,7 @@ public class Menu {
                                 if (accountList.getArray().length != 0) {
                                     while (choice != 0) {
                                         MenuContent.clearScreen();
-                                        MenuContent.showMenuCustomerListInfo(accountList,"noFeature");
+                                        MenuContent.showMenuCustomerListInfo(accountList, "noFeature");
                                         choice = Menu.getChoice();
                                     }
                                     choice = -1;
@@ -444,7 +445,7 @@ public class Menu {
                     break;
                 case 3: // quản lý khách hàng
                     MenuContent.clearScreen();
-                    MenuContent.showMenuCustomerListInfo();
+                    MenuContent.showMenuCustomerListInfo(currentAccountList, "noFeature");
                     currentAccountList.display("Customer");
                     System.out.println(
                             "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
