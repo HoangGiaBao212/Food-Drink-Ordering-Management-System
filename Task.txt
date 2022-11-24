@@ -8,9 +8,10 @@ Nguyễn Minh Tuấn:
     - Thiết kế class khởi chạy (App, Menu)
 Mai Trung Chỉnh:
     - Thiết kế Thực thể, kế thừa, phương thức
-    - Thiết kế giao diện (MenuContent)
+    - Thiết kế giao diện (MenuContent)`
     - Thiết kế luồng chạy ứng dụng
     - menu và chức năng của salesman
+    - Menu và show list sản phẩm, nhân viên, khách hàng cho chức năng của manager
 Bùi Hồng Bảo:
     - Thiết kế Thực thể, kế thừa, phương thức
     - Thiết kế luồng chạy ứng dụng

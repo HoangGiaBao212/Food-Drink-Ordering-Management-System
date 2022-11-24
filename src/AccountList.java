@@ -53,7 +53,7 @@ public class AccountList extends ArrayList {
                 case "Salesman":
                     if (person instanceof Salesman) {
                         System.out.println(String.format("│%5d│%11s│%35s│%20s│%9d│", ((Account) object).getId(),
-                                ((Salesman) person).getName(), ((Salesman) person).address,
+                                person.getName(), ((Salesman) person).address,
                                 new SimpleDateFormat("dd-MM-yyyy").format(((Salesman) person).getDateOfBirth()),
                                 ((Salesman) person).getSalary()));
                     }
