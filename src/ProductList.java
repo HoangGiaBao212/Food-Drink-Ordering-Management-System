@@ -35,7 +35,7 @@ public class ProductList extends ArrayList implements IGetable<Product> {
         return null;
     }
 
-    public void updateProductList(Bill bill) {
+    public void updateCountProductList(Bill bill) {
         for (int i = 0; i < bill.getIdProduct().length; i++) {
             for (Object object : array) {
                 if (bill.getIdProduct()[i] == ((Product) object).getId()) {

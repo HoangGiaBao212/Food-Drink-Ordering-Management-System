@@ -208,7 +208,7 @@ public class Menu {
                                 choice = -1;
                                 break;
                             case 3:
-                                currentProductList.updateProductList(bill);
+                                currentProductList.updateCountProductList(bill);
                                 currentBillList.append(bill);
                                 MenuContent.notification("Thanh toán thành công!");
                                 choice = 0;
@@ -419,6 +419,10 @@ public class Menu {
                                 currentProductList.append(newProduct);
                                 break;
                             case 2: // sửa sp
+                                int idProduct;
+                                System.out.print("Nhập id sản phẩm cần sửa: ");
+                                idProduct = Menu.getInputNumber();
+                                currentProductList.getById(idProduct);
                             case 3: // xóa sp
                             default:
                                 break;
