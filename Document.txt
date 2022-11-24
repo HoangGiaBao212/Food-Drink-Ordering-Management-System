@@ -8,5 +8,5 @@ Kết thúc:
     Mặc định đăng nhập sễ được đăng nhập dưới tài khoản khách: username: guest, password: 1234, và được tạo mới mỗi khi khởi tạo
     Đăng nhập sẽ tùy theo loại tài khoản mà chuyển tới mỗi menu người dùng khác nhau
 Customer:
-    Toàn bộ customer được bán bởi máy bán hàng tự động (id: -1)
+    Toàn bộ customer được bán bởi máy bán hàng tự động (id: -2)
 Salesman:
