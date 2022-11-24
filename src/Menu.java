@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -110,6 +111,22 @@ public class Menu {
                 System.out.println("Input không chính xác!!!");
             }
         }
+    }
+
+    public static Date getInputDate() {
+        Date date = null;
+        String strDate = "";
+        SimpleDateFormat dateInput = new SimpleDateFormat("dd-MM-yyyy");
+        while (date == null) {
+            System.out.print("Date (dd-MM-yyyy) > ");
+            strDate = scanner.nextLine();
+            try {
+                date = dateInput.parse(strDate);
+            } catch (Exception e) {
+                System.out.println("Input không chính xác!!!");
+            }
+        }
+        return date;
     }
 
     public static int getInputNumber() {
@@ -355,7 +372,12 @@ public class Menu {
                 default:
                     break;
             }
+
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Menu.getInputDate());
     }
 
 }
