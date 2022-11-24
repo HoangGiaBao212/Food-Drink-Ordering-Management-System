@@ -381,7 +381,7 @@ public class Menu {
                                 if (accountList.getArray().length != 0) {
                                     while (choice != 0) {
                                         MenuContent.clearScreen();
-                                        MenuContent.showMenuCustomerListInfo(accountList,"noFeature");
+                                        MenuContent.showMenuCustomerListInfo(accountList, "noFeature");
                                         choice = Menu.getChoice();
                                     }
                                     choice = -1;
@@ -404,19 +404,24 @@ public class Menu {
         while (choice != 0) {
             MenuContent.showMenuManager();
             choice = Menu.getChoice();
-            Bill bill = new Bill();
-            System.out.println(choice);
             switch (choice) {
                 case 1: // quản lý sản phẩm
-                    MenuContent.clearScreen();
-                    MenuContent.showMenuManagerProduct(currentProductList, bill);
-                    choice = Menu.getChoice();
-                    switch (choice) {
-                        case 1: // thêm sp
-                        case 2: // sửa sp
-                        case 3: // xóa sp
-                        default:
-                            break;
+                    while (choice != 0) {
+                        MenuContent.clearScreen();
+                        MenuContent.showMenuManagerProduct(currentProductList);
+                        choice = Menu.getChoice();
+                        switch (choice) {
+                            case 1: // thêm sp
+                                Product newProduct = new Product();
+                                newProduct.setId(currentProductList.getNewId());
+                                newProduct.input();
+                                currentProductList.append(newProduct);
+                                break;
+                            case 2: // sửa sp
+                            case 3: // xóa sp
+                            default:
+                                break;
+                        }
                     }
                     choice = -1;
                     break;
@@ -444,7 +449,7 @@ public class Menu {
                     break;
                 case 3: // quản lý khách hàng
                     MenuContent.clearScreen();
-                    MenuContent.showMenuCustomerListInfo();
+                    // MenuContent.showMenuCustomerListInfo();
                     currentAccountList.display("Customer");
                     System.out.println(
                             "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");

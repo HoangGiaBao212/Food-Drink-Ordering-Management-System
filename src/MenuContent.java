@@ -116,12 +116,11 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuManagerProduct(ProductList productList, Bill bill) {
-		System.out.println("┌────────────────────────────────── [Product Menu] ──────────────────────────────────┐");
-		productList.display(bill);
+	public static void showMenuManagerProduct(ProductList productList) {
+		System.out.println("┌─────────────────────────────── [Menu Manager Product] ─────────────────────────────┐");
+		productList.display();
 		System.out.println("├────┴───────────────┴───────┴──────────┴────────────┴────────────┴─────┴────────────┤");
-		System.out.println("├─────────────────────────────── [Menu Manager Product] ─────────────────────────────┤");
-		System.out.println("│  1. Thêm sản phẩm.                                                                 │");
+		System.out.println("│  1. Tạo sản phẩm mới.                                                              │");
 		System.out.println("│  2. Sửa sản phẩm.                                                                  │");
 		System.out.println("│  3. Xóa sản phẩm.                                                                  │");
 		System.out.println("│  0. Thoát                                                                          │");

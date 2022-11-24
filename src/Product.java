@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Scanner;
 import java.text.SimpleDateFormat;
 
 public class Product {
@@ -10,6 +11,7 @@ public class Product {
     private String brand;
     private Date MFG;
     private Date EXP;
+    static Scanner scanner = new Scanner(System.in);
 
     public Product() {
     }
@@ -46,6 +48,10 @@ public class Product {
     }
 
     public void setPrice(int price) {
+        while (price <= 0) {
+            System.out.print("Nhập giá: ");
+            price = Menu.getInputNumber();
+        }
         this.price = price;
     }
 
@@ -54,6 +60,10 @@ public class Product {
     }
 
     public void setCount(int count) {
+        while (count <= 0) {
+            System.out.print("Nhập số lượng: ");
+            count = Menu.getInputNumber();
+        }
         this.count = count;
     }
 
@@ -86,7 +96,28 @@ public class Product {
     }
 
     public void setCategory(String category) {
+        while (!category.equals("Food") && !category.equals("Drink")) {
+            System.out.print("Nhập loại: ");
+            category = scanner.nextLine();
+        }
         this.category = category;
+    }
+
+    public void input() {
+        System.out.print("Nhập tên: ");
+        setName(scanner.nextLine());
+        System.out.print("Nhập giá: ");
+        setPrice(Menu.getInputNumber());
+        System.out.print("Nhập số lượng: ");
+        setCount(Menu.getInputNumber());
+        System.out.print("Nhập loại: ");
+        setCategory(scanner.nextLine());
+        System.out.print("Nhập thương hiệu: ");
+        setBrand(scanner.nextLine());
+        System.out.print("Nhập ngày sản xuất: ");
+        setMFG(Menu.getInputDate());
+        System.out.print("Nhập hạn sử dụng: ");
+        setEXP(Menu.getInputDate());
     }
 
     @Override

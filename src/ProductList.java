@@ -59,6 +59,20 @@ public class ProductList extends ArrayList implements IGetable<Product> {
         }
     }
 
+    public int getNewId() {
+        int id = 0;
+
+        try {
+            id = ((Product) array[array.length - 1]).getId() + 1;
+            while (getById(id) != null) {
+                id++;
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return id;
+    }
     // Product [id='0', name='Kem', price='1234', count='3', category='null',
     // brand='docto', MFG='01-12-2003', EXP='01-12-2003']
     // ─ │ ┌ ┐ ┘ └ ┬ ┴ ┤ ├ ┼
