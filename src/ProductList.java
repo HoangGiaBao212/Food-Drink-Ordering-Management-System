@@ -46,6 +46,15 @@ public class ProductList extends ArrayList implements IGetable<Product> {
         }
     }
 
+    public void updateProduct(int idProduct, Product newProduct) {
+        for (int i = 0; i < array.length; i++)
+            if (((Product) array[i]).getId() == idProduct) {
+                array[i] = newProduct;
+                break;
+            }
+
+    }
+
     public void removeProduct(String name) {
         for (int i = 0; i < array.length; i++) {
             for (Object object : array)

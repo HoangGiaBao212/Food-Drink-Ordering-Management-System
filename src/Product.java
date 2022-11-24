@@ -120,6 +120,53 @@ public class Product {
         setEXP(Menu.getInputDate());
     }
 
+    public void changeAttribute(int attribute) {
+        switch (attribute) {
+            case 1 -> {
+                System.out.print("Nhập tên: ");
+                setName(scanner.nextLine());
+            }
+            case 2 -> {
+                System.out.print("Nhập giá: ");
+                setPrice(Menu.getInputNumber());
+            }
+            case 3 -> {
+                System.out.print("Nhập số lượng: ");
+                setCount(Menu.getInputNumber());
+            }
+            case 4 -> {
+                System.out.print("Nhập loại: ");
+                setCategory(scanner.nextLine());
+            }
+            case 5 -> {
+                System.out.print("Nhập thương hiệu: ");
+                setBrand(scanner.nextLine());
+            }
+            case 6 -> {
+                System.out.print("Nhập ngày sản xuất: ");
+                setMFG(Menu.getInputDate());
+            }
+            case 7 -> {
+                System.out.print("Nhập hạn sử dụng: ");
+                setEXP(Menu.getInputDate());
+            }
+        }
+    }
+
+    public void display() {
+        System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+        System.out.println(String.format("│  %-14s: %-66s│", "Id product", id));
+        System.out.println(String.format("│  %-14s: %-66s│", "Tên", name));
+        System.out.println(String.format("│  %-14s: %-66s│", "Giá", price));
+        System.out.println(String.format("│  %-14s: %-66s│", "Số lượng", count));
+        System.out.println(String.format("│  %-14s: %-66s│", "Loại", category));
+        System.out.println(String.format("│  %-14s: %-66s│", "Hiệu", brand));
+        System.out.println(
+                String.format("│  %-14s: %-66s│", "Ngày sản xuất", new SimpleDateFormat("dd-MM-yyyy").format(MFG)));
+        System.out.println(
+                String.format("│  %-14s: %-66s│", "Hạn sử dụng", new SimpleDateFormat("dd-MM-yyyy").format(EXP)));
+    }
+
     @Override
     public String toString() {
         return "Product [id='" + id + "', name='" + name + "', price='" + price + "', count='" + count + "', category='"

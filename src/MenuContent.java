@@ -127,6 +127,21 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
+	public static void showMenuManagerProduct(Product product) {
+		System.out.println("┌─────────────────────────────── [Menu Manager Product] ─────────────────────────────┐");
+		product.display();
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("│  1. Sửa tên.                                                                       │");
+		System.out.println("│  2. Sửa giá.                                                                       │");
+		System.out.println("│  3. Sửa số lượng.                                                                  │");
+		System.out.println("│  4. Sửa loại.                                                                      │");
+		System.out.println("│  5. Sửa thương hiệu.                                                               │");
+		System.out.println("│  6. Sửa ngày sản xuất.                                                             │");
+		System.out.println("│  7. Sửa hạn sử dụng.                                                               │");
+		System.out.println("│  0. Thoát                                                                          │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
+	}
+
 	public static void showMenuManagerSalesman() {
 		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
 		System.out.println("├─────────────────────────────────── [Menu Manager] ─────────────────────────────────┤");
@@ -151,7 +166,6 @@ public class MenuContent {
 	public static void showMenuCustomerProduct(ProductList productList, Bill bill) {
 		System.out.println("┌────────────────────────────────── [Product Menu] ──────────────────────────────────┐");
 		productList.display(bill);
-		System.out.println("├────┴───────────────┴───────┴──────────┴────────────┴────────────┴─────┴────────────┤");
 		System.out.println("│  1. Chọn sản phẩm.                                                                 │");
 		System.out.println("│  2. Chỉnh sửa giỏ hàng.                                                            │");
 		System.out.println("│  3. Thanh toán.                                                                    │");

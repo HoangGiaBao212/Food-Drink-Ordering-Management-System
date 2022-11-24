@@ -343,7 +343,7 @@ public class Menu {
                                 choice = -1;
                                 break;
                             case 3:
-                                currentProductList.updateProductList(bill);
+                                currentProductList.updateCountProductList(bill);
                                 currentBillList.append(bill);
                                 MenuContent.notification("Thanh toán thành công!");
                                 choice = 0;
@@ -403,6 +403,7 @@ public class Menu {
     public static void menuManager() {
         int choice = -1;
         while (choice != 0) {
+            MenuContent.clearScreen();
             MenuContent.showMenuManager();
             choice = Menu.getChoice();
             switch (choice) {
@@ -422,7 +423,19 @@ public class Menu {
                                 int idProduct;
                                 System.out.print("Nhập id sản phẩm cần sửa: ");
                                 idProduct = Menu.getInputNumber();
-                                currentProductList.getById(idProduct);
+                                Product changeProduct = currentProductList.getById(idProduct);
+                                if (changeProduct != null) {
+                                    while (choice != 0) {
+                                        MenuContent.clearScreen();
+                                        MenuContent.showMenuManagerProduct(changeProduct);
+                                        choice = getChoice();
+                                        changeProduct.changeAttribute(choice);
+                                        currentProductList.updateProduct(idProduct, changeProduct);
+                                    }
+                                    choice = -1;
+                                } else
+                                    MenuContent.notification("Id sản phẩm không đúng!");
+                                break;
                             case 3: // xóa sp
                             default:
                                 break;
