@@ -275,7 +275,6 @@ public class Menu {
         int choice = -1;
         while (choice != 0) {
             MenuContent.showMenuSalesman();
-            AccountList accountList = new AccountList();
             choice = Menu.getChoice();
             System.out.println(choice);
             switch (choice) {
@@ -283,7 +282,6 @@ public class Menu {
                     Bill bill = new Bill();
                     bill.setId(currentBillList.getArray().length);
                     bill.setIdSalesman(currentAccount.getId());
-                    
                     System.out.println("Nhập id khách hàng: ");
                     int idCustomer = Menu.getInputNumber();
                     bill.setIdCustomer(idCustomer);
@@ -340,12 +338,10 @@ public class Menu {
                     choice = -1;
                     break;
                 case 2: // chức năng hiện ds người dùng
-                    MenuContent.showMenuCustomerListInfo();
-                    currentAccountList.display("Customer");
-                    System.out.println(
-                            "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
                     while (choice != 0) {
-                        MenuContent.showMenuSearchCustomer();
+                        MenuContent.clearScreen();
+                        MenuContent.showMenuCustomerListInfo(currentAccountList);
+                        //MenuContent.showMenuSearchCustomer();
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1:
@@ -439,6 +435,5 @@ public class Menu {
 
         }
     }
-
 
 }

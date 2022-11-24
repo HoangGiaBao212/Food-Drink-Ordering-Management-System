@@ -73,17 +73,24 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuCustomerListInfo() {
+	public static void showMenuCustomerListInfo(AccountList accountList) {
 		System.out.println("┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
-		System.out.println("├─────┬───────────┬───────────────────────────────────┬────────────────────┬─────────┤");
-		System.out.println(String.format("│%5s│%11s│%35s│%20s│%9s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm"));
-		System.out.println("├─────┼───────────┼───────────────────────────────────┼────────────────────┼─────────┤");
+		System.out.println("├────┬────────────────────┬──────────────────────────────────┬────────────┬──────────┤");
+		System.out
+				.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm"));
+		System.out.println("├────┼────────────────────┼──────────────────────────────────┼────────────┼──────────┤");
+		accountList.display("Customer");
+		System.out.println("├────┴────────────────────┴──────────────────────────────────┴────────────┴──────────┤");
+		System.out.println("│  1. Tìm kiếm theo ID.                                                              │");
+		System.out.println("│  2. Tìm kiếm theo tên.                                                             │");
+		System.out.println("│  0. Thoát                                                                          │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
 	public static void showMenuSalesmanListInfo() {
 		System.out.println("┌───────────────────────────────── [Infor Salesman] ─────────────────────────────────┐");
 		System.out.println("├─────┬─────────────┬─────────────────────────────────┬────────────────────┬─────────┤");
-		System.out.println(String.format("│%5s│%13s│%33s│%20s│%9s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Lương"));
+		System.out.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Lương"));
 		System.out.println("├─────┼─────────────┼─────────────────────────────────┼────────────────────┼─────────┤");
 	}
 
