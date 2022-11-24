@@ -186,4 +186,14 @@ public class MenuContent {
 		System.out.println("│  0. Thoát                                                                          │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
+
+	public static void showMenuSearchIdFailed() {
+		System.out.println("┌───────────────────────────────── [Search Id Failed] ───────────────────────────────┐");
+		System.out.println("│  Không tìm thấy id !                                                               │");
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("│  Bạn có muốn tiếp tục mà không có id không ?                                       │");
+		System.out.println("│      1. Có                                                                         │");
+		System.out.println("│      0. Không                                                                      │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
+	}
 }
