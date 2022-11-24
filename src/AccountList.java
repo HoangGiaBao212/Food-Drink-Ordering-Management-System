@@ -39,15 +39,6 @@ public class AccountList extends ArrayList {
         return null;
     }
 
-    public void findAccountById(int id) {
-        Account account = (Account) findGetById(id);
-        if (account == null) {
-            MenuContent.notification("Id người dùng không đúng!");
-            return;
-        }
-
-    }
-
     public void display(String type) {
         for (Object object : array) {
             Person person = ((Account) object).getPerson();
