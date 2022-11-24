@@ -284,6 +284,20 @@ public class Menu {
                     bill.setIdSalesman(currentAccount.getId());
                     System.out.println("Nhập id khách hàng: ");
                     int idCustomer = Menu.getInputNumber();
+                    Account accountCus = (Account) currentAccountList.getById(idCustomer);
+                    if (accountCus == null || accountCus.getPerson() instanceof Employee) {
+                        MenuContent.notification("Không tìm thấy id!");
+                        MenuContent.showMenuSearchIdFailed();
+                        choice = Menu.getChoice();
+                        switch (choice) {
+                            case 1:
+                                accountCus = new Account(-1, "guest", "1234",
+                                        new Customer("Guest", "VN", new Date(), null, 0));
+                                break;
+                            case 2:
+                                choice = 0;
+                        }
+                    }
                     bill.setIdCustomer(idCustomer);
                     while (choice != 0) {
                         MenuContent.clearScreen();
