@@ -274,19 +274,20 @@ public class Menu {
     public static void menuSalesman() {
         int choice = -1;
         while (choice != 0) {
+            MenuContent.clearScreen();
             MenuContent.showMenuSalesman();
             choice = Menu.getChoice();
-            System.out.println(choice);
             switch (choice) {
                 case 1:
                     Bill bill = new Bill();
-                    bill.setId(currentBillList.getArray().length);
+                    bill.setId(currentBillList.getNewId());
                     bill.setIdSalesman(currentAccount.getId());
-                    System.out.println("Nhập id khách hàng: ");
+                    System.out.print("Nhập id khách hàng: ");
                     int idCustomer = Menu.getInputNumber();
-                    Account accountCus = (Account) currentAccountList.getById(idCustomer);
+                    Account accountCus = currentAccountList.getById(idCustomer);
                     if (accountCus == null || accountCus.getPerson() instanceof Employee) {
                         MenuContent.notification("Không tìm thấy id!");
+                        MenuContent.clearScreen();
                         MenuContent.showMenuSearchIdFailed();
                         choice = Menu.getChoice();
                         switch (choice) {

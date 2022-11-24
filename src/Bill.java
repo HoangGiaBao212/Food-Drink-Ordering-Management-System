@@ -157,8 +157,8 @@ public class Bill {
      * This method
      */
     public void display(ProductList productList, AccountList accountList) {
-        Account customer = (Account) accountList.getById(idCustomer);
-        Account salesman = (Account) accountList.getById(idSalesman);
+        Account customer =  accountList.getById(idCustomer);
+        Account salesman =  accountList.getById(idSalesman);
 
         if(customer == null) {
             customer = new Account(-1, "guest", "1234", new Customer("Guest", "VN", new Date(), null, 0));
