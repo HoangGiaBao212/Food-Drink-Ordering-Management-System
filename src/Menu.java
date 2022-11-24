@@ -355,12 +355,12 @@ public class Menu {
                 case 2: // chức năng hiện ds người dùng
                     while (choice != 0) {
                         MenuContent.clearScreen();
-                        MenuContent.showMenuCustomerListInfo(currentAccountList);
+                        MenuContent.showMenuCustomerListInfo(currentAccountList, "feature");
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1:
                                 // int idCustomer;
-                                System.out.print("Nhập id Cần Tìm: ");
+                                System.out.print("Nhập id cần Tìm: ");
                                 idCustomer = Menu.getInputNumber();
                                 Account account = currentAccountList.getById(idCustomer);
                                 if (account != null && account.getPerson() instanceof Customer) {
@@ -374,7 +374,19 @@ public class Menu {
                                 choice = -1;
                                 break;
                             case 2:
-                                choice = -1;
+                                System.out.print("Nhập tên cần Tìm: ");
+                                String name = scanner.nextLine();
+                                AccountList accountList = new AccountList();
+                                accountList.setArray(currentAccountList.getByString(name));
+                                if (accountList.getArray().length != 0) {
+                                    while (choice != 0) {
+                                        MenuContent.clearScreen();
+                                        MenuContent.showMenuCustomerListInfo(accountList,"noFeature");
+                                        choice = Menu.getChoice();
+                                    }
+                                    choice = -1;
+                                } else
+                                    MenuContent.notification("Tên không tìm thấy!");
                                 break;
                         }
                     }

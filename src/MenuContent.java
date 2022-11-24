@@ -73,7 +73,7 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuCustomerListInfo(AccountList accountList) {
+	public static void showMenuCustomerListInfo(AccountList accountList, String mode) {
 		System.out.println("┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
 		System.out.println("├────┬────────────────────┬──────────────────────────────────┬────────────┬──────────┤");
 		System.out
@@ -81,8 +81,12 @@ public class MenuContent {
 		System.out.println("├────┼────────────────────┼──────────────────────────────────┼────────────┼──────────┤");
 		accountList.display("Customer");
 		System.out.println("├────┴────────────────────┴──────────────────────────────────┴────────────┴──────────┤");
-		System.out.println("│  1. Tìm kiếm theo ID.                                                              │");
-		System.out.println("│  2. Tìm kiếm theo tên.                                                             │");
+		if (mode.equals("feature")) {
+			System.out
+					.println("│  1. Tìm kiếm theo ID.                                                              │");
+			System.out
+					.println("│  2. Tìm kiếm theo tên.                                                             │");
+		}
 		System.out.println("│  0. Thoát                                                                          │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
