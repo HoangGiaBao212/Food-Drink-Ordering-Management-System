@@ -2,7 +2,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class BillList extends ArrayList {
+public class BillList extends ArrayList implements IGetable <Bill> {
 
     public BillList() {
     }
@@ -37,7 +37,7 @@ public class BillList extends ArrayList {
         // object).getIdCustomer());
         for (Object object : array) {
             if (((Bill) object).getIdCustomer() == account.getId()) {
-                Account accountSalesman = (Account) accountList.findGetById(((Bill) object).getIdSalesman());
+                Account accountSalesman = (Account) accountList.getById(((Bill) object).getIdSalesman());
                 int total = 0;
                 for (int i = 0; i < ((Bill) object).getIdProduct().length; i++) {
                     Product product = (Product) productList.find(((Bill) object).getIdProduct()[i]);
@@ -51,6 +51,21 @@ public class BillList extends ArrayList {
                                 String.format("%,d VND", total)));
             }
         }
+    }
+
+    @Override
+    public Bill getById(int id) {
+        for (Object object : array) {
+            if(((Bill)object).getId() == id) {
+                return (Bill) object;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Bill[] getByString(String string) {
+        return null;
     }
 
 }

@@ -1,7 +1,8 @@
+import java.util.Arrays;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class AccountList extends ArrayList {
+public class AccountList extends ArrayList implements IGetable<Account> {
 
     public static Object findAccountbyId;
 
@@ -16,15 +17,6 @@ public class AccountList extends ArrayList {
         for (Object object : array) {
             if (((Account) object).getUsername().equals(username) && ((Account) object).checkLogin(password)) {
                 return (Account) object;
-            }
-        }
-        return null;
-    }
-
-    public Object findGetById(int id) {
-        for (Object object : array) {
-            if (((Account) object).getId() == id) {
-                return object;
             }
         }
         return null;
@@ -75,6 +67,30 @@ public class AccountList extends ArrayList {
                     break;
             }
         }
+    }
+
+    @Override
+    public Account getById(int id) {
+        for (Object object : array) {
+            if (((Account) object).getId() == id) {
+                return (Account) object;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Account[] getByString(String string) {
+        Account[] accounts = new Account[0];
+
+        for (Object object : array) {
+            if (((Account) object).getUsername().contains(string) ||
+                    ((Account) object).getPerson().getName().contains(string)) {
+                accounts = Arrays.copyOf(accounts, accounts.length + 1);
+                accounts[accounts.length - 1] = (Account) object;
+            }
+        }
+        return accounts;
     }
 
 }
