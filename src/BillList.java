@@ -14,7 +14,7 @@ public class BillList extends ArrayList implements IGetable<Bill> {
         int id = 0;
 
         try {
-            id = ((Product) array[array.length - 1]).getId() + 1;
+            id = ((Bill) array[array.length - 1]).getId() + 1;
             while (getById(id) != null) {
                 id++;
             }

@@ -129,12 +129,8 @@ public class Bill {
             }
         }
         MenuContent.notification("Không tìm thấy sản phẩm!");
-        return;
     }
 
-    public void input() {
-        
-    }
 
     public void changeAmount(int idProduct, int newAmount, ProductList productList) {
         for (int i = 0; i < this.idProduct.length; i++) {

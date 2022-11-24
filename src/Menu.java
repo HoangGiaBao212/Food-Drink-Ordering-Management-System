@@ -162,8 +162,9 @@ public class Menu {
             choice = Menu.getChoice();
             Bill bill = new Bill();
             bill.setIdCustomer(currentAccount.getId());
-            bill.setIdSalesman(-10);
-            bill.setId(currentBillList.getArray().length);
+            // -2 is id Bot
+            bill.setIdSalesman(-2);
+            bill.setId(currentBillList.getNewId());
             switch (choice) {
                 case 1:
                     // Product
@@ -280,9 +281,63 @@ public class Menu {
             switch (choice) {
                 case 1:
                     Bill bill = new Bill();
-                    Bill.setId();
-                    bill.input();
-                    currentBillList.append(bill);
+                    bill.setId(currentBillList.getArray().length);
+                    bill.setIdSalesman(currentAccount.getId());
+                    
+                    System.out.println("Nhập id khách hàng: ");
+                    int idCustomer = Menu.getInputNumber();
+                    bill.setIdCustomer(idCustomer);
+                    while (choice != 0) {
+                        MenuContent.clearScreen();
+                        MenuContent.showMenuCustomerProduct(currentProductList, bill);
+                        choice = Menu.getChoice();
+                        switch (choice) {
+                            case 1:
+                                int idProduct;
+                                int amount;
+                                System.out.print("Nhập id sản phẩm: ");
+                                idProduct = Menu.getInputNumber();
+                                System.out.print("Nhập số lượng: ");
+                                amount = Menu.getInputNumber();
+
+                                bill.append(idProduct, amount, currentProductList);
+                                break;
+                            case 2:
+                                while (choice != 0) {
+                                    MenuContent.clearScreen();
+                                    MenuContent.showMenuCustomerProduct(bill, currentProductList, currentAccountList);
+                                    choice = Menu.getChoice();
+                                    switch (choice) {
+                                        case 1:
+                                            int newAmount;
+                                            System.out.print("Nhập id sản phẩm: ");
+                                            idProduct = Menu.getInputNumber();
+                                            System.out.print("Nhập số lượng: ");
+                                            newAmount = Menu.getInputNumber();
+                                            bill.changeAmount(idProduct, newAmount, currentProductList);
+                                            break;
+                                        case 2:
+                                            System.out.print("Nhập id sản phẩm: ");
+                                            idProduct = Menu.getInputNumber();
+                                            bill.delete(idProduct);
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                                choice = -1;
+                                break;
+                            case 3:
+                                currentProductList.updateProductList(bill);
+                                currentBillList.append(bill);
+                                MenuContent.notification("Thanh toán thành công!");
+                                choice = 0;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    choice = -1;
                     break;
                 case 2: // chức năng hiện ds người dùng
                     MenuContent.showMenuCustomerListInfo();
@@ -294,7 +349,7 @@ public class Menu {
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1:
-                                int idCustomer;
+                                // int idCustomer;
                                 System.out.printf("Nhập id Cần Tìm: ");
                                 idCustomer = Menu.getInputNumber();
                                 Account account = (Account) currentAccountList.getById(idCustomer);
@@ -385,8 +440,5 @@ public class Menu {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(Menu.getInputDate());
-    }
 
 }
