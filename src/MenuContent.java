@@ -87,10 +87,19 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
+	public static void showMenuCustomerListInfo(Account account) {
+		System.out.println("┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
+		account.display();
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("│  0. Thoát                                                                          │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
+	}
+
 	public static void showMenuSalesmanListInfo() {
 		System.out.println("┌───────────────────────────────── [Infor Salesman] ─────────────────────────────────┐");
 		System.out.println("├─────┬─────────────┬─────────────────────────────────┬────────────────────┬─────────┤");
-		System.out.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Lương"));
+		System.out.println(
+				String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Lương"));
 		System.out.println("├─────┼─────────────┼─────────────────────────────────┼────────────────────┼─────────┤");
 	}
 

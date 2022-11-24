@@ -341,17 +341,20 @@ public class Menu {
                     while (choice != 0) {
                         MenuContent.clearScreen();
                         MenuContent.showMenuCustomerListInfo(currentAccountList);
-                        //MenuContent.showMenuSearchCustomer();
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1:
                                 // int idCustomer;
-                                System.out.printf("Nhập id Cần Tìm: ");
+                                System.out.print("Nhập id Cần Tìm: ");
                                 idCustomer = Menu.getInputNumber();
-                                Account account = (Account) currentAccountList.getById(idCustomer);
-                                if (account != null && account.getPerson() instanceof Customer)
-                                    account.display();
-                                else
+                                Account account = currentAccountList.getById(idCustomer);
+                                if (account != null && account.getPerson() instanceof Customer) {
+                                    while (choice != 0) {
+                                        MenuContent.clearScreen();
+                                        MenuContent.showMenuCustomerListInfo(account);
+                                        choice = Menu.getChoice();
+                                    }
+                                } else
                                     MenuContent.notification("Không tìm thấy id!");
                                 choice = -1;
                                 break;
