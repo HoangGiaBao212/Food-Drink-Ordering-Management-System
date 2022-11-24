@@ -36,7 +36,7 @@ public class BillList extends ArrayList {
         // object).getIdCustomer());
         for (Object object : array) {
             if (((Bill) object).getIdCustomer() == account.getId()) {
-                Account accountSalesman = (Account) accountList.find(((Bill) object).getIdSalesman());
+                Account accountSalesman = (Account) accountList.findGetById(((Bill) object).getIdSalesman());
                 int total = 0;
                 for (int i = 0; i < ((Bill) object).getIdProduct().length; i++) {
                     Product product = (Product) productList.find(((Bill) object).getIdProduct()[i]);

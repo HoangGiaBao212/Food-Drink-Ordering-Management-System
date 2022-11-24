@@ -273,6 +273,19 @@ public class Menu {
                     currentAccountList.display("Customer");
                     System.out.println(
                         "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
+                    MenuContent.showMenuSearchCustomer();
+                    choice = Menu.getChoice();
+                    switch (choice) {
+                        case 1:
+                            int idCustomer;
+                            System.out.printf("Nhập id khách hàng: ");
+                            idCustomer = Menu.getInputNumber();
+                            
+                            break;
+                        case 2:
+                            break;
+                    }
+                    choice = -1;
                     break;
                 default:
                     break;
@@ -282,8 +295,8 @@ public class Menu {
     }
 
     public static void menuManager() {
-        int choice;
-        while (true) {
+        int choice = -1;
+        while (choice !=0) {
             MenuContent.showMenuManager();
             choice = Menu.getChoice();
             Bill bill = new Bill();
@@ -300,6 +313,7 @@ public class Menu {
                         default:
                             break;
                     }
+                    choice = -1;
                     break;
                 case 2: // quản lý nhân viên
                     MenuContent.clearScreen();
@@ -316,6 +330,7 @@ public class Menu {
                         default:
                             break;
                     }
+                    choice = -1;
                     break;
                 case 3: // quản lý khách hàng
                     MenuContent.clearScreen();
@@ -332,6 +347,7 @@ public class Menu {
                         default:
                             break;
                     }
+                    choice = -1;
                     break;
                 default:
                     break;

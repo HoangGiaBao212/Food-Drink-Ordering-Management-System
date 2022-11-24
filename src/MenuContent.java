@@ -185,4 +185,13 @@ public class MenuContent {
 		System.out.println("│  0. Quay lại.                                                                      │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
+
+	public static void showMenuSearchCustomer() {
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("├───────────────────────────────── [Search Customer] ────────────────────────────────┤");
+		System.out.println("│  1. Tìm kiếm theo ID.                                                              │");
+		System.out.println("│  2. Tìm kiếm theo tên.                                                             │");
+		System.out.println("│  0. Thoát                                                                          │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
+	}
 }

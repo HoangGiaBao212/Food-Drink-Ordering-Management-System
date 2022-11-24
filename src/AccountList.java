@@ -19,7 +19,7 @@ public class AccountList extends ArrayList {
         return null;
     }
 
-    public Object find(int id) {
+    public Object findGetById(int id) {
         for (Object object : array) {
             if (((Account) object).getId() == id) {
                 return object;
@@ -27,6 +27,14 @@ public class AccountList extends ArrayList {
         }
         return null;
     }
+
+    // public void append(int id,AccountList accountList, Account account) {
+    //     for (Object object : array) {
+    //         if (((Bill) object).getIdCustomer() == account.getId()) {
+    //             Account accountCustomer = (Account) accountList.findGetById(((Bill) object).getIdCustomer());
+    //         }
+    //     }
+    // }
 
     public Object search(String string) {
         for (Object object : array) {
@@ -39,7 +47,6 @@ public class AccountList extends ArrayList {
 
     public void display(String type) {
         for (Object object : array) {
-            // Account account = ((Account) object).getId();
             Person person = ((Account) object).getPerson();
             switch (type) {
                 case "Customer":
