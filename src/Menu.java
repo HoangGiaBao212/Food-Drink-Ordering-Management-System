@@ -297,7 +297,7 @@ public class Menu {
                                 int idCustomer;
                                 System.out.printf("Nhập id Cần Tìm: ");
                                 idCustomer = Menu.getInputNumber();
-                                Account account = (Account) currentAccountList.findGetById(idCustomer);
+                                Account account = (Account) currentAccountList.getById(idCustomer);
                                 if (account != null && account.getPerson() instanceof Customer)
                                     account.display();
                                 else

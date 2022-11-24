@@ -161,8 +161,8 @@ public class Bill {
      * This method
      */
     public void display(ProductList productList, AccountList accountList) {
-        Account customer = (Account) accountList.findGetById(idCustomer);
-        Account salesman = (Account) accountList.findGetById(idSalesman);
+        Account customer = (Account) accountList.getById(idCustomer);
+        Account salesman = (Account) accountList.getById(idSalesman);
         System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
         System.out.println(String.format("│  %-15s: %-65d│", "Id Bill", id));
         System.out.println(String.format("│  %-15s: %-65s│", "Tên khách hàng", customer.getPerson().getName()));

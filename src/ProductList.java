@@ -1,7 +1,7 @@
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
-public class ProductList extends ArrayList {
+public class ProductList extends ArrayList implements IGetable<Product> {
     ProductList() {
     }
 
@@ -127,5 +127,29 @@ public class ProductList extends ArrayList {
         }
         System.out.println("├────┼───────────────┼───────┼──────────┼────────────┼────────────┼─────┼────────────┤");
 
+    }
+
+    @Override
+    public Product getById(int id) {
+        for (Object object : array) {
+            if (((Product) object).getId() == id) {
+                return (Product) object;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Product[] getByString(String string) {
+        Product[] products = new Product[0];
+        for (Object object : array) {
+            if (((Product) object).getName().contains(string) ||
+                    ((Product) object).getCategory().contains(string) ||
+                    ((Product) object).getBrand().contains(string)) {
+                products = Arrays.copyOf(products, products.length + 1);
+                products[products.length - 1] = (Product) object;
+            }
+        }
+        return products;
     }
 }
