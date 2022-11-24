@@ -156,17 +156,19 @@ public class Bill {
     /**
      * This method
      */
-    public void display(ProductList productList) {
+    public void display(ProductList productList, AccountList accountList) {
+        Account customer = (Account) accountList.findGetById(idCustomer);
+        Account salesman = (Account) accountList.findGetById(idSalesman);
         System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
-        System.out.println(String.format("│  %-15s:%-66d│", "id", id));
-        System.out.println(String.format("│  %-15s:%-66d│", "Ten khach hang", idCustomer));
-        System.out.println(String.format("│  %-15s:%-66d│", "Ten nhan vien", idSalesman));
-        System.out.println(String.format("│  %-15s:%-66d│", "Diem", point));
-        System.out.println(String.format("│  %-15s:%-66s│", "Ngay",
+        System.out.println(String.format("│  %-15s: %-65d│", "Id Bill", id));
+        System.out.println(String.format("│  %-15s: %-65s│", "Tên khách hàng", customer.getPerson().getName()));
+        System.out.println(String.format("│  %-15s: %-65s│", "Tên nhân viên", salesman.getPerson().getName()));
+        System.out.println(String.format("│  %-15s: %-65d│", "Điểm", point));
+        System.out.println(String.format("│  %-15s: %-65s│", "Ngày",
                 new SimpleDateFormat("dd-MM-yyyy").format(paymentTime)));
         System.out.println("├────┬────────────────────┬──────────────┬─────┬─────────────────────────────────────┤");
         System.out.println(
-                String.format("│%-4s│%-20s│%-14s│%-5s│%-37s│", "Id", "Ten san pham", "Gia goc", "SL", "Thanh Tien"));
+                String.format("│%-4s│%-20s│%-14s│%-5s│%-37s│", "Id", "Tên sản phẩm", "Giá gốc", "SL", "Thành tiền"));
         System.out.println("├────┼────────────────────┼──────────────┼─────┼─────────────────────────────────────┤");
         int totalAll = 0;
         for (int i = 0; i < idProduct.length; i++) {
@@ -179,7 +181,7 @@ public class Bill {
         }
         System.out.println("├────┴────────────────────┴──────────────┴─────┼─────────────────────────────────────┤");
         System.out.println(
-                String.format("│  %-44s│%-37s│", "Tong tien thanh toan", String.format("%,d VND", totalAll)));
+                String.format("│  %-44s│%-37s│", "Tổng tiền thanh toán", String.format("%,d VND", totalAll)));
     }
 
 }

@@ -145,6 +145,8 @@ public class Menu {
             choice = Menu.getChoice();
             Bill bill = new Bill();
             bill.setIdCustomer(currentAccount.getId());
+            bill.setIdSalesman(-10);
+            bill.setId(currentBillList.getArray().length);
             switch (choice) {
                 case 1:
                     // Product
@@ -165,7 +167,7 @@ public class Menu {
                             case 2:
                                 while (choice != 0) {
                                     MenuContent.clearScreen();
-                                    MenuContent.showMenuCustomerProduct(bill, currentProductList);
+                                    MenuContent.showMenuCustomerProduct(bill, currentProductList, currentAccountList);
                                     choice = Menu.getChoice();
                                     switch (choice) {
                                         case 1:
@@ -217,12 +219,13 @@ public class Menu {
                                             int idBill;
                                             System.out.print("Nhập id Bill: ");
                                             idBill = Menu.getInputNumber();
-                                            Bill billFind = ((Bill) currentBillList.find(idBill,currentAccount.getId()));
+                                            Bill billFind = ((Bill) currentBillList.find(idBill,
+                                                    currentAccount.getId()));
                                             if (billFind != null) {
                                                 while (choice != 0) {
                                                     MenuContent.clearScreen();
                                                     MenuContent.showMenuCustomerPurchaseHistory(currentProductList,
-                                                            billFind);
+                                                            billFind, currentAccountList);
                                                     choice = Menu.getChoice();
                                                 }
                                             } else
@@ -272,7 +275,7 @@ public class Menu {
                     MenuContent.showMenuCustomerListInfo();
                     currentAccountList.display("Customer");
                     System.out.println(
-                        "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
+                            "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
                     MenuContent.showMenuSearchCustomer();
                     choice = Menu.getChoice();
                     switch (choice) {
@@ -280,7 +283,7 @@ public class Menu {
                             int idCustomer;
                             System.out.printf("Nhập id khách hàng: ");
                             idCustomer = Menu.getInputNumber();
-                            
+
                             break;
                         case 2:
                             break;
@@ -296,7 +299,7 @@ public class Menu {
 
     public static void menuManager() {
         int choice = -1;
-        while (choice !=0) {
+        while (choice != 0) {
             MenuContent.showMenuManager();
             choice = Menu.getChoice();
             Bill bill = new Bill();
