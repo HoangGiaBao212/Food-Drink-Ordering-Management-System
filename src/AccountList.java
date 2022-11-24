@@ -37,7 +37,7 @@ public class AccountList extends ArrayList implements IGetable<Account> {
             switch (type) {
                 case "Customer":
                     if (person instanceof Customer) {
-                        System.out.println(String.format("│%5d│%11s│%35s│%20s│%9d│", ((Account) object).getId(),
+                        System.out.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", ((Account) object).getId(),
                                 person.getName(), ((Customer) person).address,
                                 new SimpleDateFormat("dd-MM-yyyy").format(((Customer) person).getDateOfBirth()),
                                 ((Customer) person).getPoint()));
@@ -45,7 +45,7 @@ public class AccountList extends ArrayList implements IGetable<Account> {
                     break;
                 case "Salesman":
                     if (person instanceof Salesman) {
-                        System.out.println(String.format("│%5d│%13s│%33s│%20s│%9d│", ((Account) object).getId(),
+                        System.out.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", ((Account) object).getId(),
                                 person.getName(), ((Salesman) person).address,
                                 new SimpleDateFormat("dd-MM-yyyy").format(((Salesman) person).getDateOfBirth()),
                                 ((Salesman) person).getSalary()));
@@ -53,7 +53,7 @@ public class AccountList extends ArrayList implements IGetable<Account> {
                     break;
                 case "Manager":
                     if (person instanceof Manager) {
-                        System.out.println(String.format("│%5d│%11s│%35s│%20s│%9d│", ((Account) object).getId(),
+                        System.out.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", ((Account) object).getId(),
                                 ((Manager) person).getName(), ((Manager) person).address,
                                 new SimpleDateFormat("dd-MM-yyyy").format(((Manager) person).getDateOfBirth()),
                                 ((Manager) person).getSalary()));
