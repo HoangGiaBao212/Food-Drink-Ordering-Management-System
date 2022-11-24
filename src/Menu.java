@@ -274,20 +274,15 @@ public class Menu {
         int choice = -1;
         while (choice != 0) {
             MenuContent.showMenuSalesman();
-            Bill bill = new Bill();
             AccountList accountList = new AccountList();
             choice = Menu.getChoice();
             System.out.println(choice);
             switch (choice) {
                 case 1:
-                    System.out.printf("Nhập thông tin người mua:");
-                    int idProduct;
-                    int amount;
-                    System.out.print("Nhập id sản phẩm: ");
-                    idProduct = Menu.getInputNumber();
-                    System.out.print("Nhập số lượng: ");
-                    amount = Menu.getInputNumber();
-                    bill.append(idProduct, amount, currentProductList);
+                    Bill bill = new Bill();
+                    Bill.setId();
+                    bill.input();
+                    currentBillList.append(bill);
                     break;
                 case 2: // chức năng hiện ds người dùng
                     MenuContent.showMenuCustomerListInfo();
@@ -355,6 +350,11 @@ public class Menu {
                     switch (choice) {
                         case 1: // thêm nhân viên
                         case 2: // sửa
+                            MenuContent.clearScreen();
+                            currentProductList.display();
+                            int idProduct;
+                            System.out.println("Nhập id sản phầm cần sửa: ");
+                            idProduct = Menu.getInputNumber();
                         case 3: // xóa
                         default:
                             break;

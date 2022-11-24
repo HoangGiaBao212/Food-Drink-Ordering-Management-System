@@ -66,8 +66,7 @@ public class MenuContent {
 	}
 
 	public static void showMenuSalesman() {
-		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
-		System.out.println("├────────────────────────────────── [Menu Salesman] ─────────────────────────────────┤");
+		System.out.println("┌────────────────────────────────── [Menu Salesman] ─────────────────────────────────┐");
 		System.out.println("│  1. Tạo hóa đơn.                                                                   │");
 		System.out.println("│  2. Danh sách khách hàng.                                                          │");
 		System.out.println("│  0. Thoát                                                                          │");
@@ -75,23 +74,17 @@ public class MenuContent {
 	}
 
 	public static void showMenuCustomerListInfo() {
-		System.out.println(
-				"┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
-		System.out.println(
-				"├─────┬───────────┬───────────────────────────────────┬────────────────────┬─────────┤");
+		System.out.println("┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
+		System.out.println("├─────┬───────────┬───────────────────────────────────┬────────────────────┬─────────┤");
 		System.out.println(String.format("│%5s│%11s│%35s│%20s│%9s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm"));
-		System.out.println(
-				"├─────┼───────────┼───────────────────────────────────┼────────────────────┼─────────┤");
+		System.out.println("├─────┼───────────┼───────────────────────────────────┼────────────────────┼─────────┤");
 	}
 
 	public static void showMenuSalesmanListInfo() {
-		System.out.println(
-				"┌───────────────────────────────── [Infor Salesman] ─────────────────────────────────┐");
-		System.out.println(
-				"├─────┬─────────────┬─────────────────────────────────┬────────────────────┬─────────┤");
+		System.out.println("┌───────────────────────────────── [Infor Salesman] ─────────────────────────────────┐");
+		System.out.println("├─────┬─────────────┬─────────────────────────────────┬────────────────────┬─────────┤");
 		System.out.println(String.format("│%5s│%13s│%33s│%20s│%9s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Lương"));
-		System.out.println(
-				"├─────┼─────────────┼─────────────────────────────────┼────────────────────┼─────────┤");
+		System.out.println("├─────┼─────────────┼─────────────────────────────────┼────────────────────┼─────────┤");
 	}
 
 	public static void showMenuManager() {

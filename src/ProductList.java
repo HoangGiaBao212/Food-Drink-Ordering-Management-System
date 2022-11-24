@@ -102,6 +102,30 @@ public class ProductList extends ArrayList {
                             bill.getAmount()[i],
                             String.format("%,d VND", total)));
         }
+    }
+
+    public void display() {
+        /**
+         * @TODO:
+         *        [x] Show list product
+         */
+        System.out.println("├────┬───────────────┬───────┬──────────┬────────────┬────────────┬─────┬────────────┤");
+        System.out.println(String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│", "id", "Tên", "Loại", "Hiệu",
+                "NSX", "HSD", "SL", "Giá"));
+        System.out.println("├────┼───────────────┼───────┼──────────┼────────────┼────────────┼─────┼────────────┤");
+
+        for (Object object : array) {
+            System.out.println(
+                    String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│", ((Product) object).getId(),
+                            ((Product) object).getName(),
+                            ((Product) object).getCategory(),
+                            ((Product) object).getBrand(),
+                            new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getMFG()),
+                            new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getEXP()),
+                            ((Product) object).getCount(),
+                            ((Product) object).getPrice()));
+        }
+        System.out.println("├────┼───────────────┼───────┼──────────┼────────────┼────────────┼─────┼────────────┤");
 
     }
 }

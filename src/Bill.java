@@ -132,6 +132,10 @@ public class Bill {
         return;
     }
 
+    public void input() {
+        
+    }
+
     public void changeAmount(int idProduct, int newAmount, ProductList productList) {
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
