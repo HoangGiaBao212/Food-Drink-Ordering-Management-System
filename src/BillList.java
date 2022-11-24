@@ -1,14 +1,28 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
-public class BillList extends ArrayList implements IGetable <Bill> {
+public class BillList extends ArrayList implements IGetable<Bill> {
 
     public BillList() {
     }
 
     public BillList(ArrayList arrayList) {
         super(arrayList);
+    }
+
+    public int getNewId() {
+        int id = 0;
+
+        try {
+            id = ((Product) array[array.length - 1]).getId() + 1;
+            while (getById(id) != null) {
+                id++;
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return id;
     }
 
     public Object find(int idBill, int idCustomer) {
@@ -56,7 +70,7 @@ public class BillList extends ArrayList implements IGetable <Bill> {
     @Override
     public Bill getById(int id) {
         for (Object object : array) {
-            if(((Bill)object).getId() == id) {
+            if (((Bill) object).getId() == id) {
                 return (Bill) object;
             }
         }
