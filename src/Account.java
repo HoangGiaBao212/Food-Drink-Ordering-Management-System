@@ -2,7 +2,7 @@ import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-public class Account implements IAccount {
+public class Account {
     private static final Scanner scanner = new Scanner(System.in);
     private int id;
     private String username;
