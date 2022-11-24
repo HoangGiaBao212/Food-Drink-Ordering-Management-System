@@ -33,7 +33,6 @@ public class MenuContent {
 		System.out.println("│  Bạn có muốn đăng nhập không ?                                                     │");
 		System.out.println("│      1. Có                                                                         │");
 		System.out.println("│      0. Không                                                                      │");
-		System.out.println("│     -1. Kết thúc phiên                                                             │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
@@ -148,9 +147,9 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuCustomerProduct(Bill bill, ProductList productList) {
+	public static void showMenuCustomerProduct(Bill bill, ProductList productList, AccountList accountList) {
 		System.out.println("┌──────────────────────────────────── [Bill Menu] ───────────────────────────────────┐");
-		bill.display(productList);
+		bill.display(productList, accountList);
 		System.out.println("├──────────────────────────────────────────────┴─────────────────────────────────────┤");
 		System.out.println("│  1. Chỉnh sửa số lượng.                                                            │");
 		System.out.println("│  2. Xóa sản phẩm.                                                                  │");
@@ -168,9 +167,9 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuCustomerPurchaseHistory(ProductList productList, Bill bill) {
+	public static void showMenuCustomerPurchaseHistory(ProductList productList, Bill bill, AccountList accountList) {
 		System.out.println("┌────────────────────────────── [Purchase History Menu] ─────────────────────────────┐");
-		bill.display(productList);
+		bill.display(productList, accountList);
 		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
 		System.out.println("│  0. Quay lại.                                                                      │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");

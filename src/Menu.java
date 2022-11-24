@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -112,6 +113,22 @@ public class Menu {
         }
     }
 
+    public static Date getInputDate() {
+        Date date = null;
+        String strDate = "";
+        SimpleDateFormat dateInput = new SimpleDateFormat("dd-MM-yyyy");
+        while (date == null) {
+            System.out.print("Date (dd-MM-yyyy) > ");
+            strDate = scanner.nextLine();
+            try {
+                date = dateInput.parse(strDate);
+            } catch (Exception e) {
+                System.out.println("Input không chính xác!!!");
+            }
+        }
+        return date;
+    }
+
     public static int getInputNumber() {
         int choice;
         while (true) {
@@ -145,6 +162,8 @@ public class Menu {
             choice = Menu.getChoice();
             Bill bill = new Bill();
             bill.setIdCustomer(currentAccount.getId());
+            bill.setIdSalesman(-10);
+            bill.setId(currentBillList.getArray().length);
             switch (choice) {
                 case 1:
                     // Product
@@ -165,7 +184,7 @@ public class Menu {
                             case 2:
                                 while (choice != 0) {
                                     MenuContent.clearScreen();
-                                    MenuContent.showMenuCustomerProduct(bill, currentProductList);
+                                    MenuContent.showMenuCustomerProduct(bill, currentProductList, currentAccountList);
                                     choice = Menu.getChoice();
                                     switch (choice) {
                                         case 1:
@@ -223,7 +242,7 @@ public class Menu {
                                                 while (choice != 0) {
                                                     MenuContent.clearScreen();
                                                     MenuContent.showMenuCustomerPurchaseHistory(currentProductList,
-                                                            billFind);
+                                                            billFind, currentAccountList);
                                                     choice = Menu.getChoice();
                                                 }
                                             } else
@@ -362,7 +381,12 @@ public class Menu {
                 default:
                     break;
             }
+
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Menu.getInputDate());
     }
 
 }
