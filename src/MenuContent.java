@@ -33,6 +33,7 @@ public class MenuContent {
 		System.out.println("│  Bạn có muốn đăng nhập không ?                                                     │");
 		System.out.println("│      1. Có                                                                         │");
 		System.out.println("│      0. Không                                                                      │");
+		System.out.println("│     -1. Kết thúc phiên                                                             │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
@@ -100,6 +101,24 @@ public class MenuContent {
 		System.out.println("├──────────────────────────────────────────────┴─────────────────────────────────────┤");
 		System.out.println("│  1. Chỉnh sửa số lượng.                                                            │");
 		System.out.println("│  2. Xóa sản phẩm.                                                                  │");
+		System.out.println("│  0. Quay lại.                                                                      │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
+	}
+
+	public static void showMenuCustomerPurchaseHistory(AccountList accountList, ProductList productList,
+			BillList billList, Account account) {
+		System.out.println("┌────────────────────────────── [Purchase History Menu] ─────────────────────────────┐");
+		billList.display(accountList, productList, account);
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("│  1. Chi tiết Bill                                                                  │");
+		System.out.println("│  0. Quay lại.                                                                      │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
+	}
+
+	public static void showMenuCustomerPurchaseHistory(ProductList productList, Bill bill) {
+		System.out.println("┌────────────────────────────── [Purchase History Menu] ─────────────────────────────┐");
+		bill.display(productList);
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
 		System.out.println("│  0. Quay lại.                                                                      │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}

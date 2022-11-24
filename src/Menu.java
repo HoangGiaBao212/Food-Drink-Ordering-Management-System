@@ -207,6 +207,33 @@ public class Menu {
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1:
+                                while (choice != 0) {
+                                    MenuContent.clearScreen();
+                                    MenuContent.showMenuCustomerPurchaseHistory(currentAccountList, currentProductList,
+                                            currentBillList, currentAccount);
+                                    choice = Menu.getChoice();
+                                    switch (choice) {
+                                        case 1:
+                                            int idBill;
+                                            System.out.print("Nhập id Bill: ");
+                                            idBill = Menu.getInputNumber();
+                                            Bill billFind = ((Bill) currentBillList.find(idBill,currentAccount.getId()));
+                                            if (billFind != null) {
+                                                while (choice != 0) {
+                                                    MenuContent.clearScreen();
+                                                    MenuContent.showMenuCustomerPurchaseHistory(currentProductList,
+                                                            billFind);
+                                                    choice = Menu.getChoice();
+                                                }
+                                            } else
+                                                MenuContent.notification("không tìm thấy hóa đơn!");
+                                            choice = -1;
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                                choice = -1;
                                 break;
                             case 2:
                                 break;
@@ -243,7 +270,8 @@ public class Menu {
                             "┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
                     System.out.println(
                             "├─────┬───────────┬───────────────────────────────────┬────────────────────┬─────────┤");
-                    System.out.println(String.format("│%5s│%11s│%35s│%20s│%9s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm"));
+                    System.out.println(
+                            String.format("│%5s│%11s│%35s│%20s│%9s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm"));
                     System.out.println(
                             "├─────┼───────────┼───────────────────────────────────┼────────────────────┼─────────┤");
                     currentAccountList.display("Customer");

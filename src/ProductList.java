@@ -24,7 +24,6 @@ public class ProductList extends ArrayList {
             }
         }
         return null;
-
     }
 
     public Object search(String string) {
