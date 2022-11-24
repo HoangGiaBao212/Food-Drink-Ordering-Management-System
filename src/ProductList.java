@@ -143,9 +143,9 @@ public class ProductList extends ArrayList implements IGetable<Product> {
     public Product[] getByString(String string) {
         Product[] products = new Product[0];
         for (Object object : array) {
-            if (((Product) object).getName().contains(string) ||
-                    ((Product) object).getCategory().contains(string) ||
-                    ((Product) object).getBrand().contains(string)) {
+            if (((Product) object).getName().toLowerCase().contains(string.toLowerCase()) ||
+                    ((Product) object).getCategory().toLowerCase().contains(string.toLowerCase()) ||
+                    ((Product) object).getBrand().toLowerCase().contains(string.toLowerCase())) {
                 products = Arrays.copyOf(products, products.length + 1);
                 products[products.length - 1] = (Product) object;
             }

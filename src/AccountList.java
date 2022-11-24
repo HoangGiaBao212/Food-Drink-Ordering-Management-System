@@ -85,7 +85,7 @@ public class AccountList extends ArrayList implements IGetable<Account> {
 
         for (Object object : array) {
             if (((Account) object).getUsername().contains(string) ||
-                    ((Account) object).getPerson().getName().contains(string)) {
+                    ((Account) object).getPerson().getName().toLowerCase().contains(string.toLowerCase())) {
                 accounts = Arrays.copyOf(accounts, accounts.length + 1);
                 accounts[accounts.length - 1] = (Account) object;
             }
