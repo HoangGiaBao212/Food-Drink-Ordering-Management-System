@@ -320,7 +320,7 @@ public class Menu {
                     MenuContent.showMenuSalesmanListInfo();
                     currentAccountList.display("Salesman");
                     System.out.println(
-                            "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
+                            "├─────┴─────────────┴─────────────────────────────────┴────────────────────┴─────────┤");
                     MenuContent.showMenuManagerSalesman();
                     choice = Menu.getChoice();
                     switch (choice) {

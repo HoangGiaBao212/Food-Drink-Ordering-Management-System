@@ -28,14 +28,6 @@ public class AccountList extends ArrayList {
         return null;
     }
 
-    // public void append(int id,AccountList accountList, Account account) {
-    //     for (Object object : array) {
-    //         if (((Bill) object).getIdCustomer() == account.getId()) {
-    //             Account accountCustomer = (Account) accountList.findGetById(((Bill) object).getIdCustomer());
-    //         }
-    //     }
-    // }
-
     public Object search(String string) {
         for (Object object : array) {
             if (((Account) object).getPerson().getName().indexOf(string) != -1) {
@@ -59,7 +51,7 @@ public class AccountList extends ArrayList {
                     break;
                 case "Salesman":
                     if (person instanceof Salesman) {
-                        System.out.println(String.format("│%5d│%11s│%35s│%20s│%9d│", ((Account) object).getId(),
+                        System.out.println(String.format("│%5d│%13s│%33s│%20s│%9d│", ((Account) object).getId(),
                                 person.getName(), ((Salesman) person).address,
                                 new SimpleDateFormat("dd-MM-yyyy").format(((Salesman) person).getDateOfBirth()),
                                 ((Salesman) person).getSalary()));
