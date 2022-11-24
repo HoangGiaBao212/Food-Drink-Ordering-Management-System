@@ -3,6 +3,8 @@ import java.text.SimpleDateFormat;
 
 public class AccountList extends ArrayList {
 
+    public static Object findAccountbyId;
+
     public AccountList() {
     }
 
@@ -35,6 +37,15 @@ public class AccountList extends ArrayList {
             }
         }
         return null;
+    }
+
+    public void findAccountById(int id) {
+        Account account = (Account) findGetById(id);
+        if (account == null) {
+            MenuContent.notification("Id người dùng không đúng!");
+            return;
+        }
+
     }
 
     public void display(String type) {

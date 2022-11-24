@@ -217,7 +217,8 @@ public class Menu {
                                             int idBill;
                                             System.out.print("Nhập id Bill: ");
                                             idBill = Menu.getInputNumber();
-                                            Bill billFind = ((Bill) currentBillList.find(idBill,currentAccount.getId()));
+                                            Bill billFind = ((Bill) currentBillList.find(idBill,
+                                                    currentAccount.getId()));
                                             if (billFind != null) {
                                                 while (choice != 0) {
                                                     MenuContent.clearScreen();
@@ -255,6 +256,7 @@ public class Menu {
         while (choice != 0) {
             MenuContent.showMenuSalesman();
             Bill bill = new Bill();
+            AccountList accountList = new AccountList();
             choice = Menu.getChoice();
             System.out.println(choice);
             switch (choice) {
@@ -272,18 +274,26 @@ public class Menu {
                     MenuContent.showMenuCustomerListInfo();
                     currentAccountList.display("Customer");
                     System.out.println(
-                        "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
-                    MenuContent.showMenuSearchCustomer();
-                    choice = Menu.getChoice();
-                    switch (choice) {
-                        case 1:
-                            int idCustomer;
-                            System.out.printf("Nhập id khách hàng: ");
-                            idCustomer = Menu.getInputNumber();
-                            
-                            break;
-                        case 2:
-                            break;
+                            "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
+                    while (choice != 0) {
+                        MenuContent.showMenuSearchCustomer();
+                        choice = Menu.getChoice();
+                        switch (choice) {
+                            case 1:
+                                int idCustomer;
+                                System.out.printf("Nhập id Cần Tìm: ");
+                                idCustomer = Menu.getInputNumber();
+                                Account account = (Account) currentAccountList.findGetById(idCustomer);
+                                if (account != null && account.getPerson() instanceof Customer)
+                                    account.display();
+                                else
+                                    MenuContent.notification("Không tìm thấy id!");
+                                choice = -1;
+                                break;
+                            case 2:
+                                choice = -1;
+                                break;
+                        }
                     }
                     choice = -1;
                     break;
@@ -296,7 +306,7 @@ public class Menu {
 
     public static void menuManager() {
         int choice = -1;
-        while (choice !=0) {
+        while (choice != 0) {
             MenuContent.showMenuManager();
             choice = Menu.getChoice();
             Bill bill = new Bill();

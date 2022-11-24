@@ -91,7 +91,11 @@ public class Account implements IAccount {
         System.out.println(String.format("│  %-12s :%-68s│", "Địa chỉ", person.getAddress()));
         System.out.println(String.format("│  %-12s :%-68s│", "Ngày sinh",
                 new SimpleDateFormat("dd-MM-yyyy").format((person.getDateOfBirth()))));
-        System.out.println(String.format("│  %-12s :%-68s│", "Điểm", ((Customer) person).getPoint()));
+        if(getPerson() instanceof Customer)
+            System.out.println(String.format("│  %-12s :%-68s│", "Điểm", ((Customer) person).getPoint()));
+        else
+            System.out.println(String.format("│  %-12s :%-68s│", "Lương", ((Employee) person).getSalary()));
+
     }
 
     public void input() {
