@@ -1,4 +1,5 @@
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class BillList extends ArrayList {
@@ -48,7 +49,6 @@ public class BillList extends ArrayList {
                                 accountSalesman.getPerson().getName(),
                                 new SimpleDateFormat("dd-MM-yyyy").format(((Bill) object).getPaymentTime()),
                                 String.format("%,d VND", total)));
-
             }
         }
     }
