@@ -9,11 +9,11 @@ public abstract class Person {
     protected Date dateOfBirth;
     protected Account account;
 
-    public Person() {
+    protected Person() {
         dateOfBirth = new Date();
     }
 
-    public Person(String name, String address, Date dateOfBirth, Account account) {
+    protected Person(String name, String address, Date dateOfBirth, Account account) {
         this.name = name;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
@@ -53,12 +53,6 @@ public abstract class Person {
     public void setAccount(Account account) {
         this.account = account;
     }
-
-    // public void display(String type) {
-    // display("list");
-    // System.out.printf("|%15s|%50s|%13s|\n", name, address, new
-    // SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth));
-    // }
 
     @Override
     public String toString() {

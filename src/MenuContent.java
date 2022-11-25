@@ -22,7 +22,7 @@ public class MenuContent {
 		try {
 			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			//
 		}
 
 		MenuContent.clearScreen();

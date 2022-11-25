@@ -55,7 +55,6 @@ public class Menu {
                 System.out.print("Nhập username: ");
                 String username = Menu.getInput();
                 System.out.print("Nhập password: ");
-                // String password = Menu.getInput();
                 String password = Menu.getInputPassword();
                 currentAccount = currentAccountList.login(username, password);
                 if (currentAccount == null) {
