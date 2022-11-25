@@ -18,7 +18,7 @@ public class BillList extends ArrayList implements IGetable<Bill> {
                 id++;
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            // id = 0
         }
 
         return id;
@@ -46,8 +46,6 @@ public class BillList extends ArrayList implements IGetable<Bill> {
                 String.format("│%-4s│%-25s│%-25s│%-12s│%-14s│", "id", "Ten KH", "Ten NV", "Thoi Gian", "Tong"));
         System.out.println("├────┼─────────────────────────┼─────────────────────────┼────────────┼──────────────┤");
 
-        // Account accountCustumer = (Account) accountList.find(((Bill)
-        // object).getIdCustomer());
         for (Object object : array) {
             if (((Bill) object).getIdCustomer() == account.getId()) {
                 Account accountSalesman = accountList.getById(((Bill) object).getIdSalesman());
