@@ -92,7 +92,8 @@ public class Account {
     }
 
     public void input(String person) {
-        if (!person.equals("Customer") && !person.equals("Salesman") && !person.equals("Manager"))
+        person = person.toLowerCase();
+        if (!person.equals("customer") && !person.equals("salesman") && !person.equals("manager"))
             return;
         System.out.print("Nhập username: ");
         setUsername(scanner.nextLine());
@@ -100,14 +101,17 @@ public class Account {
         setPassword(scanner.nextLine());
         Person newPerson = null;
         switch (person) {
-            case "Customer" -> {
+            case "customer" -> {
                 newPerson = new Customer();
             }
-            case "Salesman" -> {
+            case "salesman" -> {
                 newPerson = new Salesman();
             }
-            case "Manager" -> {
+            case "manager" -> {
                 newPerson = new Manager();
+            }
+            default -> {
+                return;
             }
         }
         newPerson.input();
