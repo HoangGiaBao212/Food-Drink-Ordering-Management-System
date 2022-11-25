@@ -60,7 +60,7 @@ public class Product {
     }
 
     public void setCount(int count) {
-        while (count <= 0) {
+        while (count < 0) {
             System.out.print("Nhập số lượng: ");
             count = Menu.getInputNumber();
         }

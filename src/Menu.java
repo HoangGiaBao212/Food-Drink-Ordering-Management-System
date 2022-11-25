@@ -185,8 +185,6 @@ public class Menu {
                                 bill.append(idProduct, amount, currentProductList);
                                 break;
                             case 2:
-                                if (currentAccount.getId() == -1) // -1 is id guest
-                                    break;
                                 while (choice != 0) {
                                     MenuContent.clearScreen();
                                     MenuContent.showMenuCustomerProduct(bill, currentProductList, currentAccountList);
@@ -212,25 +210,61 @@ public class Menu {
                                 choice = -1;
                                 break;
                             case 3:
-                                currentProductList.updateCountProductList(bill);
-                                currentBillList.append(bill);
-                                MenuContent.showMenuCustomerInfo(currentAccount);
-                                if (currentAccount.getId() != 1) {
-                                    MenuContent.showMenuCustomerInfo(currentAccount);
-                                    MenuContent.showMenuPoint(currentAccount);
-                                    choice = Menu.getChoice();
-                                    switch (choice) {
-                                        case 1: // sử dụng điểm: tổng tiền(totalall) - điểm của khách nếu bằng 1 số lớn
-                                                // hơn bằng 0
-                                                // thì đó là tiền cần thanh toán và số điểm của khách sẽ về tổng
-                                                // tiền/100
-                                                // ngược lại nếu nhỏ hơn 0 thì tiền thanh toán là 0 và điểm còn lại là
-                                                // điểm của khách trừ đi tổng tiền cộng với tổng tiền /100
-                                        case 2:
-                                            // điểm khách sẽ cộng thêm tổng tiền /100
+                                int totalAll = bill.totalAll(currentProductList);
+                                if (currentAccount.getId() != -1) {
+                                    choice = -1;
+                                    while (choice != 1 && choice != 2) {
+                                        MenuContent.clearScreen();
+                                        MenuContent.showMenuPoint(currentProductList, currentAccount, bill);
+                                        choice = Menu.getChoice();
+                                        int newPoint;
+                                        int billPoint = totalAll / 100;
+                                        int currentCustomerPoint = ((Customer) currentAccount.getPerson()).getPoint();
+                                        switch (choice) {
+                                            case 1:
+                                                if (currentCustomerPoint >= totalAll)
+                                                    totalAll = 0;
+                                                else
+                                                    totalAll -= currentCustomerPoint;
+                                                newPoint = currentCustomerPoint - bill.totalAll(currentProductList);
+                                                if (newPoint < 0)
+                                                    newPoint = 0;
+                                                newPoint += billPoint;
+                                                ((Customer) currentAccount.getPerson()).setPoint(newPoint);
+                                                currentAccountList.updateAccount(currentAccount.getId(),
+                                                        currentAccount);
+                                                currentBillList.append(bill);
+                                                currentProductList.updateCountProductList(bill);
+                                                MenuContent
+                                                        .notification(String.format("Số tiền cần thành toán: %,d VND",
+                                                                totalAll));
+                                                MenuContent.notification("Thanh toán thành công!");
+                                                break;
+                                            case 2:
+                                                newPoint = currentCustomerPoint + billPoint;
+                                                ((Customer) currentAccount.getPerson()).setPoint(newPoint);
+                                                currentAccountList.updateAccount(currentAccount.getId(),
+                                                        currentAccount);
+                                                currentBillList.append(bill);
+                                                currentProductList.updateCountProductList(bill);
+                                                MenuContent
+                                                        .notification(String.format("Số tiền cần thành toán: %,d VND",
+                                                                totalAll));
+                                                MenuContent.notification("Thanh toán thành công!");
+                                                break;
+                                            default:
+                                                break;
+                                        }
                                     }
+
+                                } else {
+                                    currentBillList.append(bill);
+                                    currentProductList.updateCountProductList(bill);
+                                    MenuContent
+                                            .notification(String.format("Số tiền cần thành toán: %,d VND",
+                                                    totalAll));
+                                    MenuContent.notification("Thanh toán thành công!");
                                 }
-                                MenuContent.notification("Thanh toán thành công!");
                                 choice = 0;
                                 break;
                             default:
@@ -241,6 +275,8 @@ public class Menu {
                     break;
                 case 2:
                     // Bill
+                    if (currentAccount.getId() == -1) // -1 is id guest
+                        break;
                     while (choice != 0) {
                         MenuContent.clearScreen();
                         MenuContent.showMenuCustomerInfo(currentAccount);
@@ -343,7 +379,6 @@ public class Menu {
                                 idProduct = Menu.getInputNumber();
                                 System.out.print("Nhập số lượng: ");
                                 amount = Menu.getInputNumber();
-
                                 bill.append(idProduct, amount, currentProductList);
                                 break;
                             case 2:
@@ -372,9 +407,61 @@ public class Menu {
                                 choice = -1;
                                 break;
                             case 3:
-                                currentProductList.updateCountProductList(bill);
-                                currentBillList.append(bill);
-                                MenuContent.notification("Thanh toán thành công!");
+                                int totalAll = bill.totalAll(currentProductList);
+                                if (accountCustomer.getId() != -1) {
+                                    choice = -1;
+                                    while (choice != 1 && choice != 2) {
+                                        MenuContent.clearScreen();
+                                        MenuContent.showMenuPoint(currentProductList, accountCustomer, bill);
+                                        choice = Menu.getChoice();
+                                        int newPoint;
+                                        int billPoint = totalAll / 100;
+                                        int currentCustomerPoint = ((Customer) accountCustomer.getPerson()).getPoint();
+                                        switch (choice) {
+                                            case 1:
+                                                if (currentCustomerPoint >= totalAll)
+                                                    totalAll = 0;
+                                                else
+                                                    totalAll -= currentCustomerPoint;
+                                                newPoint = currentCustomerPoint - bill.totalAll(currentProductList);
+                                                if (newPoint < 0)
+                                                    newPoint = 0;
+                                                newPoint += billPoint;
+                                                ((Customer) accountCustomer.getPerson()).setPoint(newPoint);
+                                                currentAccountList.updateAccount(accountCustomer.getId(),
+                                                        accountCustomer);
+                                                currentBillList.append(bill);
+                                                currentProductList.updateCountProductList(bill);
+                                                MenuContent
+                                                        .notification(String.format("Số tiền cần thành toán: %,d VND",
+                                                                totalAll));
+                                                MenuContent.notification("Thanh toán thành công!");
+                                                break;
+                                            case 2:
+                                                newPoint = currentCustomerPoint + billPoint;
+                                                ((Customer) accountCustomer.getPerson()).setPoint(newPoint);
+                                                currentAccountList.updateAccount(accountCustomer.getId(),
+                                                        accountCustomer);
+                                                currentBillList.append(bill);
+                                                currentProductList.updateCountProductList(bill);
+                                                MenuContent
+                                                        .notification(String.format("Số tiền cần thành toán: %,d VND",
+                                                                totalAll));
+                                                MenuContent.notification("Thanh toán thành công!");
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }
+
+                                } else {
+                                    currentBillList.append(bill);
+                                    currentProductList.updateCountProductList(bill);
+                                    MenuContent
+                                            .notification(String.format("Số tiền cần thành toán: %,d VND",
+                                                    totalAll));
+                                    MenuContent.notification("Thanh toán thành công!");
+                                }
                                 choice = 0;
                                 break;
                             default:

@@ -131,7 +131,6 @@ public class Bill {
         MenuContent.notification("Không tìm thấy sản phẩm!");
     }
 
-
     public void changeAmount(int idProduct, int newAmount, ProductList productList) {
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
@@ -156,11 +155,21 @@ public class Bill {
     /**
      * This method
      */
-    public void display(ProductList productList, AccountList accountList) {
-        Account customer =  accountList.getById(idCustomer);
-        Account salesman =  accountList.getById(idSalesman);
+    public int totalAll(ProductList productList) {
+        int totalAll = 0;
+        for (int i = 0; i < idProduct.length; i++) {
+            Product product = (Product) productList.find(idProduct[i]);
+            totalAll += product.getPrice() * amount[i];
+        }
+        return totalAll;
+    }
 
-        if(customer == null) {
+    public void display(ProductList productList, AccountList accountList) {
+        Account customer = accountList.getById(idCustomer);
+        Account salesman = accountList.getById(idSalesman);
+        int totalAll = totalAll(productList);
+        setPoint(totalAll / 100);
+        if (customer == null) {
             customer = new Account(-1, "guest", "1234", new Customer("Guest", "VN", new Date(), null, 0));
         }
 
@@ -175,11 +184,9 @@ public class Bill {
         System.out.println(
                 String.format("│%-4s│%-20s│%-14s│%-5s│%-37s│", "Id", "Tên sản phẩm", "Giá gốc", "SL", "Thành tiền"));
         System.out.println("├────┼────────────────────┼──────────────┼─────┼─────────────────────────────────────┤");
-        int totalAll = 0;
         for (int i = 0; i < idProduct.length; i++) {
             Product product = (Product) productList.find(idProduct[i]);
             int total = product.getPrice() * amount[i];
-            totalAll += total;
             System.out.println(
                     String.format("│%-4d│%-20s│%-14s│%-5s│%-37s│", product.getId(), product.getName(),
                             product.getPrice(), amount[i], String.format("%,d", total)));

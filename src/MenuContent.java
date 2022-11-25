@@ -79,9 +79,15 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuPoint(Account account) {
-		System.out.println("┌────────────────────────────────── [Account Menu] ──────────────────────────────────┐");
-		account.display();
+	public static void showMenuPoint(ProductList productList, Account account, Bill bill) {
+		System.out.println("┌────────────────────────────────── [Menu Payment] ──────────────────────────────────┐");
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println(
+				String.format("│  %-12s: %-68s│", "Tổng hóa đơn",
+						String.format("%,d VND", bill.totalAll(productList))));
+		System.out.println(
+				String.format("│  %-12s: %-68s│", "Điểm hiện có",
+						String.format("%,d", ((Customer) account.getPerson()).getPoint())));
 		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
 		System.out.println("│  Bạn có muốn sử dụng điểm không ?                                                  │");
 		System.out.println("│  1. Có.                                                                            │");
