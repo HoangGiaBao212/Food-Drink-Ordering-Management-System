@@ -3,8 +3,6 @@ import java.text.SimpleDateFormat;
 
 public class AccountList extends ArrayList implements IGetable<Account> {
 
-    public static Object findAccountbyId;
-
     public AccountList() {
     }
 
@@ -39,7 +37,7 @@ public class AccountList extends ArrayList implements IGetable<Account> {
                 id++;
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            id = 0;
         }
 
         return id;
@@ -95,10 +93,6 @@ public class AccountList extends ArrayList implements IGetable<Account> {
                     }
                     break;
                 default:
-                    /**
-                     * @TODO:
-                     *        fix later
-                     */
                     break;
             }
         }
