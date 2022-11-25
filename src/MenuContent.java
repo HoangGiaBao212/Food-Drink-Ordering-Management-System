@@ -133,7 +133,6 @@ public class MenuContent {
 		System.out.println("│  3. Sửa họ và tên.                                                                 │");
 		System.out.println("│  4. Sửa địa chỉ.                                                                   │");
 		System.out.println("│  5. Sửa ngày sinh.                                                                 │");
-		System.out.println("│  6. Sửa điểm.                                                                      │");
 		System.out.println("│  0. Thoát                                                                          │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
