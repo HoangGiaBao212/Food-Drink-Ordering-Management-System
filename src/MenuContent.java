@@ -229,4 +229,14 @@ public class MenuContent {
 		System.out.println("│      0. Không                                                                      │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
+
+	public static void showMenuPoint(Account account) {
+		System.out.println("┌────────────────────────────────── [Account Menu] ──────────────────────────────────┐");
+		account.display();
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("│  Bạn có muốn sử dụng điểm không ?                                                  │");
+		System.out.println("│  1. Có.                                                                            │");
+		System.out.println("│  2. Không.                                                                         │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
+	}
 }

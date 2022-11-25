@@ -210,6 +210,19 @@ public class Menu {
                             case 3:
                                 currentProductList.updateCountProductList(bill);
                                 currentBillList.append(bill);
+                                MenuContent.showMenuCustomerInfo(currentAccount);
+                                if(currentAccount.getId() != 1) {
+                                    MenuContent.showMenuCustomerInfo(currentAccount);
+                                    MenuContent.showMenuPoint(currentAccount);
+                                    choice = Menu.getChoice();
+                                    switch (choice) {
+                                        case 1: // sử dụng điểm: tổng tiền(totalall) - điểm của khách nếu bằng 1 số lớn hơn bằng 0
+                                                // thì đó là tiền cần thanh toán và số điểm của khách sẽ về tổng tiền/100
+                                                //ngược lại nếu nhỏ hơn 0 thì tiền thanh toán là 0 và điểm còn lại là điểm của khách trừ đi tổng tiền cộng với tổng tiền /100
+                                        case 2:
+                                                // điểm khách sẽ cộng thêm tổng tiền /100
+                                    }
+                                }
                                 MenuContent.notification("Thanh toán thành công!");
                                 choice = 0;
                                 break;
