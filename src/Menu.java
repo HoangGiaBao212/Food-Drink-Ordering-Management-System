@@ -211,16 +211,19 @@ public class Menu {
                                 currentProductList.updateCountProductList(bill);
                                 currentBillList.append(bill);
                                 MenuContent.showMenuCustomerInfo(currentAccount);
-                                if(currentAccount.getId() != 1) {
+                                if (currentAccount.getId() != 1) {
                                     MenuContent.showMenuCustomerInfo(currentAccount);
                                     MenuContent.showMenuPoint(currentAccount);
                                     choice = Menu.getChoice();
                                     switch (choice) {
-                                        case 1: // sử dụng điểm: tổng tiền(totalall) - điểm của khách nếu bằng 1 số lớn hơn bằng 0
-                                                // thì đó là tiền cần thanh toán và số điểm của khách sẽ về tổng tiền/100
-                                                //ngược lại nếu nhỏ hơn 0 thì tiền thanh toán là 0 và điểm còn lại là điểm của khách trừ đi tổng tiền cộng với tổng tiền /100
+                                        case 1: // sử dụng điểm: tổng tiền(totalall) - điểm của khách nếu bằng 1 số lớn
+                                                // hơn bằng 0
+                                                // thì đó là tiền cần thanh toán và số điểm của khách sẽ về tổng
+                                                // tiền/100
+                                                // ngược lại nếu nhỏ hơn 0 thì tiền thanh toán là 0 và điểm còn lại là
+                                                // điểm của khách trừ đi tổng tiền cộng với tổng tiền /100
                                         case 2:
-                                                // điểm khách sẽ cộng thêm tổng tiền /100
+                                            // điểm khách sẽ cộng thêm tổng tiền /100
                                     }
                                 }
                                 MenuContent.notification("Thanh toán thành công!");
@@ -422,6 +425,7 @@ public class Menu {
             switch (choice) {
                 case 1: // quản lý sản phẩm
                     while (choice != 0) {
+                        int idProduct;
                         MenuContent.clearScreen();
                         MenuContent.showMenuManagerProduct(currentProductList);
                         choice = Menu.getChoice();
@@ -433,7 +437,6 @@ public class Menu {
                                 currentProductList.append(newProduct);
                                 break;
                             case 2: // sửa sp
-                                int idProduct;
                                 System.out.print("Nhập id sản phẩm cần sửa: ");
                                 idProduct = Menu.getInputNumber();
                                 Product changeProduct = currentProductList.getById(idProduct);
@@ -450,6 +453,15 @@ public class Menu {
                                     MenuContent.notification("Id sản phẩm không đúng!");
                                 break;
                             case 3: // xóa sp
+                                System.out.print("Nhập id sản phẩm cần sửa: ");
+                                idProduct = Menu.getInputNumber();
+                                Product removeProduct = currentProductList.getById(idProduct);
+                                if (removeProduct != null) {
+                                    currentProductList.removeProduct(idProduct);
+                                    MenuContent.notification("Xoá sản phẩm thành công!");
+                                } else
+                                    MenuContent.notification("Id sản phẩm không đúng!");
+                                break;
                             default:
                                 break;
                         }

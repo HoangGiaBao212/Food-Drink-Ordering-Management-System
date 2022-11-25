@@ -55,17 +55,15 @@ public class ProductList extends ArrayList implements IGetable<Product> {
 
     }
 
-    public void removeProduct(String name) {
-        for (int i = 0; i < array.length; i++) {
-            for (Object object : array)
-                if (((Product) object).getName().equals(name)) {
-                    for (int j = i; j < array.length - 1; i++) {
-                        array[j] = array[j + 1];
-                        array = Arrays.copyOf(array, array.length - 1);
-                        break;
-                    }
+    public void removeProduct(int idProduct) {
+        for (int i = 0; i < array.length; i++)
+            if (((Product) array[i]).getId() == idProduct) {
+                for (int j = i; j < array.length - 1; j++) {
+                    array[j] = array[j + 1];
                 }
-        }
+                array = Arrays.copyOf(array, array.length - 1);
+                break;
+            }
     }
 
     public int getNewId() {
@@ -148,7 +146,6 @@ public class ProductList extends ArrayList implements IGetable<Product> {
                             ((Product) object).getCount(),
                             ((Product) object).getPrice()));
         }
-        System.out.println("├────┼───────────────┼───────┼──────────┼────────────┼────────────┼─────┼────────────┤");
 
     }
 

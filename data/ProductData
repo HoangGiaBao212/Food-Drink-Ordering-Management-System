@@ -1,4 +1,4 @@
-Product [id='0', name='Kem', price='15000', count='1', category='Food', brand='Number1', MFG='01-12-2003', EXP='01-12-2003']
+Product [id='0', name='Kem', price='15000', count='5', category='Food', brand='Number1', MFG='01-12-2003', EXP='01-12-2003']
 Product [id='1', name='CoCa', price='12000', count='2', category='Drink', brand='Number1', MFG='01-12-2003', EXP='01-12-2003']
 Product [id='2', name='Pepsi', price='12000', count='2', category='Drink', brand='Number1', MFG='01-12-2003', EXP='01-12-2003']
 Product [id='3', name='C2', price='8000', count='4', category='Drink', brand='Number1', MFG='01-12-2003', EXP='01-12-2003']
