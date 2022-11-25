@@ -517,19 +517,22 @@ public class Menu {
                     choice = -1;
                     break;
                 case 3: // quản lý khách hàng
-                    MenuContent.clearScreen();
-                    // MenuContent.showMenuCustomerListInfo();
-                    currentAccountList.display("Customer");
-                    System.out.println(
-                            "├─────┴───────────┴───────────────────────────────────┴────────────────────┴─────────┤");
-                    MenuContent.showMenuManagerCustomer();
-                    choice = Menu.getChoice();
-                    switch (choice) {
-                        case 1: // thêm khách hàng
-                        case 2: // sửa
-                        case 3: // xóa
-                        default:
-                            break;
+                    while (choice != 0) {
+                        MenuContent.clearScreen();
+                        MenuContent.showMenuManagerCustomer(currentAccountList);
+                        choice = Menu.getChoice();
+                        switch (choice) {
+                            case 1: // thêm khách hàng
+                                Account newCustomer = new Account();
+                                newCustomer.setId(currentAccountList.getNewId());
+                                newCustomer.input("Customer");
+                                currentAccountList.append(newCustomer);
+                                break;
+                            case 2: // sửa
+                            case 3: // xóa
+                            default:
+                                break;
+                        }
                     }
                     choice = -1;
                     break;

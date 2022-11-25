@@ -21,11 +21,18 @@ public class Customer extends Person {
     }
 
     public void setPoint(int point) {
+        while (point < 0) {
+            System.out.print("Nhập điểm: ");
+            point = Menu.getInputNumber();
+        }
         this.point = point;
     }
 
+    @Override
     public void input() {
         super.input();
+        System.out.print("Nhập điểm: ");
+        setPoint(Menu.getInputNumber());
     }
 
     public void display(String type) {
