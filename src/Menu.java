@@ -470,25 +470,39 @@ public class Menu {
                     choice = -1;
                     break;
                 case 2: // quản lý nhân viên
-                    MenuContent.clearScreen();
-                    MenuContent.showMenuSalesmanListInfo(currentAccountList);
-                    choice = Menu.getChoice();
-                    switch (choice) {
-                        case 1: // thêm nhân viên
-                            Account newSalesman = new Account();
-                            newSalesman.setId(currentAccountList.getNewId());
-                            newSalesman.input("Salesman");
-                            currentAccountList.append(newSalesman);
-                            break;
-                        case 2: // sửa
-                            MenuContent.clearScreen();
-                            currentProductList.display();
-                            int idProduct;
-                            System.out.println("Nhập id sản phầm cần sửa: ");
-                            idProduct = Menu.getInputNumber();
-                        case 3: // xóa
-                        default:
-                            break;
+                    while (choice != 0) {
+                        int idSalesman;
+                        MenuContent.clearScreen();
+                        MenuContent.showMenuSalesmanListInfo(currentAccountList);
+                        choice = Menu.getChoice();
+                        switch (choice) {
+                            case 1: // thêm nhân viên
+                                Account newSalesman = new Account();
+                                newSalesman.setId(currentAccountList.getNewId());
+                                newSalesman.input("Salesman");
+                                currentAccountList.append(newSalesman);
+                                break;
+                            case 2: // sửa
+                                System.out.print("Nhập id nhân viên bán hàng cần sửa: ");
+                                idSalesman = Menu.getInputNumber();
+                                Account changeSalesmanAccount = currentAccountList.getById(idSalesman);
+                                if (changeSalesmanAccount != null
+                                        && changeSalesmanAccount.getPerson() instanceof Salesman) {
+                                    while (choice != 0) {
+                                        MenuContent.clearScreen();
+                                        MenuContent.showMenuSalesmanListInfo(changeSalesmanAccount);
+                                        choice = getChoice();
+                                        changeSalesmanAccount.changeAttribute(choice);
+                                        currentAccountList.updateAccount(idSalesman, changeSalesmanAccount);
+                                    }
+                                    choice = -1;
+                                } else
+                                    MenuContent.notification("Id sản phẩm không đúng!");
+                                break;
+                            case 3: // xóa
+                            default:
+                                break;
+                        }
                     }
                     choice = -1;
                     break;

@@ -129,4 +129,37 @@ public class Account {
         setPerson(newPerson);
     }
 
+    public void changeAttribute(int attribute) {
+        Person newPerson = getPerson();
+        switch (attribute) {
+            case 1 -> {
+                System.out.print("Nhập username: ");
+                setUsername(scanner.nextLine());
+            }
+            case 2 -> {
+                System.out.print("Nhập password: ");
+                setPassword(scanner.nextLine());
+            }
+            case 3 -> {
+                System.out.print("Nhập tên: ");
+                newPerson.setName(scanner.nextLine());
+                setPerson(newPerson);
+            }
+            case 4 -> {
+                System.out.print("Nhập địa chỉ: ");
+                newPerson.setAddress(scanner.nextLine());
+                setPerson(newPerson);
+            }
+            case 5 -> {
+                System.out.print("Nhập ngày sinh: ");
+                newPerson.setDateOfBirth(Menu.getInputDate());
+                setPerson(newPerson);
+            }
+            case 6 -> {
+                System.out.print("Nhập lương: ");
+                ((Salesman) newPerson).setSalary(Menu.getInputNumber());
+                setPerson(newPerson);
+            }
+        }
+    }
 }

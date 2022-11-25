@@ -112,6 +112,20 @@ public class MenuContent {
 		System.out.println("│  3. Xóa người bán.                                                                 │");
 		System.out.println("│  0. Thoát                                                                          │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
+	}
+
+	public static void showMenuSalesmanListInfo(Account account) {
+		System.out.println("┌───────────────────────────────── [Infor Salesman] ─────────────────────────────────┐");
+		account.display();
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("│  1. Sửa username.                                                                  │");
+		System.out.println("│  2. Sửa password.                                                                  │");
+		System.out.println("│  3. Sửa họ và tên.                                                                 │");
+		System.out.println("│  4. Sửa địa chỉ.                                                                   │");
+		System.out.println("│  5. Sửa ngày sinh.                                                                 │");
+		System.out.println("│  6. Sửa lương.                                                                     │");
+		System.out.println("│  0. Thoát                                                                          │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 
 	}
 

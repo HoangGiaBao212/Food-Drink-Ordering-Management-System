@@ -52,7 +52,6 @@ public class ProductList extends ArrayList implements IGetable<Product> {
                 array[i] = newProduct;
                 break;
             }
-
     }
 
     public void removeProduct(int idProduct) {
