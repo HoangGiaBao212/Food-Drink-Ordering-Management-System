@@ -9,4 +9,10 @@ Kết thúc:
     Đăng nhập sẽ tùy theo loại tài khoản mà chuyển tới mỗi menu người dùng khác nhau
 Customer:
     Toàn bộ customer được bán bởi máy bán hàng tự động (id: -2)
+    Được quyền chọn sản phẩm rồi thanh toán
+    Nếu người dùng đăng nhập thì được phép thay đổi thông tin cá nhân
 Salesman:
+    Được phép tạo hóa đơn với id của khách hàng hoặc không dùng id
+    Được phép tra cứu thông tin khách hàng
+Manager:
+    Được toàn quyền quản lý sản phẩm, nhân viên, người dùng
