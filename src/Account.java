@@ -156,6 +156,9 @@ public class Account {
                     setPerson(newPerson);
                 }
             }
+            default -> {
+                // nothing change
+            }
         }
     }
 }
