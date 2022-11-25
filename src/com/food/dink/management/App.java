@@ -1,3 +1,4 @@
+package com.food.dink.management;
 public class App {
     private static AccountList accountList = null;
     private static ProductList productList = null;

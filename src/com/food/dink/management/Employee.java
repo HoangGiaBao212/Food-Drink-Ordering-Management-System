@@ -1,3 +1,4 @@
+package com.food.dink.management;
 import java.util.Date;
 
 abstract class Employee extends Person {

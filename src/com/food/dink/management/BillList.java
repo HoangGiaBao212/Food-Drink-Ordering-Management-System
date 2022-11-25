@@ -1,3 +1,4 @@
+package com.food.dink.management;
 import java.text.SimpleDateFormat;
 
 public class BillList extends ArrayList implements IGetable<Bill> {
