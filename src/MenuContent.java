@@ -99,6 +99,20 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
+	public static void showMenuCustomerChangeInfo(Account account) {
+		System.out.println("┌──────────────────────────── [Menu Customer Change Info] ───────────────────────────┐");
+		account.display();
+		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("│  1. Sửa username.                                                                  │");
+		System.out.println("│  2. Sửa password.                                                                  │");
+		System.out.println("│  3. Sửa họ và tên.                                                                 │");
+		System.out.println("│  4. Sửa địa chỉ.                                                                   │");
+		System.out.println("│  5. Sửa ngày sinh.                                                                 │");
+		System.out.println("│  6. Sửa điểm.                                                                      │");
+		System.out.println("│  0. Thoát                                                                          │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
+	}
+
 	public static void showMenuSalesmanListInfo(AccountList accountList) {
 		System.out.println("┌───────────────────────────────── [Infor Salesman] ─────────────────────────────────┐");
 		System.out.println("├────┬────────────────────┬──────────────────────────────────┬────────────┬──────────┤");
@@ -198,6 +212,7 @@ public class MenuContent {
 	public static void showMenuCustomerProduct(ProductList productList, Bill bill) {
 		System.out.println("┌────────────────────────────────── [Product Menu] ──────────────────────────────────┐");
 		productList.display(bill);
+		System.out.println("├────┴───────────────┴───────┴──────────┴────────────┴────────────┴─────┴────────────┤");
 		System.out.println("│  1. Chọn sản phẩm.                                                                 │");
 		System.out.println("│  2. Chỉnh sửa giỏ hàng.                                                            │");
 		System.out.println("│  3. Thanh toán.                                                                    │");
@@ -219,7 +234,7 @@ public class MenuContent {
 			BillList billList, Account account) {
 		System.out.println("┌────────────────────────────── [Purchase History Menu] ─────────────────────────────┐");
 		billList.display(accountList, productList, account);
-		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
+		System.out.println("├────┴─────────────────────────┴─────────────────────────┴────────────┴──────────────┤");
 		System.out.println("│  1. Chi tiết Bill                                                                  │");
 		System.out.println("│  0. Quay lại.                                                                      │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");

@@ -274,6 +274,15 @@ public class Menu {
                                 choice = -1;
                                 break;
                             case 2:
+                                Account changeCustomerAccount = currentAccountList.getById(currentAccount.getId());
+                                while (choice != 0) {
+                                    MenuContent.clearScreen();
+                                    MenuContent.showMenuCustomerChangeInfo(changeCustomerAccount);
+                                    choice = getChoice();
+                                    changeCustomerAccount.changeAttribute(choice);
+                                    currentAccountList.updateAccount(currentAccount.getId(), changeCustomerAccount);
+                                }
+                                choice = -1;
                                 break;
                             default:
                                 break;
@@ -500,7 +509,7 @@ public class Menu {
                                     MenuContent.notification("Id khách hàng không đúng!");
                                 break;
                             case 3: // xóa
-                                System.out.print("Nhập id sản phẩm cần sửa: ");
+                                System.out.print("Nhập id sản phẩm cần xóa: ");
                                 idSalesman = Menu.getInputNumber();
                                 Account removeSalesmanAccount = currentAccountList.getById(idSalesman);
                                 if (removeSalesmanAccount != null
@@ -547,6 +556,16 @@ public class Menu {
                                     MenuContent.notification("Id nhân viên bán hàng không đúng!");
                                 break;
                             case 3: // xóa
+                                System.out.print("Nhập id khách hàng cần xóa: ");
+                                idCustomer = Menu.getInputNumber();
+                                Account removeCustomerAccount = currentAccountList.getById(idCustomer);
+                                if (removeCustomerAccount != null
+                                        && removeCustomerAccount.getPerson() instanceof Customer) {
+                                    currentAccountList.removeAccount(idCustomer);
+                                    MenuContent.notification("Xoá khách hàng thành công!");
+                                } else
+                                    MenuContent.notification("Id khách hàng không đúng!");
+                                break;
                             default:
                                 break;
                         }
