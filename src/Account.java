@@ -65,19 +65,6 @@ public class Account {
     }
 
     public void display() {
-        /**
-         * @TODO:
-         *        [ ] show all info of account
-         */
-
-        // id
-        // username
-        // password
-        // Ho va ten getPerson().getName()
-        // Dia chi
-        // ngay sinh
-        // diem
-        // ─ │ ┌ ┐ ┘ └ ┬ ┴ ┤ ├ ┼
         System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
         if (id == -1)
             System.out.println(String.format("│  %-12s :%-68s│", "Id", "Guess Account"));

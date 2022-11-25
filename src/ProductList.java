@@ -79,15 +79,8 @@ public class ProductList extends ArrayList implements IGetable<Product> {
 
         return id;
     }
-    // Product [id='0', name='Kem', price='1234', count='3', category='null',
-    // brand='docto', MFG='01-12-2003', EXP='01-12-2003']
-    // ─ │ ┌ ┐ ┘ └ ┬ ┴ ┤ ├ ┼
-
     public void display(Bill bill) {
-        /**
-         * @TODO:
-         *        [x] Show list product
-         */
+
         System.out.println("├────┬───────────────┬───────┬──────────┬────────────┬────────────┬─────┬────────────┤");
         System.out.println(String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│", "id", "Tên", "Loại", "Hiệu",
                 "NSX", "HSD", "SL", "Giá"));

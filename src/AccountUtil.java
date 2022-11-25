@@ -4,12 +4,6 @@ public class AccountUtil {
     static public Account createAccount(char choice) {
         Account tempAccount = new Account();
         Person tempPerson = null;
-        /**
-         * 0, Tạo tài khoản cho Khách
-         * 1, Tạo tài khoản cho Salesman
-         * 2, Tạo tài khoản cho Manager
-         * Q, Thoát
-         */
         tempAccount.input();
 
         if (Character.toUpperCase(choice) == '0') {
