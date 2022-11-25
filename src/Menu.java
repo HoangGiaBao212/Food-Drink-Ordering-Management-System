@@ -470,11 +470,7 @@ public class Menu {
                     break;
                 case 2: // quản lý nhân viên
                     MenuContent.clearScreen();
-                    MenuContent.showMenuSalesmanListInfo();
-                    currentAccountList.display("Salesman");
-                    System.out.println(
-                            "├─────┴─────────────┴─────────────────────────────────┴────────────────────┴─────────┤");
-                    MenuContent.showMenuManagerSalesman();
+                    MenuContent.showMenuSalesmanListInfo(currentAccountList);
                     choice = Menu.getChoice();
                     switch (choice) {
                         case 1: // thêm nhân viên

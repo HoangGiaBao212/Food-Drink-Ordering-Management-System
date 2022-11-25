@@ -99,12 +99,20 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuSalesmanListInfo() {
+	public static void showMenuSalesmanListInfo(AccountList accountList) {
 		System.out.println("┌───────────────────────────────── [Infor Salesman] ─────────────────────────────────┐");
-		System.out.println("├─────┬─────────────┬─────────────────────────────────┬────────────────────┬─────────┤");
+		System.out.println("├────┬────────────────────┬──────────────────────────────────┬────────────┬──────────┤");
 		System.out.println(
 				String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Lương"));
-		System.out.println("├─────┼─────────────┼─────────────────────────────────┼────────────────────┼─────────┤");
+		System.out.println("├────┼────────────────────┼──────────────────────────────────┼────────────┼──────────┤");
+		accountList.display("Salesman");
+		System.out.println("├────┴────────────────────┴──────────────────────────────────┴────────────┴──────────┤");
+		System.out.println("│  1. Thêm tài khoản người bán.                                                      │");
+		System.out.println("│  2. Sửa thông tin người bán.                                                       │");
+		System.out.println("│  3. Xóa người bán.                                                                 │");
+		System.out.println("│  0. Thoát                                                                          │");
+		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
+
 	}
 
 	public static void showMenuManager() {
@@ -138,16 +146,6 @@ public class MenuContent {
 		System.out.println("│  5. Sửa thương hiệu.                                                               │");
 		System.out.println("│  6. Sửa ngày sản xuất.                                                             │");
 		System.out.println("│  7. Sửa hạn sử dụng.                                                               │");
-		System.out.println("│  0. Thoát                                                                          │");
-		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
-	}
-
-	public static void showMenuManagerSalesman() {
-		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
-		System.out.println("├─────────────────────────────────── [Menu Manager] ─────────────────────────────────┤");
-		System.out.println("│  1. Thêm tài khoản người bán.                                                      │");
-		System.out.println("│  2. Sửa thông tin người bán.                                                       │");
-		System.out.println("│  3. Xóa người bán.                                                                 │");
 		System.out.println("│  0. Thoát                                                                          │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}

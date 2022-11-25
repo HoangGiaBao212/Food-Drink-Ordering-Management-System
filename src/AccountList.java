@@ -44,6 +44,8 @@ public class AccountList extends ArrayList implements IGetable<Account> {
                     }
                     break;
                 case "Salesman":
+                    if (((Account) object).getId() == -2)// -2 is bot id
+                        continue;
                     if (person instanceof Salesman) {
                         System.out.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", ((Account) object).getId(),
                                 person.getName(), ((Salesman) person).address,
