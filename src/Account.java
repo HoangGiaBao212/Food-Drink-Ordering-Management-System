@@ -156,9 +156,15 @@ public class Account {
                 setPerson(newPerson);
             }
             case 6 -> {
-                System.out.print("Nhập lương: ");
-                ((Salesman) newPerson).setSalary(Menu.getInputNumber());
-                setPerson(newPerson);
+                if (newPerson instanceof Salesman) {
+                    System.out.print("Nhập lương: ");
+                    ((Salesman) newPerson).setSalary(Menu.getInputNumber());
+                    setPerson(newPerson);
+                } else if (newPerson instanceof Customer) {
+                    System.out.print("Nhập điểm: ");
+                    ((Customer) newPerson).setPoint(Menu.getInputNumber());
+                    setPerson(newPerson);
+                }
             }
         }
     }

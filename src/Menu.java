@@ -497,7 +497,7 @@ public class Menu {
                                     }
                                     choice = -1;
                                 } else
-                                    MenuContent.notification("Id nhân viên bán hàng không đúng!");
+                                    MenuContent.notification("Id khách hàng không đúng!");
                                 break;
                             case 3: // xóa
                                 System.out.print("Nhập id sản phẩm cần sửa: ");
@@ -518,6 +518,7 @@ public class Menu {
                     break;
                 case 3: // quản lý khách hàng
                     while (choice != 0) {
+                        int idCustomer;
                         MenuContent.clearScreen();
                         MenuContent.showMenuManagerCustomer(currentAccountList);
                         choice = Menu.getChoice();
@@ -529,6 +530,22 @@ public class Menu {
                                 currentAccountList.append(newCustomer);
                                 break;
                             case 2: // sửa
+                                System.out.print("Nhập id khách hàng cần sửa: ");
+                                idCustomer = Menu.getInputNumber();
+                                Account changeCustomerAccount = currentAccountList.getById(idCustomer);
+                                if (changeCustomerAccount != null
+                                        && changeCustomerAccount.getPerson() instanceof Customer) {
+                                    while (choice != 0) {
+                                        MenuContent.clearScreen();
+                                        MenuContent.showMenuManagerCustomer(changeCustomerAccount);
+                                        choice = getChoice();
+                                        changeCustomerAccount.changeAttribute(choice);
+                                        currentAccountList.updateAccount(idCustomer, changeCustomerAccount);
+                                    }
+                                    choice = -1;
+                                } else
+                                    MenuContent.notification("Id nhân viên bán hàng không đúng!");
+                                break;
                             case 3: // xóa
                             default:
                                 break;
