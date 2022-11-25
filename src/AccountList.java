@@ -54,6 +54,17 @@ public class AccountList extends ArrayList implements IGetable<Account> {
             }
     }
 
+    public void removeAccount(int idAccount) {
+        for (int i = 0; i < array.length; i++)
+            if (((Account) array[i]).getId() == idAccount) {
+                for (int j = i; j < array.length - 1; j++) {
+                    array[j] = array[j + 1];
+                }
+                array = Arrays.copyOf(array, array.length - 1);
+                break;
+            }
+    }
+
     public void display(String type) {
         for (Object object : array) {
             Person person = ((Account) object).getPerson();

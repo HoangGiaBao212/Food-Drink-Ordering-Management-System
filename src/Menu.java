@@ -497,9 +497,19 @@ public class Menu {
                                     }
                                     choice = -1;
                                 } else
-                                    MenuContent.notification("Id sản phẩm không đúng!");
+                                    MenuContent.notification("Id nhân viên bán hàng không đúng!");
                                 break;
                             case 3: // xóa
+                                System.out.print("Nhập id sản phẩm cần sửa: ");
+                                idSalesman = Menu.getInputNumber();
+                                Account removeSalesmanAccount = currentAccountList.getById(idSalesman);
+                                if (removeSalesmanAccount != null
+                                        && removeSalesmanAccount.getPerson() instanceof Salesman) {
+                                    currentAccountList.removeAccount(idSalesman);
+                                    MenuContent.notification("Xoá nhân viên bán hàng thành công!");
+                                } else
+                                    MenuContent.notification("Id nhân viên bán hàng không đúng!");
+                                break;
                             default:
                                 break;
                         }
