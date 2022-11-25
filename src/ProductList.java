@@ -74,7 +74,7 @@ public class ProductList extends ArrayList implements IGetable<Product> {
                 id++;
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            // id = 0
         }
 
         return id;
@@ -118,10 +118,6 @@ public class ProductList extends ArrayList implements IGetable<Product> {
     }
 
     public void display() {
-        /**
-         * @TODO:
-         *        [x] Show list product
-         */
         System.out.println("├────┬───────────────┬───────┬──────────┬────────────┬────────────┬─────┬────────────┤");
         System.out.println(String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│", "id", "Tên", "Loại", "Hiệu",
                 "NSX", "HSD", "SL", "Giá"));

@@ -152,9 +152,6 @@ public class Bill {
                 + "', paymentTime='" + new SimpleDateFormat("dd-MM-yyyy").format(paymentTime) + "']";
     }
 
-    /**
-     * This method
-     */
     public int totalAll(ProductList productList) {
         int totalAll = 0;
         for (int i = 0; i < idProduct.length; i++) {

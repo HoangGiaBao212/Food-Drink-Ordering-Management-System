@@ -19,8 +19,6 @@ public class FileUtil {
 
     public static Object dataToObject(String dataString) {
         Object data = new Object();
-        // 'Account','id','username','password','Manager','name','address','dateOfBirth','salary'
-        // 'Product','id',''
         switch (cutString(dataString, "", " ")) {
             case "Account" -> {
                 data = new Account();

@@ -34,13 +34,6 @@ public class BillList extends ArrayList implements IGetable<Bill> {
     }
 
     public void display(AccountList accountList, ProductList productList, Account account) {
-        /**
-         * @TODO:
-         *        [x] Show list product
-         */
-        // Bill [id='0', idCustomer='0', idSalesman='0', idProduct='[1, 2, 3]',
-        // amount='[3, 4, 5]', point='7']┼┴┌ ┐ ┘ └
-
         System.out.println("├────┬─────────────────────────┬─────────────────────────┬────────────┬──────────────┤");
         System.out.println(
                 String.format("│%-4s│%-25s│%-25s│%-12s│%-14s│", "id", "Ten KH", "Ten NV", "Thoi Gian", "Tong"));

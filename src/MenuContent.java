@@ -158,7 +158,7 @@ public class MenuContent {
 	}
 
 	public static void showMenuCustomerListInfo(AccountList accountList, String mode) {
-		System.out.println("┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
+		System.out.println("┌────────────────────────────────── [Info Customer] ─────────────────────────────────┐");
 		System.out.println("├────┬────────────────────┬──────────────────────────────────┬────────────┬──────────┤");
 		System.out
 				.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm"));
@@ -176,7 +176,7 @@ public class MenuContent {
 	}
 
 	public static void showMenuCustomerListInfo(Account account) {
-		System.out.println("┌───────────────────────────────── [Infor Customer] ─────────────────────────────────┐");
+		System.out.println("┌────────────────────────────────── [Info Customer] ─────────────────────────────────┐");
 		account.display();
 		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
 		System.out.println("│  0. Thoát                                                                          │");
@@ -220,7 +220,7 @@ public class MenuContent {
 	}
 
 	public static void showMenuSalesmanListInfo(AccountList accountList) {
-		System.out.println("┌───────────────────────────────── [Infor Salesman] ─────────────────────────────────┐");
+		System.out.println("┌────────────────────────────────── [Info Salesman] ─────────────────────────────────┐");
 		System.out.println("├────┬────────────────────┬──────────────────────────────────┬────────────┬──────────┤");
 		System.out.println(
 				String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Lương"));
@@ -235,7 +235,7 @@ public class MenuContent {
 	}
 
 	public static void showMenuSalesmanListInfo(Account account) {
-		System.out.println("┌───────────────────────────────── [Infor Salesman] ─────────────────────────────────┐");
+		System.out.println("┌────────────────────────────────── [Info Salesman] ─────────────────────────────────┐");
 		account.display();
 		System.out.println("├────────────────────────────────────────────────────────────────────────────────────┤");
 		System.out.println("│  1. Sửa username.                                                                  │");
