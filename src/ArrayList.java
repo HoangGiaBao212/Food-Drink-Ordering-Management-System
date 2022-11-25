@@ -28,13 +28,4 @@ public class ArrayList {
         array[array.length - 1] = obj;
     }
 
-    @Override
-    public String toString() {
-        String str = "";
-        for (Object object : array) {
-            str += (object.toString() + '\n');
-        }
-        return str;
-    }
-
 }
