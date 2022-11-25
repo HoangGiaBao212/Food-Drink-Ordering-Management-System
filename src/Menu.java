@@ -327,7 +327,7 @@ public class Menu {
                                 choice = 0;
                         }
                     }
-                    bill.setIdCustomer(idCustomer);
+                    bill.setIdCustomer(accountCustomer.getId());
                     while (choice != 0) {
                         MenuContent.clearScreen();
                         MenuContent.showMenuCustomerProduct(currentProductList, bill);
