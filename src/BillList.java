@@ -1,5 +1,4 @@
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class BillList extends ArrayList implements IGetable<Bill> {
 
@@ -79,7 +78,7 @@ public class BillList extends ArrayList implements IGetable<Bill> {
 
     @Override
     public Bill[] getByString(String string) {
-        return null;
+        return new Bill[0];
     }
 
 }

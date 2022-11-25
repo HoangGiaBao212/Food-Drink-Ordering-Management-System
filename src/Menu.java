@@ -10,6 +10,9 @@ public class Menu {
     private static ProductList currentProductList = null;
     private static BillList currentBillList = null;
 
+    private Menu() {
+    }
+
     public static void setAccount(Account account) {
         currentAccount = account;
     }
@@ -80,9 +83,7 @@ public class Menu {
         while (true) {
             MenuContent.clearScreen();
             currentAccount = null;
-            if (currentAccount == null) {
-                login();
-            }
+            login();
 
             if (currentAccount == null) {
                 return;

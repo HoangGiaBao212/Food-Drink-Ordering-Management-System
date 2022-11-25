@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class AccountList extends ArrayList implements IGetable<Account> {
