@@ -160,7 +160,7 @@ public class Menu {
         int choice = -1;
         while (choice != 0) {
             MenuContent.clearScreen();
-            MenuContent.showMenuCustomer();
+            MenuContent.showMenuCustomer(currentAccount.getId());
             choice = Menu.getChoice();
             Bill bill = new Bill();
             bill.setIdCustomer(currentAccount.getId());
@@ -185,6 +185,8 @@ public class Menu {
                                 bill.append(idProduct, amount, currentProductList);
                                 break;
                             case 2:
+                                if (currentAccount.getId() == -1) // -1 is id guest
+                                    break;
                                 while (choice != 0) {
                                     MenuContent.clearScreen();
                                     MenuContent.showMenuCustomerProduct(bill, currentProductList, currentAccountList);

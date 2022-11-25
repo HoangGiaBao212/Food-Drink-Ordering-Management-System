@@ -57,10 +57,12 @@ public class MenuContent {
 	}
 
 	// Menu customer
-	public static void showMenuCustomer() {
+	public static void showMenuCustomer(int idCustomer) {
 		System.out.println("┌────────────────────────────────── [Menu Customer] ─────────────────────────────────┐");
 		System.out.println("│  1. Hiện danh sách sản phẩm.                                                       │");
-		System.out.println("│  2. Thông tin người dùng.                                                          │");
+		if (idCustomer != -1) // -1 is id guest
+			System.out
+					.println("│  2. Thông tin người dùng.                                                          │");
 		System.out.println("│  0. Thoát                                                                          │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 
