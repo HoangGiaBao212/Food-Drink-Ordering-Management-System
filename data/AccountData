@@ -1,5 +1,5 @@
-Account [id='-2', username='bot', password='1234', person='Salesman [name='Máy bán hàng', address='VN', dateOfBirth='01-01-2009', salary='0']']
-Account [id='0', username='root', password='1234', person='Manager [name='root', address='VN', dateOfBirth='09-11-2022', salary='0']']
+Account [id='-2', username='bot', password='1234', person='Salesman [name='Máy bán hàng', address='VN', dateOfBirth='01-01-2009', salary='1']']
+Account [id='0', username='root', password='1234', person='Manager [name='root', address='VN', dateOfBirth='09-11-2022', salary='1']']
 Account [id='1', username='huyen', password='12341', person='Manager [name='Huyền', address='VN', dateOfBirth='02-12-2003', salary='1000000']']
 Account [id='2', username='minh', password='12342', person='Manager [name='Minh', address='VN', dateOfBirth='03-12-2003', salary='2000000']']
 Account [id='3', username='dat', password='12343', person='Manager [name='Đạt, address=', address=', address=', dateOfBirth='13-12-2003', salary='3000000']']

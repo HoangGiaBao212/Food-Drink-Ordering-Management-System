@@ -68,23 +68,12 @@ public abstract class Person {
 
     public void input() {
         System.out.print("Nhập tên: ");
-        name = scanner.nextLine();
+        setName(scanner.nextLine());
 
         System.out.print("Nhập địa chỉ: ");
-        address = scanner.nextLine();
+        setAddress(scanner.nextLine());
 
-        SimpleDateFormat dateInput = new SimpleDateFormat("dd-MM-yyyy");
-        while (dateOfBirth == null) {
-            System.out.print("Nhập ngày sinh (dd-MM-yyyy): ");
-            String strDate = scanner.nextLine();
-
-            try {
-                dateOfBirth = dateInput.parse(strDate);
-                System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth));
-            } catch (Exception e) {
-                System.out.println("Lỗi nhập, vui lòng nhập lại: ");
-            }
-        }
-
+        System.out.print("Nhập ngày sinh: ");
+        setDateOfBirth(Menu.getInputDate());
     }
 }

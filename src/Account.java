@@ -91,7 +91,7 @@ public class Account {
         System.out.println(String.format("│  %-12s :%-68s│", "Địa chỉ", person.getAddress()));
         System.out.println(String.format("│  %-12s :%-68s│", "Ngày sinh",
                 new SimpleDateFormat("dd-MM-yyyy").format((person.getDateOfBirth()))));
-        if(getPerson() instanceof Customer)
+        if (getPerson() instanceof Customer)
             System.out.println(String.format("│  %-12s :%-68s│", "Điểm", ((Customer) person).getPoint()));
         else
             System.out.println(String.format("│  %-12s :%-68s│", "Lương", ((Employee) person).getSalary()));
@@ -102,7 +102,31 @@ public class Account {
         System.out.print("Nhập username: ");
         username = scanner.nextLine();
         System.out.print("Nhập password: ");
-        password = scanner.next();
+        password = scanner.nextLine();
+    }
+
+    public void input(String person) {
+        if (!person.equals("Customer") && !person.equals("Salesman") && !person.equals("Manager"))
+            return;
+        System.out.print("Nhập username: ");
+        setUsername(scanner.nextLine());
+        System.out.print("Nhập password: ");
+        setPassword(scanner.nextLine());
+        Person newPerson = null;
+        switch (person) {
+            case "Customer" -> {
+                newPerson = new Customer();
+            }
+            case "Salesman" -> {
+                newPerson = new Salesman();
+            }
+            case "Manager" -> {
+                newPerson = new Manager();
+            }
+        }
+        newPerson.input();
+        newPerson.setAccount(this);
+        setPerson(newPerson);
     }
 
 }

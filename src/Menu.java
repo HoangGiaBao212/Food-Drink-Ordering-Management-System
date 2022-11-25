@@ -83,6 +83,7 @@ public class Menu {
             if (currentAccount == null) {
                 login();
             }
+
             if (currentAccount == null) {
                 return;
             } else if (currentAccount.getPerson() instanceof Customer) {
@@ -474,6 +475,11 @@ public class Menu {
                     choice = Menu.getChoice();
                     switch (choice) {
                         case 1: // thêm nhân viên
+                            Account newSalesman = new Account();
+                            newSalesman.setId(currentAccountList.getNewId());
+                            newSalesman.input("Salesman");
+                            currentAccountList.append(newSalesman);
+                            break;
                         case 2: // sửa
                             MenuContent.clearScreen();
                             currentProductList.display();

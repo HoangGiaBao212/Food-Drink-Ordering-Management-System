@@ -31,6 +31,21 @@ public class AccountList extends ArrayList implements IGetable<Account> {
         return null;
     }
 
+    public int getNewId() {
+        int id = 0;
+
+        try {
+            id = ((Account) array[array.length - 1]).getId() + 1;
+            while (getById(id) != null) {
+                id++;
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return id;
+    }
+
     public void display(String type) {
         for (Object object : array) {
             Person person = ((Account) object).getPerson();
