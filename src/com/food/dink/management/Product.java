@@ -117,8 +117,12 @@ public class Product {
         setBrand(scanner.nextLine());
         System.out.print("Nhập ngày sản xuất: ");
         setMFG(Menu.getInputDate());
+        do {
         System.out.print("Nhập hạn sử dụng: ");
         setEXP(Menu.getInputDate());
+        if(EXP.after(MFG)==false)
+            System.out.println("Nhập hạn sử dụng không đúng!");
+        } while(EXP.after(MFG)==false);
     }
 
     public void changeAttribute(int attribute) {
