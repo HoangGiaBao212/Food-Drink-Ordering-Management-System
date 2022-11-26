@@ -1,10 +1,8 @@
 package com.food.dink.management;
-import java.util.Scanner;
+
 import java.util.concurrent.TimeUnit;
 
 public class MenuContent {
-	static Scanner sc = new Scanner(System.in);
-
 	private MenuContent() {
 
 	}

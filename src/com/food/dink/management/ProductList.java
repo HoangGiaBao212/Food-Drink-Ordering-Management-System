@@ -14,15 +14,6 @@ public class ProductList extends ArrayList implements IGetable<Product> {
         super(arrayList);
     }
 
-    // public Object find(int id) {
-    //     for (Object object : array) {
-    //         if (((Product) object).getId() == id) {
-    //             return object;
-    //         }
-    //     }
-    //     return null;
-    // }
-
     public Object search(String string) {
         for (Object object : array) {
             if (((Product) object).getName().indexOf(string) != -1) {
