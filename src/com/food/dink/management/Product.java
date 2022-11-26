@@ -180,4 +180,8 @@ public class Product {
                 + new SimpleDateFormat("dd-MM-yyyy").format(EXP) + "']";
     }
 
+    public boolean checkOutOfDate() {
+        return !EXP.after(MFG);
+    }
+
 }

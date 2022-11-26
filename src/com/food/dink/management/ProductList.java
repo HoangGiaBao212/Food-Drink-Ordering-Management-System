@@ -1,4 +1,5 @@
 package com.food.dink.management;
+
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
@@ -80,6 +81,7 @@ public class ProductList extends ArrayList implements IGetable<Product> {
 
         return id;
     }
+
     public void display(Bill bill) {
 
         System.out.println("├────┬───────────────┬───────┬──────────┬────────────┬────────────┬─────┬────────────┤");
@@ -88,6 +90,8 @@ public class ProductList extends ArrayList implements IGetable<Product> {
         System.out.println("├────┼───────────────┼───────┼──────────┼────────────┼────────────┼─────┼────────────┤");
 
         for (Object object : array) {
+            if (((Product) object).checkOutOfDate())
+                continue;
             System.out.println(
                     String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│", ((Product) object).getId(),
                             ((Product) object).getName(),
@@ -125,15 +129,28 @@ public class ProductList extends ArrayList implements IGetable<Product> {
         System.out.println("├────┼───────────────┼───────┼──────────┼────────────┼────────────┼─────┼────────────┤");
 
         for (Object object : array) {
-            System.out.println(
-                    String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│", ((Product) object).getId(),
-                            ((Product) object).getName(),
-                            ((Product) object).getCategory(),
-                            ((Product) object).getBrand(),
-                            new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getMFG()),
-                            new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getEXP()),
-                            ((Product) object).getCount(),
-                            ((Product) object).getPrice()));
+            if (((Product) object).checkOutOfDate()){
+                System.out.println(
+                        String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│", ((Product) object).getId(),
+                                ((Product) object).getName(),
+                                ((Product) object).getCategory(),
+                                ((Product) object).getBrand(),
+                                new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getMFG()),
+                                new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getEXP()),
+                                ((Product) object).getCount(),
+                                "Hết hạn!"));
+
+            } else {
+                System.out.println(
+                        String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│", ((Product) object).getId(),
+                                ((Product) object).getName(),
+                                ((Product) object).getCategory(),
+                                ((Product) object).getBrand(),
+                                new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getMFG()),
+                                new SimpleDateFormat("dd-MM-yyyy").format(((Product) object).getEXP()),
+                                ((Product) object).getCount(),
+                                ((Product) object).getPrice()));
+            }
         }
 
     }

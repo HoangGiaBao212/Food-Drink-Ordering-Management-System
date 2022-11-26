@@ -1,4 +1,5 @@
 package com.food.dink.management;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -90,11 +91,11 @@ public class Bill {
 
     public void append(int idProduct, int amount, ProductList productList) {
         Product product = (Product) productList.find(idProduct);
-        if (product == null) {
+        if (product == null || product.checkOutOfDate()) {
             MenuContent.notification("Id sản phẩm không đúng!");
             return;
         }
-
+        
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
                 if (this.amount[i] + amount > product.getCount()) {
@@ -107,7 +108,7 @@ public class Bill {
                 return;
             }
         }
-        if (amount > product.getCount()) {
+        if (amount <= 0 || amount > product.getCount()) {
             MenuContent.notification("Không đủ số lượng!");
             return;
         }
