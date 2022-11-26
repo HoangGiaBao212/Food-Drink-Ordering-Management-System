@@ -318,8 +318,10 @@ public class Menu {
                                     MenuContent.clearScreen();
                                     MenuContent.showMenuCustomerChangeInfo(changeCustomerAccount);
                                     choice = getChoice();
-                                    changeCustomerAccount.changeAttribute(choice);
-                                    currentAccountList.updateAccount(currentAccount.getId(), changeCustomerAccount);
+                                    if(choice < 6){
+                                        changeCustomerAccount.changeAttribute(choice);
+                                        currentAccountList.updateAccount(currentAccount.getId(), changeCustomerAccount);
+                                    }
                                 }
                                 choice = -1;
                                 break;
