@@ -1,4 +1,5 @@
 package com.food.dink.management;
+
 import java.util.Arrays;
 
 public class ArrayList {
@@ -29,4 +30,12 @@ public class ArrayList {
         array[array.length - 1] = obj;
     }
 
+    @Override
+    public String toString() {
+        String str = "";
+        for (Object object : array) {
+            str += (object.toString() + '\n');
+        }
+        return str;
+    }
 }
