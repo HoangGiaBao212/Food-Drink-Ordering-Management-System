@@ -1,4 +1,5 @@
 package com.food.dink.management;
+
 import java.util.Date;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
@@ -118,11 +119,11 @@ public class Product {
         System.out.print("Nhập ngày sản xuất: ");
         setMFG(Menu.getInputDate());
         do {
-        System.out.print("Nhập hạn sử dụng: ");
-        setEXP(Menu.getInputDate());
-        if(EXP.after(MFG)==false)
-            System.out.println("Nhập hạn sử dụng không đúng!");
-        } while(EXP.after(MFG)==false);
+            System.out.print("Nhập hạn sử dụng: ");
+            setEXP(Menu.getInputDate());
+            if (EXP.after(MFG) == false)
+                System.out.println("Nhập hạn sử dụng không đúng!");
+        } while (EXP.after(MFG) == false);
     }
 
     public void changeAttribute(int attribute) {
@@ -181,7 +182,8 @@ public class Product {
     }
 
     public boolean checkOutOfDate() {
-        return !EXP.after(MFG);
+        Date currenDate = new Date();
+        return !EXP.after(currenDate);
     }
 
 }
