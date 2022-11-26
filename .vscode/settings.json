@@ -7,5 +7,5 @@
 		"lib/**/*.jar"
 	],
 	"cSpell.language": "lorem,vi,en",
-	
+    "terminal.integrated.fontFamily": "'consolas', 'MesloLGS NF','sans-serif', 'Droid Sans Mono', monospace",
 }
