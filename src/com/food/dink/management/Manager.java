@@ -17,7 +17,7 @@ public class Manager extends Employee {
     }
 
     @Override
-    public int netSalary(BillList billList) {
+    public double netSalary(BillList billList) {
         // TODO Auto-generated method stub
         return 0;
     }
