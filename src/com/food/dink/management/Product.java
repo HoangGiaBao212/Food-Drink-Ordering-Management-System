@@ -186,8 +186,8 @@ public class Product {
     }
 
     public boolean checkOutOfDate() {
-        Date currenDate = new Date();
-        return !EXP.after(currenDate);
+        Date currentDate = new Date();
+        return !EXP.after(currentDate);
     }
 
 }

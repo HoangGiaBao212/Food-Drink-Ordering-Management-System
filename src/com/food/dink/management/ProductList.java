@@ -14,22 +14,14 @@ public class ProductList extends ArrayList implements IGetable<Product> {
         super(arrayList);
     }
 
-    public void apppendProduct()
-
-    {
-
-        array = Arrays.copyOf(array, array.length + 1);
-        array[array.length - 1] = new Product();
-    }
-
-    public Object find(int id) {
-        for (Object object : array) {
-            if (((Product) object).getId() == id) {
-                return object;
-            }
-        }
-        return null;
-    }
+    // public Object find(int id) {
+    //     for (Object object : array) {
+    //         if (((Product) object).getId() == id) {
+    //             return object;
+    //         }
+    //     }
+    //     return null;
+    // }
 
     public Object search(String string) {
         for (Object object : array) {
@@ -110,7 +102,7 @@ public class ProductList extends ArrayList implements IGetable<Product> {
             return;
 
         for (int i = 0; i < bill.getIdProduct().length; i++) {
-            Product product = (Product) this.find(bill.getIdProduct()[i]);
+            Product product = this.getById(bill.getIdProduct()[i]);
             int total = bill.getAmount()[i] * product.getPrice();
             System.out.println(
                     String.format("│%-4s│%-15s│%-7s│%-10s│%-12s│%-12s│%-5s│%-12s│",

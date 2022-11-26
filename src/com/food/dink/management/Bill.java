@@ -5,13 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 public class Bill {
-    int id;
-    int idCustomer;
-    int idSalesman;
-    int[] idProduct;
-    int[] amount;
-    int point;
-    Date paymentTime;
+    private int id;
+    private int idCustomer;
+    private int idSalesman;
+    private int[] idProduct;
+    private int[] amount;
+    private int point;
+    private Date paymentTime;
 
     public Bill() {
         id = -1;
@@ -90,12 +90,12 @@ public class Bill {
     }
 
     public void append(int idProduct, int amount, ProductList productList) {
-        Product product = (Product) productList.find(idProduct);
+        Product product = productList.getById(idProduct);
         if (product == null || product.checkOutOfDate()) {
             MenuContent.notification("Id sản phẩm không đúng!");
             return;
         }
-        
+
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
                 if (this.amount[i] + amount > product.getCount()) {
@@ -136,7 +136,7 @@ public class Bill {
     public void changeAmount(int idProduct, int newAmount, ProductList productList) {
         for (int i = 0; i < this.idProduct.length; i++) {
             if (this.idProduct[i] == idProduct) {
-                if (newAmount > ((Product) productList.find(idProduct)).getCount()) {
+                if (newAmount > productList.getById(idProduct).getCount()) {
                     MenuContent.notification("Không đủ số lượng!");
                     return;
                 }
@@ -157,7 +157,7 @@ public class Bill {
     public int totalAll(ProductList productList) {
         int totalAll = 0;
         for (int i = 0; i < idProduct.length; i++) {
-            Product product = (Product) productList.find(idProduct[i]);
+            Product product = productList.getById(idProduct[i]);
             totalAll += product.getPrice() * amount[i];
         }
         return totalAll;
@@ -184,7 +184,7 @@ public class Bill {
                 String.format("│%-4s│%-20s│%-14s│%-5s│%-37s│", "Id", "Tên sản phẩm", "Giá gốc", "SL", "Thành tiền"));
         System.out.println("├────┼────────────────────┼──────────────┼─────┼─────────────────────────────────────┤");
         for (int i = 0; i < idProduct.length; i++) {
-            Product product = (Product) productList.find(idProduct[i]);
+            Product product = productList.getById(idProduct[i]);
             int total = product.getPrice() * amount[i];
             System.out.println(
                     String.format("│%-4d│%-20s│%-14s│%-5s│%-37s│", product.getId(), product.getName(),

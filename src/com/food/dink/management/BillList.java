@@ -47,7 +47,7 @@ public class BillList extends ArrayList implements IGetable<Bill> {
                 Account accountSalesman = accountList.getById(((Bill) object).getIdSalesman());
                 int total = 0;
                 for (int i = 0; i < ((Bill) object).getIdProduct().length; i++) {
-                    Product product = (Product) productList.find(((Bill) object).getIdProduct()[i]);
+                    Product product = productList.getById(((Bill) object).getIdProduct()[i]);
                     total += product.getPrice() * ((Bill) object).getAmount()[i];
                 }
                 System.out.println(
