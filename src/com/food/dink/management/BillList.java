@@ -1,5 +1,7 @@
 package com.food.dink.management;
+
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class BillList extends ArrayList implements IGetable<Bill> {
 
@@ -71,6 +73,18 @@ public class BillList extends ArrayList implements IGetable<Bill> {
     @Override
     public Bill[] getByString(String string) {
         return new Bill[0];
+    }
+
+    public int counterBill(String string, int id, Date currentDay) {
+        int count = 0;
+        for (Object object : array) {
+            long timeDifference = currentDay.getTime() - ((Bill) object).getPaymentTime().getTime();
+            long daysDifference = (timeDifference / (1000 * 60 * 60 * 24)) % 365;
+            if (daysDifference < 30) {
+                count++;
+            }
+        }
+        return count;
     }
 
 }

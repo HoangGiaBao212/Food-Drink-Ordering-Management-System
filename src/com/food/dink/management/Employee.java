@@ -1,4 +1,5 @@
 package com.food.dink.management;
+
 import java.util.Date;
 
 abstract class Employee extends Person {
@@ -30,4 +31,6 @@ abstract class Employee extends Person {
         System.out.print("Nhập lương: ");
         setSalary(Menu.getInputNumber());
     }
+
+    public abstract double netSalary(BillList billList);
 }

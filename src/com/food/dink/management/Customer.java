@@ -2,7 +2,7 @@ package com.food.dink.management;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Customer extends Person {
+public class Customer extends Person implements IEvaluate {
     private int point = 0;
 
     public Customer() {
@@ -40,6 +40,12 @@ public class Customer extends Person {
     public String toString() {
         return "Customer [name='" + name + "', address='" + address + "', dateOfBirth='"
                 + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + "', point='" + point + "']";
+    }
+
+    @Override
+    public String evaluate() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

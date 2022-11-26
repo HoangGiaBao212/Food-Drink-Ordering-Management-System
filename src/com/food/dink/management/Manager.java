@@ -16,4 +16,10 @@ public class Manager extends Employee {
                 + new SimpleDateFormat("dd-MM-yyyy").format(dateOfBirth) + "', salary='" + salary + "']";
     }
 
+    @Override
+    public int netSalary(BillList billList) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
 }
