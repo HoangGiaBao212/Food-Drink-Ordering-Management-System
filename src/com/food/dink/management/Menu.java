@@ -108,7 +108,7 @@ public class Menu {
         }
         while (true) {
             try {
-                choice = Integer.parseInt(scanner.nextLine());
+                choice = Integer.parseInt(Menu.getInput());
                 return choice;
             } catch (Exception e) {
                 System.out.println("Input không chính xác!!!");
@@ -122,7 +122,7 @@ public class Menu {
         SimpleDateFormat dateInput = new SimpleDateFormat("dd-MM-yyyy");
         while (date == null) {
             System.out.print("Date (dd-MM-yyyy) > ");
-            strDate = scanner.nextLine();
+            strDate = Menu.getInput();
             try {
                 date = dateInput.parse(strDate);
             } catch (Exception e) {
@@ -136,7 +136,7 @@ public class Menu {
         int choice;
         while (true) {
             try {
-                choice = Integer.parseInt(scanner.nextLine());
+                choice = Integer.parseInt(Menu.getInput());
                 return choice;
             } catch (Exception e) {
                 System.out.println("Input không chính xác!!!");
@@ -478,6 +478,8 @@ public class Menu {
                         MenuContent.clearScreen();
                         MenuContent.showMenuCustomerListInfo(currentAccountList, currentBillList, "feature");
                         choice = Menu.getChoice();
+                        String name;
+                        AccountList accountList;
                         switch (choice) {
                             case 1:
                                 System.out.print("Nhập id cần Tìm: ");
@@ -495,9 +497,9 @@ public class Menu {
                                 break;
                             case 2:
                                 System.out.print("Nhập tên cần Tìm: ");
-                                String name = scanner.nextLine();
-                                AccountList accountList = new AccountList();
-                                accountList.setArray(currentAccountList.getByString(name));
+                                name = Menu.getInput();
+                                accountList = new AccountList();
+                                accountList.setArray(currentAccountList.getByString(name, ""));
                                 if (accountList.getArray().length != 0) {
                                     while (choice != 0) {
                                         MenuContent.clearScreen();
@@ -508,6 +510,22 @@ public class Menu {
                                 } else
                                     MenuContent.notification("Tên không tìm thấy!");
                                 break;
+                            case 3:
+                                System.out.print("Nhập tên cần Tìm: ");
+                                name = Menu.getInput();
+                                accountList = new AccountList();
+                                accountList.setArray(currentAccountList.getByString(name, "absolute"));
+                                if (accountList.getArray().length != 0) {
+                                    while (choice != 0) {
+                                        MenuContent.clearScreen();
+                                        MenuContent.showMenuCustomerListInfo(accountList, currentBillList, "noFeature");
+                                        choice = Menu.getChoice();
+                                    }
+                                    choice = -1;
+                                } else
+                                    MenuContent.notification("Tên không tìm thấy!");
+                                break;
+
                         }
                     }
                     choice = -1;
@@ -602,13 +620,24 @@ public class Menu {
                                     MenuContent.notification("Id khách hàng không đúng!");
                                 break;
                             case 3: // xóa
-                                System.out.print("Nhập id sản phẩm cần xóa: ");
+                                System.out.print("Nhập id nhân viên  bán hàng cần xóa: ");
                                 idSalesman = Menu.getInputNumber();
                                 Account removeSalesmanAccount = currentAccountList.getById(idSalesman);
                                 if (removeSalesmanAccount != null
                                         && removeSalesmanAccount.getPerson() instanceof Salesman) {
                                     currentAccountList.removeAccount(idSalesman);
                                     MenuContent.notification("Xoá nhân viên bán hàng thành công!");
+                                } else
+                                    MenuContent.notification("Id nhân viên bán hàng không đúng!");
+                                break;
+                            case 4: // đánh giá
+                                System.out.print("Nhập id nhân viên bán hàng: ");
+                                idSalesman = Menu.getInputNumber();
+                                Account evaluateSalesmanAccount = currentAccountList.getById(idSalesman);
+                                if (evaluateSalesmanAccount != null
+                                        && evaluateSalesmanAccount.getPerson() instanceof Salesman) {
+                                    Salesman salesman = (Salesman) evaluateSalesmanAccount.getPerson();
+                                    MenuContent.notification(salesman.evaluate(currentBillList));
                                 } else
                                     MenuContent.notification("Id nhân viên bán hàng không đúng!");
                                 break;
@@ -656,6 +685,17 @@ public class Menu {
                                         && removeCustomerAccount.getPerson() instanceof Customer) {
                                     currentAccountList.removeAccount(idCustomer);
                                     MenuContent.notification("Xoá khách hàng thành công!");
+                                } else
+                                    MenuContent.notification("Id khách hàng không đúng!");
+                                break;
+                            case 4:
+                                System.out.print("Nhập id khách hàng: ");
+                                idCustomer = Menu.getInputNumber();
+                                Account evaluateCustomerAccount = currentAccountList.getById(idCustomer);
+                                if (evaluateCustomerAccount != null
+                                        && evaluateCustomerAccount.getPerson() instanceof Customer) {
+                                    Customer customer = (Customer) evaluateCustomerAccount.getPerson();
+                                    MenuContent.notification(customer.evaluate(currentBillList));
                                 } else
                                     MenuContent.notification("Id khách hàng không đúng!");
                                 break;

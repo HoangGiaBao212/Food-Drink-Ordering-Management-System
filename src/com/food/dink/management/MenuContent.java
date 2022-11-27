@@ -168,6 +168,8 @@ public class MenuContent {
 					.println("│  1. Tìm kiếm theo ID.                                                              │");
 			System.out
 					.println("│  2. Tìm kiếm theo tên.                                                             │");
+			System.out
+					.println("│  3. Tìm kiếm theo tên chính xác.                                                   │");
 		}
 		System.out.println("│  0. Thoát                                                                          │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
@@ -228,6 +230,7 @@ public class MenuContent {
 		System.out.println("│  1. Thêm tài khoản người bán.                                                      │");
 		System.out.println("│  2. Sửa thông tin người bán.                                                       │");
 		System.out.println("│  3. Xóa người bán.                                                                 │");
+		System.out.println("│  4. Đánh giá.                                                                      │");
 		System.out.println("│  0. Thoát                                                                          │");
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}

@@ -113,14 +113,20 @@ public class AccountList extends ArrayList implements IGetable<Account> {
     }
 
     @Override
-    public Account[] getByString(String string) {
+    public Account[] getByString(String string, String type) {
         Account[] accounts = new Account[0];
-
         for (Object object : array) {
-            if (((Account) object).getUsername().contains(string) ||
-                    ((Account) object).getPerson().getName().toLowerCase().contains(string.toLowerCase())) {
-                accounts = Arrays.copyOf(accounts, accounts.length + 1);
-                accounts[accounts.length - 1] = (Account) object;
+            if (type.equals("absolute")) {
+                if (((Account) object).getPerson().getName().equalsIgnoreCase((string))) {
+                    accounts = Arrays.copyOf(accounts, accounts.length + 1);
+                    accounts[accounts.length - 1] = (Account) object;
+                }
+            } else {
+                if (((Account) object).getUsername().contains(string) ||
+                        ((Account) object).getPerson().getName().toLowerCase().contains(string.toLowerCase())) {
+                    accounts = Arrays.copyOf(accounts, accounts.length + 1);
+                    accounts[accounts.length - 1] = (Account) object;
+                }
             }
         }
         return accounts;

@@ -19,7 +19,7 @@ public class Salesman extends Employee implements IEvaluate {
 
     @Override
     public String evaluate(BillList billList) {
-        int counterBill = billList.counterBill("Salesman", getAccount().getId(), new Date());
+        int counterBill = billList.counterBill(getAccount().getId(), new Date());
         if (counterBill > 3000)
             return "Nhân viên xuất sắc.";
         else if (counterBill > 2000)
@@ -31,7 +31,7 @@ public class Salesman extends Employee implements IEvaluate {
     }
 
     public double netSalary(BillList billList) {
-        int counterBill = billList.counterBill("Salesman", getAccount().getId(), new Date());
+        int counterBill = billList.counterBill(getAccount().getId(), new Date());
         double netSalary = salary * (1 - (0.08 + 0.015 + 0.01) + 0.0001 * counterBill);
         return netSalary;
     }

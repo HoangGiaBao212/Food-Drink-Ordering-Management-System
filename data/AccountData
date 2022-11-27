@@ -30,4 +30,4 @@ Account [id='27', username='ly', password='12341', person='Salesman [name='Ly', 
 Account [id='28', username='toan', password='12341', person='Salesman [name='Toàn', address='DONG NAI ', dateOfBirth='02-01-2003', salary='13000000']']
 Account [id='29', username='hao', password='12341', person='Salesman [name='Hào', address='NGHE TINH ', dateOfBirth='02-10-2003', salary='17000000']']
 Account [id='30', username='sinh', password='12341', person='Salesman [name='Sinh', address='QUANG NAM ',dateOfBirth='04-12-2003', salary='13000000']']
-Account [id='31', username='tuan', password='1234', person='Salesman [name=' Nguyễn Minh Tuấn', address='Thái Bình', dateOfBirth='10-12-2003', salary='600000000']']
+Account [id='31', username='tuan', password='1234', person='Salesman [name='Nguyễn Minh Tuấn', address='Thái Bình', dateOfBirth='10-12-2003', salary='600000000']']

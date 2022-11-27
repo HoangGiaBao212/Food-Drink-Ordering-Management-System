@@ -153,14 +153,21 @@ public class ProductList extends ArrayList implements IGetable<Product> {
     }
 
     @Override
-    public Product[] getByString(String string) {
+    public Product[] getByString(String string, String type) {
         Product[] products = new Product[0];
         for (Object object : array) {
-            if (((Product) object).getName().toLowerCase().contains(string.toLowerCase()) ||
-                    ((Product) object).getCategory().toLowerCase().contains(string.toLowerCase()) ||
-                    ((Product) object).getBrand().toLowerCase().contains(string.toLowerCase())) {
-                products = Arrays.copyOf(products, products.length + 1);
-                products[products.length - 1] = (Product) object;
+            if (type.equals("absolute")) {
+                if (((Product) object).getName().equalsIgnoreCase(string)) {
+                    products = Arrays.copyOf(products, products.length + 1);
+                    products[products.length - 1] = (Product) object;
+                }
+            } else {
+                if (((Product) object).getName().toLowerCase().contains(string.toLowerCase()) ||
+                        ((Product) object).getCategory().toLowerCase().contains(string.toLowerCase()) ||
+                        ((Product) object).getBrand().toLowerCase().contains(string.toLowerCase())) {
+                    products = Arrays.copyOf(products, products.length + 1);
+                    products[products.length - 1] = (Product) object;
+                }
             }
         }
         return products;
