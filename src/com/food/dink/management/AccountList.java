@@ -46,9 +46,9 @@ public class AccountList extends ArrayList implements IGetable<Account> {
         return id;
     }
 
-    public void updateAccount(int idAccount, Account newAccount) {
+    public void updateAccount(int idSalesman, Account newAccount) {
         for (int i = 0; i < array.length; i++)
-            if (((Account) array[i]).getId() == idAccount) {
+            if (((Account) array[i]).getId() == idSalesman) {
                 array[i] = newAccount;
                 break;
             }
