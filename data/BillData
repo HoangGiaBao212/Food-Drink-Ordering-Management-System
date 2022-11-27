@@ -1,0 +1,4 @@
+Bill [id='0', idCustomer='20', idSalesman='-2', idProduct='[10, 8]', amount='[2, 1]', point='0', paymentTime='24-11-2022']
+Bill [id='1', idCustomer='14', idSalesman='-2', idProduct='[2]', amount='[3]', point='0', paymentTime='24-11-2022']
+Bill [id='2', idCustomer='14', idSalesman='-2', idProduct='[5]', amount='[2]', point='0', paymentTime='24-11-2022']
+Bill [id='3', idCustomer='12', idSalesman='2', idProduct='[4]', amount='[1]', point='0', paymentTime='24-11-2022']
