@@ -14,4 +14,3 @@ Product [id='12', name='Mirinda', price='8000', count='76', category='Drink', br
 Product [id='13', name='Fanta', price='8000', count='202', category='Drink', brand='Number1', MFG='28-06-2022', EXP='17-05-2023']
 Product [id='14', name='Mì Hảo Hảo', price='4000', count='190', category='Food', brand='Acecook', MFG='14-07-2022', EXP='10-10-2023']
 Product [id='15', name='Mì 3 Miền', price='4200', count='188', category='Food', brand='Acecook', MFG='16-09-2022', EXP='18-14-2023']
-
