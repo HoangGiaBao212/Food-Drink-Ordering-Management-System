@@ -18,14 +18,21 @@ public class Salesman extends Employee implements IEvaluate {
     }
 
     @Override
-    public String evaluate() {
-        // TODO Auto-generated method stub
-        return null;
+    public String evaluate(BillList billList) {
+        int counterBill = billList.counterBill("Salesman", getAccount().getId(), new Date());
+        if (counterBill > 3000)
+            return "Nhân viên xuất sắc.";
+        else if (counterBill > 2000)
+            return "Nhân viên tốt.";
+        else if (counterBill > 1000)
+            return "Nhân viên đạt yêu cầu.";
+        else
+            return "Nhân viên chưa đạt yêu cầu.";
     }
 
     public double netSalary(BillList billList) {
         int counterBill = billList.counterBill("Salesman", getAccount().getId(), new Date());
-        double netSalary = salary * (1 - (0.08 + 0.015 + 0.01) + 0.0001*counterBill);
+        double netSalary = salary * (1 - (0.08 + 0.015 + 0.01) + 0.0001 * counterBill);
         return netSalary;
     }
 }

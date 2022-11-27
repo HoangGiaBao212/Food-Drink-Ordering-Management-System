@@ -18,8 +18,8 @@ public class Manager extends Employee {
 
     @Override
     public double netSalary(BillList billList) {
-        // TODO Auto-generated method stub
-        return 0;
+        double netSalary = salary * (1 - (0.08 + 0.015 + 0.01));
+        return netSalary;
     }
 
 }

@@ -1,5 +1,5 @@
 package com.food.dink.management;
 
 public interface IEvaluate {
-    public String evaluate();
+    public String evaluate(BillList billList);
 }

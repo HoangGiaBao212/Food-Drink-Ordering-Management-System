@@ -1,4 +1,5 @@
 package com.food.dink.management;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -43,9 +44,12 @@ public class Customer extends Person implements IEvaluate {
     }
 
     @Override
-    public String evaluate() {
-        // TODO Auto-generated method stub
-        return null;
+    public String evaluate(BillList billList) {
+        if (point > 1000000)
+            return "Khách hàng Vip.";
+        else if (point > 5000000)
+            return "Khách hàng thân thiết.";
+        else
+            return "Khách hàng mới.";
     }
-
 }
