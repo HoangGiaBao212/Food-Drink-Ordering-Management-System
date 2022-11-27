@@ -45,9 +45,9 @@ public class Customer extends Person implements IEvaluate {
 
     @Override
     public String evaluate(BillList billList) {
-        if (point > 1000000)
+        if (point > 10000)
             return "Khách hàng Vip.";
-        else if (point > 5000000)
+        else if (point > 50000)
             return "Khách hàng thân thiết.";
         else
             return "Khách hàng mới.";

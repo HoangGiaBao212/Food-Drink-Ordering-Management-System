@@ -21,5 +21,4 @@ public class Manager extends Employee {
         double netSalary = salary * (1 - (0.08 + 0.015 + 0.01));
         return netSalary;
     }
-
 }
