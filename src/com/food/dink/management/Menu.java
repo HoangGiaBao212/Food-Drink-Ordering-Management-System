@@ -1,4 +1,5 @@
 package com.food.dink.management;
+
 import java.io.Console;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -318,7 +319,7 @@ public class Menu {
                                     MenuContent.clearScreen();
                                     MenuContent.showMenuCustomerChangeInfo(changeCustomerAccount);
                                     choice = getChoice();
-                                    if(choice < 6){
+                                    if (choice < 6) {
                                         changeCustomerAccount.changeAttribute(choice);
                                         currentAccountList.updateAccount(currentAccount.getId(), changeCustomerAccount);
                                     }
@@ -475,7 +476,7 @@ public class Menu {
                 case 2: // chức năng hiện ds người dùng
                     while (choice != 0) {
                         MenuContent.clearScreen();
-                        MenuContent.showMenuCustomerListInfo(currentAccountList, "feature");
+                        MenuContent.showMenuCustomerListInfo(currentAccountList, currentBillList, "feature");
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1:
@@ -500,7 +501,7 @@ public class Menu {
                                 if (accountList.getArray().length != 0) {
                                     while (choice != 0) {
                                         MenuContent.clearScreen();
-                                        MenuContent.showMenuCustomerListInfo(accountList, "noFeature");
+                                        MenuContent.showMenuCustomerListInfo(accountList, currentBillList, "noFeature");
                                         choice = Menu.getChoice();
                                     }
                                     choice = -1;
@@ -574,7 +575,7 @@ public class Menu {
                     while (choice != 0) {
                         int idSalesman;
                         MenuContent.clearScreen();
-                        MenuContent.showMenuSalesmanListInfo(currentAccountList);
+                        MenuContent.showMenuSalesmanListInfo(currentAccountList, currentBillList);
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1: // thêm nhân viên
@@ -621,7 +622,7 @@ public class Menu {
                     while (choice != 0) {
                         int idCustomer;
                         MenuContent.clearScreen();
-                        MenuContent.showMenuManagerCustomer(currentAccountList);
+                        MenuContent.showMenuManagerCustomer(currentAccountList, currentBillList);
                         choice = Menu.getChoice();
                         switch (choice) {
                             case 1: // thêm khách hàng

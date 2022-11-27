@@ -56,6 +56,7 @@ public class FileUtil {
                 } catch (ParseException e) {
                     ((Account) data).getPerson().setDateOfBirth(new Date());
                 }
+                ((Account) data).getPerson().setAccount((Account) data);
             }
             case "Product" -> {
                 data = new Product();

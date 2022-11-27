@@ -155,13 +155,13 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuCustomerListInfo(AccountList accountList, String mode) {
+	public static void showMenuCustomerListInfo(AccountList accountList, BillList billList, String mode) {
 		System.out.println("┌────────────────────────────────── [Info Customer] ─────────────────────────────────┐");
 		System.out.println("├────┬────────────────────┬──────────────────────────────────┬────────────┬──────────┤");
 		System.out
 				.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm"));
 		System.out.println("├────┼────────────────────┼──────────────────────────────────┼────────────┼──────────┤");
-		accountList.display("Customer");
+		accountList.display("Customer", billList);
 		System.out.println("├────┴────────────────────┴──────────────────────────────────┴────────────┴──────────┤");
 		if (mode.equals("feature")) {
 			System.out
@@ -217,14 +217,14 @@ public class MenuContent {
 		System.out.println("└────────────────────────────────────────────────────────────────────────────────────┘");
 	}
 
-	public static void showMenuSalesmanListInfo(AccountList accountList) {
+	public static void showMenuSalesmanListInfo(AccountList accountList, BillList billList) {
 		System.out.println("┌────────────────────────────────── [Info Salesman] ─────────────────────────────────┐");
-		System.out.println("├────┬────────────────────┬──────────────────────────────────┬────────────┬──────────┤");
+		System.out.println("├────┬────────────────────┬──────────────────────────────────┬───────────┬───────────┤");
 		System.out.println(
-				String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Lương"));
-		System.out.println("├────┼────────────────────┼──────────────────────────────────┼────────────┼──────────┤");
-		accountList.display("Salesman");
-		System.out.println("├────┴────────────────────┴──────────────────────────────────┴────────────┴──────────┤");
+				String.format("│%-4s│%-20s│%-34s│%-11s│%-11s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Lương"));
+		System.out.println("├────┼────────────────────┼──────────────────────────────────┼───────────┼───────────┤");
+		accountList.display("Salesman", billList);
+		System.out.println("├────┴────────────────────┴──────────────────────────────────┴───────────┴───────────┤");
 		System.out.println("│  1. Thêm tài khoản người bán.                                                      │");
 		System.out.println("│  2. Sửa thông tin người bán.                                                       │");
 		System.out.println("│  3. Xóa người bán.                                                                 │");
@@ -247,13 +247,13 @@ public class MenuContent {
 
 	}
 
-	public static void showMenuManagerCustomer(AccountList accountList) {
+	public static void showMenuManagerCustomer(AccountList accountList, BillList billList) {
 		System.out.println("┌────────────────────────────── [Menu Manager Customer] ─────────────────────────────┐");
 		System.out.println("├────┬────────────────────┬──────────────────────────────────┬────────────┬──────────┤");
 		System.out
 				.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", "ID", "Name", "Địa Chỉ", "Ngày sinh", "Điểm"));
 		System.out.println("├────┼────────────────────┼──────────────────────────────────┼────────────┼──────────┤");
-		accountList.display("Customer");
+		accountList.display("Customer", billList);
 		System.out.println("├────┴────────────────────┴──────────────────────────────────┴────────────┴──────────┤");
 		System.out.println("│  1. Thêm tài khoản khách hàng.                                                     │");
 		System.out.println("│  2. Sửa thông tin khách hàng.                                                      │");

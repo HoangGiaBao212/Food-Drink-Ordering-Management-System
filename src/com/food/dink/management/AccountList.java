@@ -1,5 +1,7 @@
 package com.food.dink.management;
+
 import java.util.Arrays;
+import java.text.Format;
 import java.text.SimpleDateFormat;
 
 public class AccountList extends ArrayList implements IGetable<Account> {
@@ -63,7 +65,7 @@ public class AccountList extends ArrayList implements IGetable<Account> {
             }
     }
 
-    public void display(String type) {
+    public void display(String type, BillList billList) {
         for (Object object : array) {
             Person person = ((Account) object).getPerson();
             switch (type) {
@@ -79,10 +81,11 @@ public class AccountList extends ArrayList implements IGetable<Account> {
                     if (((Account) object).getId() == -2)// -2 is bot id
                         continue;
                     if (person instanceof Salesman) {
-                        System.out.println(String.format("│%-4s│%-20s│%-34s│%-12s│%-10s│", ((Account) object).getId(),
-                                person.getName(), ((Salesman) person).address,
-                                new SimpleDateFormat("dd-MM-yyyy").format(((Salesman) person).getDateOfBirth()),
-                                ((Salesman) person).getSalary()));
+                        System.out
+                                .println(String.format("│%-4s│%-20s│%-34s│%-11s│%-,11.0f│", ((Account) object).getId(),
+                                        person.getName(), ((Salesman) person).address,
+                                        new SimpleDateFormat("dd-MM-yyyy").format(((Salesman) person).getDateOfBirth()),
+                                        ((Salesman) person).netSalary(billList)));
                     }
                     break;
                 case "Manager":
