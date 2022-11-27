@@ -1,7 +1,6 @@
 package com.food.dink.management;
 
 import java.util.Arrays;
-import java.text.Format;
 import java.text.SimpleDateFormat;
 
 public class AccountList extends ArrayList implements IGetable<Account> {
